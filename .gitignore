@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.eggs/
+dist/
+sdist/
+*.egg-info/
+*.whl
+MANIFEST
+
+# PyInstaller
+/# dist/
+/# build/
+/dist/*
+/build/*
+.pytest_cache
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/*
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Editor/IDE-specific files
+.idea/
+.project
+.vscode/
+*.swp
+*~
+*.bak
+*.tmp
+*.DS_Store
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# User secrets
+secrets.json
+
+#  node_modules
+node_modules/
+
+# Static files collected from apps (if STATIC_ROOT is in project root)
+staticfiles/
