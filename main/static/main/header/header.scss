@@ -5,6 +5,7 @@ header {
     top: 30px;
     left: 0;
     width: 100%;
+    z-index: 100;
 
     .header_wrapper {
         display: grid;
@@ -22,27 +23,95 @@ header {
             }
             p {
                 font-size: 64px;
+                @include common.adaptiveFont(64, 40);
                 height: 45px;
                 line-height: 0.5;
                 color: var(--grey);
                 white-space: nowrap;
             }
         }
-
+        
         nav {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 10px;
             flex-wrap: wrap;
-
             width: 100%;
             max-width: 372px;
             padding: 0 20px;
-
-            .link {
+            
+    
+            .link,
+            .method_btn {
                 font-size: 13px;
                 color: var(--green);
+                transition: 0.3s;
+            }
+
+            .link.disabled {
+                color: var(--brown2);
+                opacity: 50%;
+            }
+
+            .method_list {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                border-radius: 16px;
+                width: 304px;
+                animation: Open forwards 0.3s;
+                opacity: 0;
+                display: none;
+                padding: 25px 25px 20px 59px;
+                transform: translateY(calc(100% + 15px));
+                z-index: 10;
+                background-color: var(--white);
+                flex-direction: column;
+                transition: 0.3s;
+
+                &.active {
+                    display: flex;
+                }
+
+                .acordeon {
+                    height: 0px;
+                    overflow: hidden;
+                    transition: 0.1s;
+
+                    .acordeon_wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        padding-left: 20px;
+                        padding-bottom: 10px;
+                    }
+                    &.active {
+                        height: 121px;
+                    }
+                }
+
+                .acordeon_link {
+                    font-size: 13px;
+                    color: var(--grey);
+                    transition: 0.3s;
+                    width: max-content;
+                    height: 27px;
+                    padding: 0 10px;
+                    gap: 15px;
+                    transition: 0.3s;
+                    display: flex;
+                    align-items: center;
+
+                    &.acordeon_btn {
+                        margin-bottom: 15px;
+                    }
+
+                    // &:hover {
+                    //     background-color: var(--grey);
+                    // }
+                }
             }
         }
     }

@@ -10,6 +10,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
     <link rel="stylesheet" href="{% static 'main/header/header.css' %}">
+    <script src="{% static 'main/scripts/script.js' %}" defer></script>
 </head>
 <body>
 
@@ -22,12 +23,23 @@
 
             <nav>
                 <a href="" class="link">О нас</a>
-                <a href="" class="link">Наш метод</a>
+                <button class="method_btn" onclick="openMethodList()">Наш метод</button>
                 <a href="" class="link">Компетенции</a>
                 <a href="" class="link">Контакты</a>
+
+                <div class="method_list">
+                    <button class="acordeon_link acordeon_btn" onclick="openHeaderAcordeon()">Ваша траектория</button>
+                    <div class="acordeon">
+                        <div class="acordeon_wrapper">
+                            <a href="" class="acordeon_link">Начать?</a>
+                            <a href="" class="acordeon_link">Обновление</a>
+                            <a href="" class="acordeon_link">Просто</a>
+                        </div>
+                    </div>
+                    <div class="acordeon_link">Фокусные мероприятия</div>
+                </div>
             </nav>
 
-            
         </div>
     </header>
 

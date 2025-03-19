@@ -5,6 +5,7 @@ header {
   top: 30px;
   left: 0;
   width: 100%;
+  z-index: 100;
 }
 header .header_wrapper {
   display: grid;
@@ -27,7 +28,18 @@ header .header_wrapper .logo p {
   color: var(--grey);
   white-space: nowrap;
 }
+@media (max-width: 768px) {
+  header .header_wrapper .logo p {
+    font-size: calc(40px + 40.8 * (100vw - 390px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  header .header_wrapper .logo p {
+    font-size: calc(40px + 24 * 0.0520833333vw);
+  }
+}
 header .header_wrapper nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +49,63 @@ header .header_wrapper nav {
   max-width: 372px;
   padding: 0 20px;
 }
-header .header_wrapper nav .link {
+header .header_wrapper nav .link,
+header .header_wrapper nav .method_btn {
   font-size: 13px;
   color: var(--green);
+  transition: 0.3s;
+}
+header .header_wrapper nav .link.disabled {
+  color: var(--brown2);
+  opacity: 50%;
+}
+header .header_wrapper nav .method_list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 16px;
+  width: 304px;
+  animation: Open forwards 0.3s;
+  opacity: 0;
+  display: none;
+  padding: 25px 25px 20px 59px;
+  transform: translateY(calc(100% + 15px));
+  z-index: 10;
+  background-color: var(--white);
+  flex-direction: column;
+  transition: 0.3s;
+}
+header .header_wrapper nav .method_list.active {
+  display: flex;
+}
+header .header_wrapper nav .method_list .acordeon {
+  height: 0px;
+  overflow: hidden;
+  transition: 0.1s;
+}
+header .header_wrapper nav .method_list .acordeon .acordeon_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+header .header_wrapper nav .method_list .acordeon.active {
+  height: 121px;
+}
+header .header_wrapper nav .method_list .acordeon_link {
+  font-size: 13px;
+  color: var(--grey);
+  transition: 0.3s;
+  width: -moz-max-content;
+  width: max-content;
+  height: 27px;
+  padding: 0 10px;
+  gap: 15px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+header .header_wrapper nav .method_list .acordeon_link.acordeon_btn {
+  margin-bottom: 15px;
 }/*# sourceMappingURL=header.css.map */

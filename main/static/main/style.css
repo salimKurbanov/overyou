@@ -115,10 +115,10 @@ input::placeholder {
 }
 @media (max-width: 768px) {
   input::-moz-placeholder {
-    font-size: calc(14px + 3.4 * (100vw - 320px) / 1920);
+    font-size: calc(14px + 3.4 * (100vw - 390px) / 1920);
   }
   input::placeholder {
-    font-size: calc(14px + 3.4 * (100vw - 320px) / 1920);
+    font-size: calc(14px + 3.4 * (100vw - 390px) / 1920);
   }
 }
 @media (min-width: 768px) {
@@ -156,4 +156,13 @@ img {
   -webkit-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+
+@keyframes Open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

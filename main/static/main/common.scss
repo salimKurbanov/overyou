@@ -3,7 +3,7 @@
     $addSize: $maxFont - $minFont;
     $addMobSize: $addSize + $addSize * 0.7;
     @media (max-width: 768px) {
-        font-size: calc(#{$minFont + px} + #{$addMobSize} * ((100vw - 320px) / 1920));
+        font-size: calc(#{$minFont + px} + #{$addMobSize} * ((100vw - 390px) / 1920));
     }
     @media (min-width: 768px) {
         font-size: calc(#{$minFont + px} + #{$addSize} * (100vw  / 1920));
@@ -14,7 +14,7 @@
     $addSize: $max - $min;
     $addMobSize: $addSize + $addSize * 0.7;
     @media (max-width: 768px) {
-        #{$property}: calc(#{$min + px} + #{$addMobSize} * ((100vw - 320px) / 1920));
+        #{$property}: calc(#{$min + px} + #{$addMobSize} * ((100vw - 390px) / 1920));
     }
     @media (min-width: 768px) {
         #{$property}: calc(#{$min + px} + #{$addSize} * (100vw  / 1920));
