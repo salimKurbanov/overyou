@@ -2,7 +2,14 @@
 
 /*--------------*/
 :root {
-    
+    --grey: #3F3A33;
+    --green: #31443A;
+    --brown: #6A5847;
+    --brown2: #333333;
+    --white: #FCFAF2;
+    --green-transparent: #31443A99;
+    --background: #F0EEDD;
+    --black: #000000;
 }
 
 /*--------Обнуление----------*/
@@ -35,7 +42,7 @@ html,body{
 	-webkit-text-size-adjust: 100%;
 	scroll-behavior: smooth;
     // color: var(--text-color-light);
-    // background: var(--background);
+    background: var(--background);
 }
 
 input,button,textarea{font-family:inherit;}
