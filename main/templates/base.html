@@ -10,6 +10,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
     <link rel="stylesheet" href="{% static 'main/header/header.css' %}">
+    <link rel="stylesheet" href="{% static 'main/footer/footer.css' %}">
     <script src="{% static 'main/scripts/script.js' %}" defer></script>
 </head>
 <body>
@@ -45,5 +46,43 @@
 
     {% block content %}{% endblock %}
     
+    <footer>
+        <div class="footer_wrapper container">
+            <nav class="footer_nav">
+                <a href="" class="link">о нас</a>
+                <a href="" class="link">о методе</a>
+                <a href="" class="link">компетенции</a>
+                <a href="" class="link">контакты</a>
+            </nav>
+
+            <div class="logo_container">
+                <div class="logo_image">
+                    <img class="logo" src="{% static 'main/images/logo.svg' %}" alt="">
+
+                    <img class="decor" src="{% static 'main/images/sun.svg' %}" alt="">
+                </div>
+                <p>сверх ты</p>
+            </div>
+
+            <div class="social">
+                <a href="" class="social__link">
+                    <img src="{% static 'main/images/wk.svg' %}" alt="">
+                </a>
+                <a href="" class="social__link">
+                    <img src="{% static 'main/images/tg.svg' %}" alt="">
+                </a>
+                <a href="" class="social__link bot">
+                    <img src="{% static 'main/images/tg.svg' %}" alt="">
+                    <span>бот</span>
+                </a>
+                <a href="" class="social__link">
+                    <img src="{% static 'main/images/dzen.svg' %}" alt="">
+                </a>
+                <a href="" class="social__link">
+                    <img src="{% static 'main/images/instagram.svg' %}" alt="">
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
