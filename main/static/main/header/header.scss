@@ -134,11 +134,11 @@ header {
             }
             p {
                 font-size: 64px;
-                @include common.adaptiveFont(64, 40);
                 height: 45px;
                 line-height: 0.5;
                 color: var(--grey);
                 white-space: nowrap;
+                @include common.adaptiveFont(64, 40);
             }
         }
         
