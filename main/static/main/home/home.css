@@ -263,15 +263,127 @@
     top: 20%;
   }
 }
+.scenaries .scenaries_item.h .label {
+  top: 0px;
+  left: 40%;
+  transition: 0.3s cubic-bezier(0.56, -0.64, 0.42, 1.5);
+}
+.scenaries .scenaries_item.h .description {
+  background-image: url("./../images/water_back.svg");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+.scenaries .scenaries_item.h .description .title_block {
+  position: relative;
+  top: -10px;
+  left: 30%;
+  transition: 0.2s cubic-bezier(0.56, -0.64, 0.42, 1.5);
+  transition-delay: 0s;
+}
 .scenaries .scenaries_item.h .description p {
   -webkit-line-clamp: 7;
+}
+@media screen and (min-width: 992px) {
+  .scenaries .scenaries_item.h .description:hover .title_block {
+    transition-delay: 0.1s;
+    top: 2px;
+    left: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .scenaries .scenaries_item.h:hover .label {
+    left: 30px;
+  }
+}
+.scenaries .scenaries_item.i .label {
+  top: 50%;
+  left: 30%;
+  transition: 0.3s cubic-bezier(0.56, -0.64, 0.42, 1.5);
+  transform: translateY(-50%);
+}
+.scenaries .scenaries_item.i .description {
+  background-image: url("./../images/air_back.svg");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+.scenaries .scenaries_item.i .description .title_block {
+  position: relative;
+  top: 20%;
+  left: 20%;
+  transition: 0.2s cubic-bezier(0.56, -0.64, 0.42, 1.5);
+  transition-delay: 0s;
 }
 .scenaries .scenaries_item.i .description p {
   -webkit-line-clamp: 7;
 }
+@media screen and (min-width: 992px) {
+  .scenaries .scenaries_item.i .description:hover .title_block {
+    transition-delay: 0.1s;
+    top: 0;
+    left: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .scenaries .scenaries_item.i:hover .label {
+    top: 30%;
+    left: 10%;
+  }
+}
+.scenaries .scenaries_item.j .label {
+  top: 0px;
+  left: 20%;
+  transition: 0.3s cubic-bezier(0.56, -0.64, 0.42, 1.5);
+}
+.scenaries .scenaries_item.j .description {
+  background-image: url("./../images/water_back.svg");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+.scenaries .scenaries_item.j .description .title_block {
+  position: relative;
+  left: 20%;
+  transition: 0.2s cubic-bezier(0.56, -0.64, 0.42, 1.5);
+  transition-delay: 0.1s;
+}
 .scenaries .scenaries_item.j .description p {
   -webkit-line-clamp: 4;
 }
+@media screen and (min-width: 992px) {
+  .scenaries .scenaries_item.j .description:hover .title_block {
+    left: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .scenaries .scenaries_item.j:hover .label {
+    left: 30px;
+  }
+}
+.scenaries .scenaries_item.k .label {
+  top: 0px;
+  left: 40%;
+  transition: 0.3s cubic-bezier(0.56, -0.64, 0.42, 1.5);
+}
+.scenaries .scenaries_item.k .description {
+  background-image: url("./../images/fire_back2.svg");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+.scenaries .scenaries_item.k .description .title_block {
+  position: relative;
+  left: 40%;
+  transition: 0.2s cubic-bezier(0.56, -0.64, 0.42, 1.5);
+  transition-delay: 0.1s;
+}
 .scenaries .scenaries_item.k .description p {
   -webkit-line-clamp: 4;
+}
+@media screen and (min-width: 992px) {
+  .scenaries .scenaries_item.k .description:hover .title_block {
+    left: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .scenaries .scenaries_item.k:hover .label {
+    left: 30px;
+  }
 }/*# sourceMappingURL=home.css.map */
