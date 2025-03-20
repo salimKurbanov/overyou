@@ -20,7 +20,9 @@ header .header_wrapper {
   }
 }
 header .header_wrapper .menu {
-  position: relative;
+  position: fixed;
+  top: 50px;
+  right: 16px;
   width: 44px;
   height: 47px;
   z-index: 20;
@@ -122,6 +124,8 @@ header .header_wrapper .logo img {
   width: 80px;
 }
 header .header_wrapper .logo p {
+  display: flex;
+  align-items: center;
   font-size: 64px;
   height: 45px;
   line-height: 0.5;
@@ -144,7 +148,6 @@ header .header_wrapper nav {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  flex-wrap: wrap;
   width: 100%;
   max-width: 372px;
   padding: 0 20px;
@@ -159,6 +162,7 @@ header .header_wrapper nav .method_btn {
   font-size: 13px;
   color: var(--green);
   transition: 0.3s;
+  white-space: nowrap;
 }
 header .header_wrapper nav .link.disabled {
   color: var(--brown2);
