@@ -13,6 +13,106 @@ header .header_wrapper {
   align-items: center;
   gap: 20px;
 }
+@media screen and (max-width: 991px) {
+  header .header_wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+header .header_wrapper .menu {
+  position: relative;
+  width: 44px;
+  height: 47px;
+  z-index: 20;
+}
+header .header_wrapper .menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  border-radius: 8px;
+  background-color: var(--white);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+header .header_wrapper .menu.open {
+  animation: openMenu forwards 0.8s;
+}
+header .header_wrapper .menu.open::before {
+  opacity: 1;
+  z-index: 3;
+  animation: openBack forwards 0.8s;
+}
+header .header_wrapper .menu.open .menu_head .links_list_wrapper {
+  transition: opacity 0.6s, height 0.5s 0s;
+  opacity: 1;
+  z-index: 4;
+  height: 441px;
+}
+header .header_wrapper .menu.close {
+  animation: closeMenu forwards 0.8s;
+}
+header .header_wrapper .menu.close::before {
+  animation: closeBack forwards 0.8s;
+  z-index: 1;
+  opacity: 0;
+}
+@media screen and (min-width: 992px) {
+  header .header_wrapper .menu {
+    display: none;
+  }
+}
+header .header_wrapper .menu .burger {
+  position: relative;
+  z-index: 2;
+}
+header .header_wrapper .menu .menu_head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 172px;
+  padding: 13px;
+  height: 47px;
+}
+header .header_wrapper .menu .menu_head .links_list_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 172px;
+  height: 47px;
+  padding: 13px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.6s, height 0.5s 0.5s;
+  overflow: hidden;
+}
+header .header_wrapper .menu .menu_head .links_list_wrapper .close {
+  align-self: flex-end;
+}
+header .header_wrapper .menu .menu_head .links_list_wrapper .link_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 10px;
+}
+header .header_wrapper .menu .menu_head .links_list_wrapper .link_list .link {
+  height: 17px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--green);
+}
+header .header_wrapper .menu .menu_head .links_list_wrapper .link_list .links_block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+}
 header .header_wrapper .logo {
   display: flex;
   align-items: center;
@@ -49,6 +149,11 @@ header .header_wrapper nav {
   max-width: 372px;
   padding: 0 20px;
 }
+@media screen and (max-width: 991px) {
+  header .header_wrapper nav {
+    display: none;
+  }
+}
 header .header_wrapper nav .link,
 header .header_wrapper nav .method_btn {
   font-size: 13px;
@@ -79,9 +184,18 @@ header .header_wrapper nav .method_list.active {
   display: flex;
 }
 header .header_wrapper nav .method_list .acordeon {
-  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  opacity: 0;
+  padding-left: 59px;
+  padding-bottom: 20px;
+  border-radius: 16px;
+  background-color: var(--white);
+  z-index: -1;
   overflow: hidden;
-  transition: 0.1s;
+  transition: 0.3s;
 }
 header .header_wrapper nav .method_list .acordeon .acordeon_wrapper {
   display: flex;
@@ -91,7 +205,8 @@ header .header_wrapper nav .method_list .acordeon .acordeon_wrapper {
   padding-bottom: 10px;
 }
 header .header_wrapper nav .method_list .acordeon.active {
-  height: 121px;
+  opacity: 1;
+  z-index: 10;
 }
 header .header_wrapper nav .method_list .acordeon_link {
   font-size: 13px;
@@ -108,4 +223,61 @@ header .header_wrapper nav .method_list .acordeon_link {
 }
 header .header_wrapper nav .method_list .acordeon_link.acordeon_btn {
   margin-bottom: 15px;
+}
+header .header_wrapper nav .method_list .acordeon_link.disabled {
+  color: var(--brown2);
+  opacity: 50%;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes openMenu {
+  0% {
+    width: 44px;
+  }
+  70% {
+    width: 177px;
+  }
+  100% {
+    width: 172px;
+  }
+}
+@keyframes closeMenu {
+  0% {
+    width: 172px;
+  }
+  70% {
+    width: 39px;
+  }
+  100% {
+    width: 44px;
+  }
+}
+@keyframes openBack {
+  0% {
+    height: 47px;
+  }
+  70% {
+    height: 451px;
+  }
+  100% {
+    height: 441px;
+  }
+}
+@keyframes closeBack {
+  0% {
+    height: 441px;
+  }
+  100% {
+    height: 47px;
+  }
 }/*# sourceMappingURL=header.css.map */
