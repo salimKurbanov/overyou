@@ -23,6 +23,7 @@ header {
             width: 44px;
             height: 47px;
             z-index: 20;
+            // overflow: hidden; //Исправить
 
             &::before {
                 content: "";
