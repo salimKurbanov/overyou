@@ -1,8 +1,12 @@
 const methodList = document.querySelector('.method_list');
 const links = document.querySelectorAll('.link');
 
+const stopPropagation = (e) => {
+    e.stopPropagation();
+}
+
 const openMethodList = (e) => {
-    e.stopPropagation()
+    e.stopPropagation();
     links.forEach(link => link.classList.toggle('disabled'));
     methodList.classList.toggle('active');
 }
@@ -13,5 +17,5 @@ const openHeaderAcordeon = () => {
 }
 
 window.addEventListener('click', () => {
-    // methodList.classList.remove('active')
+    methodList.classList.remove('active')
 })

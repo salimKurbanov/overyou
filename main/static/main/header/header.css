@@ -79,9 +79,18 @@ header .header_wrapper nav .method_list.active {
   display: flex;
 }
 header .header_wrapper nav .method_list .acordeon {
-  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  opacity: 0;
+  padding-left: 59px;
+  padding-bottom: 20px;
+  border-radius: 16px;
+  background-color: var(--white);
+  z-index: -1;
   overflow: hidden;
-  transition: 0.1s;
+  transition: 0.3s;
 }
 header .header_wrapper nav .method_list .acordeon .acordeon_wrapper {
   display: flex;
@@ -91,7 +100,8 @@ header .header_wrapper nav .method_list .acordeon .acordeon_wrapper {
   padding-bottom: 10px;
 }
 header .header_wrapper nav .method_list .acordeon.active {
-  height: 121px;
+  opacity: 1;
+  z-index: 10;
 }
 header .header_wrapper nav .method_list .acordeon_link {
   font-size: 13px;
@@ -108,4 +118,20 @@ header .header_wrapper nav .method_list .acordeon_link {
 }
 header .header_wrapper nav .method_list .acordeon_link.acordeon_btn {
   margin-bottom: 15px;
+}
+header .header_wrapper nav .method_list .acordeon_link.disabled {
+  color: var(--brown2);
+  opacity: 50%;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=header.css.map */

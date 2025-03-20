@@ -23,20 +23,21 @@
 
             <nav>
                 <a href="" class="link">О нас</a>
-                <button class="method_btn" onclick="openMethodList()">Наш метод</button>
+                <button class="method_btn" onclick="openMethodList(event)">Наш метод</button>
                 <a href="" class="link">Компетенции</a>
                 <a href="" class="link">Контакты</a>
 
-                <div class="method_list">
+                <div class="method_list" onclick="stopPropagation(event)">
                     <button class="acordeon_link acordeon_btn" onclick="openHeaderAcordeon()">Ваша траектория</button>
+                    <a href="" class="acordeon_link">Фокусные мероприятия</a>
                     <div class="acordeon">
                         <div class="acordeon_wrapper">
                             <a href="" class="acordeon_link">Начать?</a>
                             <a href="" class="acordeon_link">Обновление</a>
                             <a href="" class="acordeon_link">Просто</a>
                         </div>
+                        <a href="" class="acordeon_link disabled">Фокусные мероприятия</a>
                     </div>
-                    <div class="acordeon_link">Фокусные мероприятия</div>
                 </div>
             </nav>
 
