@@ -19,7 +19,9 @@ header {
         }
 
         .menu {
-            position: relative;
+            position: fixed;
+            top: 50px;
+            right: 16px;
             width: 44px;
             height: 47px;
             z-index: 20;
@@ -133,6 +135,8 @@ header {
                 width: 80px;
             }
             p {
+                display: flex;
+                align-items: center;
                 font-size: 64px;
                 height: 45px;
                 line-height: 0.5;
@@ -148,7 +152,6 @@ header {
             align-items: center;
             justify-content: space-between;
             gap: 10px;
-            flex-wrap: wrap;
             width: 100%;
             max-width: 372px;
             padding: 0 20px;
@@ -161,6 +164,7 @@ header {
                 font-size: 13px;
                 color: var(--green);
                 transition: 0.3s;
+                white-space: nowrap;
             }
 
             .link.disabled {
