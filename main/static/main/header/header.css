@@ -85,7 +85,7 @@ header .header_wrapper .menu .menu_head .links_list_wrapper {
   left: 0;
   width: 172px;
   height: 47px;
-  padding: 13px;
+  padding: 10px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -108,6 +108,7 @@ header .header_wrapper .menu .menu_head .links_list_wrapper .link_list .link {
   align-items: center;
   font-size: 13px;
   color: var(--green);
+  white-space: nowrap;
 }
 header .header_wrapper .menu .menu_head .links_list_wrapper .link_list .links_block {
   display: flex;
