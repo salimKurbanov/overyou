@@ -72,7 +72,6 @@ footer .footer_wrapper .logo_container .logo_image .decor {
   }
 }
 footer .footer_wrapper .logo_container p {
-  height: 45px;
   color: var(--grey);
   white-space: nowrap;
 }

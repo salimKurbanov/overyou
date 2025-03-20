@@ -74,7 +74,6 @@ footer {
             }
 
             & p {
-                height: 45px;
                 color: var(--grey);
                 white-space: nowrap;
                 @include common.adaptiveFont(64, 40);
@@ -123,7 +122,7 @@ footer {
                     width: 60px;
 
                     &.bot {
-                        
+
                         & span {
                             line-height: 0.85;
                         }
