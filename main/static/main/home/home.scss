@@ -1468,4 +1468,52 @@
             }
         }
     }
+
+    .over_you_splide {
+        width: 100%;
+        padding-bottom: 30px;
+        @include common.mediaMinWidth(769) {
+            display: none;
+        }
+
+
+        .splide__track {
+            position: relative;
+
+            .splide__list {
+                height: unset;
+            }
+
+        }
+        .splide__slide {
+            width: 100%;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            height: max-content;
+
+            p {
+                margin-top: 20px;
+                font-size: 16px;
+                color: var(--green);
+                line-height: 130%;
+
+                &.max {
+                    width: 100%;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                }
+
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            .bload {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+    }
 }
