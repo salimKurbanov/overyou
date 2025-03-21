@@ -5,12 +5,13 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'main/home/home.css' %}">
+    <script src="{% static 'main/home/home.js' %}" defer></script>
 {% endblock %}
 
 {% block content %}
 
-    <!-- <div class="container scenaries">
-        <div class="scenaries_item a">
+    <div class="container scenaries">
+        <div class="scenaries_item a active" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Потеря смысла</h4>
@@ -33,7 +34,7 @@
                 <h4>Потеря смысла</h4>
             </div>
         </div>
-        <div class="scenaries_item b">
+        <div class="scenaries_item b" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Тревожность</h4>
@@ -58,7 +59,7 @@
                 <h4>Тревожность</h4>
             </div>
         </div>
-        <div class="scenaries_item c">
+        <div class="scenaries_item c" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Прокрастинация</h4>
@@ -105,7 +106,7 @@
                 <h4>прокрастинация</h4>
             </div>
         </div>
-        <div class="scenaries_item d">
+        <div class="scenaries_item d" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Отношения</h4>
@@ -126,12 +127,12 @@
                 <h4>Отношения</h4>
             </div>
         </div>
-        <div class="scenaries_item e">
+        <div class="scenaries_item e" onclick="openDescription(event)">
             <p>
                 Мы рады приветствовать вас в нашем <span>открытом</span> и в то же время очень приватном <span>пространстве</span>, так как психотерапия это про тонкое взаимодействие двоих в поиске <span>истины</span>
             </p>
         </div>
-        <div class="scenaries_item f">
+        <div class="scenaries_item f" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Дипрессия</h4>
@@ -152,12 +153,12 @@
                 <h4>Дипрессия</h4>
             </div>
         </div>
-        <div class="scenaries_item g">
+        <div class="scenaries_item g" onclick="openDescription(event)">
             <p>
                 Если вы ощущаете нечто, что заставляет вас увязать в старых сценариях, <span>ходить по кругу</span> или любой другой дискомфорт, который не позволяет получать удовольствие от жизни, мы готовы стать <span>Вашим проводником</span> для познания истинного Себя
             </p>
         </div>
-        <div class="scenaries_item h">
+        <div class="scenaries_item h" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Апатия</h4>
@@ -182,7 +183,7 @@
                 <h4>Апатия</h4>
             </div>
         </div>
-        <div class="scenaries_item i">
+        <div class="scenaries_item i" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Зависимости</h4>
@@ -228,7 +229,7 @@
                 <h4>Зависимости</h4>
             </div>
         </div>
-        <div class="scenaries_item j">
+        <div class="scenaries_item j" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Cамооценка</h4>
@@ -274,7 +275,7 @@
                 <h4>Самооценка</h4>
             </div>
         </div>
-        <div class="scenaries_item k">
+        <div class="scenaries_item k" onclick="openDescription(event)">
             <div class="description">
                 <div class="title_block">
                     <h4>Сепарация</h4>
@@ -297,6 +298,6 @@
                 <h4>Сепарация</h4>
             </div>
         </div>
-    </div> -->
+    </div>
 
 {% endblock %}

@@ -2,6 +2,7 @@
 
 
 .scenaries {
+    width: 100%;
     margin-top: 150px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -13,9 +14,18 @@
         'j j j j j j k k k k k k'
     ;
     gap: 40px;
+    overflow: hidden;
 
     @include common.mediaMaxWidth(991) {
-        
+        grid-template-areas: 
+            'f f f a a a e e e e e e'
+            'f f f a a a i i i i i i'
+            'g g g g g g d d d d d d'
+            'c c c c c c b b b b b b'
+            'k k k k k k k k h h h h'
+            'j j j j j j j j l l l l'
+        ;
+        grid-template-rows: 185px 202px 202px 140px 133px 133px;
     }
 
     & > *:nth-child(1) {
@@ -142,7 +152,7 @@
             padding: 16px;
             padding-bottom: 10px;
             color: var(--green);
-            z-index: 10;
+            z-index: -1;
 
             @include common.mediaMinWidth(992) {
                 &:hover {
@@ -167,6 +177,16 @@
             }
         }
 
+        @include common.mediaMaxWidth(991) {
+            &.active {
+                .description {
+                    transition-delay: 0.1s;
+                    opacity: 1;
+                    z-index: 10;
+                }
+            }
+        }
+
         &.a {
             .label {
                 top: 88px;
@@ -177,6 +197,9 @@
                 background-image: url('./../images/fire_back.svg');
                 background-position: left bottom;
                 background-repeat: no-repeat;
+                @include common.mediaMaxWidth(991) {
+                    height: 367px;
+                }
                 p {
                     -webkit-line-clamp: 16;
                     line-clamp: 16;
@@ -185,6 +208,14 @@
 
             @include common.mediaMinWidth(992) {
                 &:hover {
+                    .label {
+                        transform: translateX(10%);
+                        top: 70px;
+                    }
+                }
+            }
+            @include common.mediaMaxWidth(991) {
+                &.active {
                     .label {
                         transform: translateX(10%);
                         top: 70px;
@@ -227,6 +258,18 @@
                     }
                 }
             }
+            @include common.mediaMaxWidth(991) {
+                &.active {
+                    .label {
+                        left: 30px;
+                    }
+                    .description {
+                        .title_block {
+                            left: 0;
+                        }
+                    }
+                }
+            }
         }
         &.c {
             .label {
@@ -234,11 +277,18 @@
                 left: 30%;
                 transition: 0.3s cubic-bezier(.56,-0.64,.42,1.5);
                 transform: translateY(-50%);
+
+                @include common.mediaMaxWidth(991) {
+                    left: 54%;
+                }
             }
             .description {
                 background-image: url('./../images/air_back.svg');
                 background-position: right bottom;
                 background-repeat: no-repeat;
+                @include common.mediaMaxWidth(991) {
+                    width: 70dvw;
+                }
                 .title_block {
                     position: relative;
                     top: 20%;
@@ -265,6 +315,21 @@
                     .label {
                         top: 30%;
                         left: 10%;
+                    }
+                }
+            }
+            @include common.mediaMaxWidth(991) {
+                &.active {
+                    .label {
+                        top: 30%;
+                        left: 10%;
+                    }
+                    .description {
+                        .title_block {
+                            transition-delay: 0.1s;
+                            top: 0;
+                            left: 0;
+                        }
                     }
                 }
             }
@@ -323,6 +388,19 @@
                     }
                 }
             }
+            @include common.mediaMaxWidth(991) {
+                &.active {
+                    .label {
+                        top: 20%;
+                    }
+                    .description {
+                        .title_block {
+                            // transition-delay: 0.1s;
+                            top: 0;
+                        }
+                    }
+                }
+            }
         }
         &.h {
             .label {
@@ -334,6 +412,9 @@
                 background-image: url('./../images/water_back.svg');
                 background-position: right bottom;
                 background-repeat: no-repeat;
+                @include common.mediaMaxWidth(991) {
+                    height: 202px;
+                }
                 .title_block {
                     position: relative;
                     top: -10px;
@@ -361,6 +442,21 @@
                         left: 30px;
                     }
                 }
+            }
+            @include common.mediaMaxWidth(991) {
+                &.active {
+                    .label {
+                        left: 30px;
+                    }
+                    .description {
+                        .title_block {
+                            transition-delay: 0.1s;
+                            top: 2px;
+                            left: 0;
+                        }
+                    }
+                }
+
             }
         }
         &.i {
@@ -403,6 +499,21 @@
                     }
                 }
             }
+            @include common.mediaMaxWidth(991) {
+                &.active {
+                    .label {
+                        top: 30%;
+                        left: 10%;
+                    }
+                    .description {
+                        .title_block {
+                            transition-delay: 0.1s;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+                }
+            }
         }
         &.j {
             .label {
@@ -414,6 +525,10 @@
                 background-image: url('./../images/water_back.svg');
                 background-position: right bottom;
                 background-repeat: no-repeat;
+
+                @include common.mediaMaxWidth(991) {
+                    width: 70dvw;
+                }
                 .title_block {
                     position: relative;
                     left: 20%;
@@ -439,17 +554,36 @@
                     }
                 }
             }
+            @include common.mediaMaxWidth(991) {
+                &.active {
+                    .label {
+                        left: 30px;
+                    }
+                    .description {
+                        .title_block {
+                            left: 0;
+                        }
+                    }
+                }
+            }
         }
         &.k {
             .label {
                 top: 0px;
                 left: 40%;
                 transition: 0.3s cubic-bezier(.56,-0.64,.42,1.5);
+
+                @include common.mediaMaxWidth(991) {
+                    left: 48%;
+                }
             }
             .description {
                 background-image: url('./../images/fire_back2.svg');
                 background-position: right bottom;
                 background-repeat: no-repeat;
+                @include common.mediaMaxWidth(991) {
+                    width: 70dvw;
+                }
                 .title_block {
                     position: relative;
                     left: 40%;
@@ -472,6 +606,18 @@
                 &:hover {
                     .label {
                         left: 30px;
+                    }
+                }
+            }
+            @include common.mediaMaxWidth(991) {
+                &.active {
+                    .label {
+                        left: 30px;
+                    }
+                    .description {
+                        .title_block {
+                            left: 0;
+                        }
                     }
                 }
             }
