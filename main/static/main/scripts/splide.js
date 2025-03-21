@@ -13,4 +13,15 @@ document.addEventListener('DOMContentLoaded', function () {
             },
           },
     }).mount();
+
+    new Splide('#over_you_slider', {
+      type: 'fade',
+      perPage: 1,
+      arrows: false,
+      pagination: true,
+      rewind: true,
+      // fixedWidth : '160px',
+      // fixedHeight: '240px',  
+  
+  }).mount();
 });

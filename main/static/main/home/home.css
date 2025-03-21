@@ -1360,4 +1360,46 @@
 }
 .over_you .over_you_grid .over_you_grid_item:nth-child(4) img {
   width: 100%;
+}
+.over_you .over_you_splide {
+  width: 100%;
+  padding-bottom: 30px;
+}
+@media screen and (min-width: 769px) {
+  .over_you .over_you_splide {
+    display: none;
+  }
+}
+.over_you .over_you_splide .splide__track {
+  position: relative;
+}
+.over_you .over_you_splide .splide__track .splide__list {
+  height: unset;
+}
+.over_you .over_you_splide .splide__slide {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  height: -moz-max-content;
+  height: max-content;
+}
+.over_you .over_you_splide .splide__slide p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--green);
+  line-height: 130%;
+}
+.over_you .over_you_splide .splide__slide p.max {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.over_you .over_you_splide .splide__slide p span {
+  font-weight: 600;
+}
+.over_you .over_you_splide .splide__slide .bload {
+  width: 100%;
+  max-width: 500px;
 }/*# sourceMappingURL=home.css.map */
