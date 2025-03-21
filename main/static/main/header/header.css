@@ -20,7 +20,7 @@ header .header_wrapper {
   }
 }
 header .header_wrapper .menu {
-  position: fixed;
+  position: absolute;
   top: 50px;
   right: 16px;
   width: 44px;

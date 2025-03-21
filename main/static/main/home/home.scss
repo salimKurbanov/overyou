@@ -14,6 +14,10 @@
     ;
     gap: 40px;
 
+    @include common.mediaMaxWidth(991) {
+        
+    }
+
     & > *:nth-child(1) {
         grid-area: a;
     }
@@ -175,6 +179,7 @@
                 background-repeat: no-repeat;
                 p {
                     -webkit-line-clamp: 16;
+                    line-clamp: 16;
                 }
             }
 
@@ -205,6 +210,7 @@
                 }
                 p {
                     -webkit-line-clamp: 4;
+                    line-clamp: 4;
                 }
                 @include common.mediaMinWidth(992) {
                     &:hover {
@@ -242,6 +248,7 @@
                 }
                 p {
                     -webkit-line-clamp: 4;
+                    line-clamp: 4;
                 }
                 @include common.mediaMinWidth(992) {
                     &:hover {
@@ -273,6 +280,7 @@
                 background-repeat: no-repeat;
                 p {
                     -webkit-line-clamp: 6;
+                    line-clamp: 6;
                 }
             }
         }
@@ -296,6 +304,7 @@
                 }
                 p {
                     -webkit-line-clamp: 18;
+                    line-clamp: 18;
                 }
                 
                 @include common.mediaMinWidth(992) {
@@ -334,6 +343,7 @@
                 }
                 p {
                     -webkit-line-clamp: 7;
+                    line-clamp: 7;
                 }
                 @include common.mediaMinWidth(992) {
                     &:hover {
@@ -373,6 +383,7 @@
                 }
                 p {
                     -webkit-line-clamp: 7;
+                    line-clamp: 7;
                 }
                 @include common.mediaMinWidth(992) {
                     &:hover {
@@ -411,6 +422,7 @@
                 }
                 p {
                     -webkit-line-clamp: 4;
+                    line-clamp: 4;
                 }
                 @include common.mediaMinWidth(992) {
                     &:hover {
@@ -446,6 +458,7 @@
                 }
                 p {
                     -webkit-line-clamp: 4;
+                    line-clamp: 4;
                 }
                 @include common.mediaMinWidth(992) {
                     &:hover {
