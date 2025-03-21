@@ -619,6 +619,23 @@
   margin-top: 150px;
   position: relative;
 }
+.acquaintance .decor {
+  width: 300px;
+  position: absolute;
+  top: -95px;
+  left: -129px;
+  z-index: 0;
+}
+.acquaintance .decor img {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .acquaintance .decor {
+    width: 180px;
+    top: -53px;
+    left: -90px;
+  }
+}
 .acquaintance .acquaintance_link {
   font-size: 16px;
   color: var(--green);
