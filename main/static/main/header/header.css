@@ -1,5 +1,106 @@
 @charset "UTF-8";
 /*-------------Миксины----------------*/
+.menu {
+  position: absolute;
+  top: 50px;
+  right: 16px;
+  width: 44px;
+  height: 47px;
+  z-index: 120;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  border-radius: 8px;
+  background-color: var(--white);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.menu.open {
+  animation: openMenu forwards 0.8s;
+  height: 450px;
+}
+.menu.open::before {
+  opacity: 1;
+  z-index: 3;
+  animation: openBack forwards 0.8s;
+}
+.menu.open .menu_head .links_list_wrapper {
+  transition: opacity 0.6s, height 0.5s 0s;
+  opacity: 1;
+  z-index: 4;
+  height: 441px;
+}
+.menu.close {
+  animation: closeMenu forwards 0.8s;
+}
+.menu.close::before {
+  animation: closeBack forwards 0.8s;
+  z-index: 1;
+  opacity: 0;
+}
+@media screen and (min-width: 992px) {
+  .menu {
+    display: none;
+  }
+}
+.menu .burger {
+  position: relative;
+  z-index: 2;
+}
+.menu .menu_head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 172px;
+  padding: 13px;
+  height: 47px;
+}
+.menu .menu_head .links_list_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 172px;
+  height: 47px;
+  padding: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.6s, height 0.5s 0.5s;
+  overflow: hidden;
+}
+.menu .menu_head .links_list_wrapper .close {
+  align-self: flex-end;
+}
+.menu .menu_head .links_list_wrapper .link_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 10px;
+}
+.menu .menu_head .links_list_wrapper .link_list .link {
+  height: 17px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--green);
+  white-space: nowrap;
+}
+.menu .menu_head .links_list_wrapper .link_list .links_block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+}
+
 header {
   position: absolute;
   top: 30px;
@@ -18,102 +119,6 @@ header .header_wrapper {
     display: flex;
     justify-content: space-between;
   }
-}
-header .header_wrapper .menu {
-  position: fixed;
-  top: 50px;
-  right: 16px;
-  width: 44px;
-  height: 47px;
-  z-index: 20;
-}
-header .header_wrapper .menu::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0px;
-  border-radius: 8px;
-  background-color: var(--white);
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-header .header_wrapper .menu.open {
-  animation: openMenu forwards 0.8s;
-}
-header .header_wrapper .menu.open::before {
-  opacity: 1;
-  z-index: 3;
-  animation: openBack forwards 0.8s;
-}
-header .header_wrapper .menu.open .menu_head .links_list_wrapper {
-  transition: opacity 0.6s, height 0.5s 0s;
-  opacity: 1;
-  z-index: 4;
-  height: 441px;
-}
-header .header_wrapper .menu.close {
-  animation: closeMenu forwards 0.8s;
-}
-header .header_wrapper .menu.close::before {
-  animation: closeBack forwards 0.8s;
-  z-index: 1;
-  opacity: 0;
-}
-@media screen and (min-width: 992px) {
-  header .header_wrapper .menu {
-    display: none;
-  }
-}
-header .header_wrapper .menu .burger {
-  position: relative;
-  z-index: 2;
-}
-header .header_wrapper .menu .menu_head {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 172px;
-  padding: 13px;
-  height: 47px;
-}
-header .header_wrapper .menu .menu_head .links_list_wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 172px;
-  height: 47px;
-  padding: 13px;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  transition: opacity 0.6s, height 0.5s 0.5s;
-  overflow: hidden;
-}
-header .header_wrapper .menu .menu_head .links_list_wrapper .close {
-  align-self: flex-end;
-}
-header .header_wrapper .menu .menu_head .links_list_wrapper .link_list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 10px;
-}
-header .header_wrapper .menu .menu_head .links_list_wrapper .link_list .link {
-  height: 17px;
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  color: var(--green);
-}
-header .header_wrapper .menu .menu_head .links_list_wrapper .link_list .links_block {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-left: 20px;
 }
 header .header_wrapper .logo {
   display: flex;
