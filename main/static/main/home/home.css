@@ -54,6 +54,11 @@
   border-radius: 16px;
   font-size: 16px;
 }
+@media screen and (max-width: 768px) {
+  .scenaries .scenaries_item {
+    height: 55px;
+  }
+}
 .scenaries .scenaries_item.e {
   display: flex;
   align-items: center;
@@ -111,6 +116,13 @@
 }
 .scenaries .scenaries_item .label svg {
   min-width: 20px;
+}
+@media screen and (max-width: 768px) {
+  .scenaries .scenaries_item .label {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 .scenaries .scenaries_item .description {
   position: absolute;
@@ -514,5 +526,50 @@
   }
   .scenaries .scenaries_item.k.active .description .title_block {
     left: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .scenaries {
+    padding: 0px !important;
+    grid-template-columns: 1fr;
+    grid-template-areas: "e" "a" "b" "c" "f" "d" "h" "i" "g";
+    grid-auto-rows: auto;
+    grid-template-rows: repeat(11, auto);
+    gap: 0px;
+    overflow: hidden;
+  }
+  .scenaries .scenaries_item {
+    border-top: 1px solid var(--brown);
+    width: 100% !important;
+    background-color: var(--white);
+    transition: 0.8s;
+    height: 55px;
+    border-radius: 0px;
+  }
+  .scenaries .scenaries_item .label {
+    left: 0 !important;
+    top: 0 !important;
+    transform: translateY(0%) !important;
+    border-radius: 0;
+    height: 55px !important;
+    animation: none !important;
+  }
+  .scenaries .scenaries_item .description {
+    width: 100% !important;
+    height: 100% !important;
+    transition: 0.8s !important;
+    transition-delay: 0s !important;
+    background-position: right bottom !important;
+  }
+  .scenaries .scenaries_item .description .title_block {
+    left: 0 !important;
+    transition: 0s linear !important;
+  }
+  .scenaries .scenaries_item .description .title_block h4 {
+    width: -moz-max-content !important;
+    width: max-content !important;
+  }
+  .scenaries .scenaries_item.active {
+    height: 202px;
   }
 }/*# sourceMappingURL=home.css.map */
