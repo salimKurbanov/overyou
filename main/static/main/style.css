@@ -1,17 +1,29 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /*-------------Миксины----------------*/
+@font-face {
+  font-family: "Anticva";
+  font-weight: 400;
+  src: url("./fonts/Anticva.woff"), url("./fonts/Anticva.woff2");
+}
 /*--------------*/
 :root {
   --grey: #3F3A33;
+  --grey3: #C2BDB8;
   --grey2: #C2BDB880;
   --green: #31443A;
   --brown: #6A5847;
   --brown2: #333333;
+  --brown3: #3F3A33;
   --white: #FCFAF2;
+  --white2: #F0EEDD;
   --green-transparent: #31443A99;
-  --background: #F0EEDD;
+  --background: #f0eedd;
   --black: #000000;
+  --lora: "Lora", serif;
+  --anticva: "Anticva";
+  --main-font: "Montserrat", sans-serif;
 }
 
 /*--------Обнуление----------*/
@@ -48,7 +60,7 @@ html, body {
   font-weight: 400;
   line-height: 1;
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--main-font);
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

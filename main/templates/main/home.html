@@ -9,7 +9,60 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container hidden_text noselect">
+        <div class="focus_state">
+            <h2 class="state one">
+                С<img class="romb" src="{% static 'main/images/romb.svg' %}" alt="">вершай себя
+            </h2>
+            <h2 class="state two">
+                <span>СВЕРШАЙ СЕБЯ</span>
+                <img class="man" src="{% static 'main/images/man.png' %}" alt="">
+            </h2>
+        </div>
+    </div>
 
+    <div class="slider_container">
+        <section id="main_slider" class="splide" aria-label="Splide Basic HTML Example">
+            <button class="chat_button desc">
+                <img src="{% static 'main/images/chat.svg' %}" alt="">
+            </button>
+
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="{% static 'main/images/main_slider/slide1.jpg' %}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{% static 'main/images/main_slider/slide2.png' %}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{% static 'main/images/main_slider/slide3.png' %}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{% static 'main/images/main_slider/slide4.png' %}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{% static 'main/images/main_slider/slide5.png' %}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{% static 'main/images/main_slider/slide6.png' %}" alt="">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container">
+            <h3>Просто Психоанализ
+
+                <p class="decor">для просто Сверх тебя</p>
+            </h3>
+
+            <button class="chat_button mob">
+                <img src="{% static 'main/images/chat.svg' %}" alt="">
+            </button>
+        </div>
+    </div>
+{% endblock %}
     <div class="container scenaries">
         <div class="scenaries_item a active" onclick="openDescription(event)">
             <div class="description">
