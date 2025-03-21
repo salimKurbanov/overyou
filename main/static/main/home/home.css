@@ -138,7 +138,7 @@
   padding: 16px;
   padding-bottom: 10px;
   color: var(--green);
-  z-index: -1;
+  z-index: 10;
 }
 @media screen and (min-width: 992px) {
   .scenaries .scenaries_item .description:hover {
@@ -160,6 +160,9 @@
   overflow: hidden;
 }
 @media screen and (max-width: 991px) {
+  .scenaries .scenaries_item .description {
+    z-index: -1;
+  }
   .scenaries .scenaries_item.active .description {
     transition-delay: 0.1s;
     opacity: 1;
@@ -532,9 +535,9 @@
   .scenaries {
     padding: 0px !important;
     grid-template-columns: 1fr;
-    grid-template-areas: "e" "a" "b" "c" "f" "d" "h" "i" "g";
+    grid-template-areas: "e" "a" "b" "c" "f" "d" "h" "i" "j" "k" "g";
     grid-auto-rows: auto;
-    grid-template-rows: repeat(11, auto);
+    grid-template-rows: repeat(9, auto);
     gap: 0px;
     overflow: hidden;
   }
@@ -545,14 +548,46 @@
     transition: 0.8s;
     height: 55px;
     border-radius: 0px;
+    overflow: hidden;
+  }
+  .scenaries .scenaries_item.a {
+    border-radius: 16px;
+    margin-top: -14px;
+    z-index: 10;
+  }
+  .scenaries .scenaries_item.a .description {
+    background-image: url("./../images/fire_back3.svg");
+    background-position: bottom right 5px;
+  }
+  .scenaries .scenaries_item.e {
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    border: 0;
+    height: 185px;
+  }
+  .scenaries .scenaries_item.g {
+    height: auto;
+    border: 0;
+    background-color: transparent;
+    padding: 16px;
+  }
+  .scenaries .scenaries_item.b .description {
+    background-position: bottom -10px right !important;
+  }
+  .scenaries .scenaries_item.c .description {
+    background-position: bottom -30px right !important;
   }
   .scenaries .scenaries_item .label {
     left: 0 !important;
-    top: 0 !important;
+    top: 1px !important;
     transform: translateY(0%) !important;
     border-radius: 0;
-    height: 55px !important;
+    height: 53px !important;
     animation: none !important;
+  }
+  .scenaries .scenaries_item .label h4 {
+    width: -moz-max-content;
+    width: max-content;
   }
   .scenaries .scenaries_item .description {
     width: 100% !important;
@@ -561,9 +596,15 @@
     transition-delay: 0s !important;
     background-position: right bottom !important;
   }
+  .scenaries .scenaries_item .description p {
+    -webkit-line-clamp: 6 !important;
+    line-clamp: 6 !important;
+  }
   .scenaries .scenaries_item .description .title_block {
+    top: 0 !important;
     left: 0 !important;
     transition: 0s linear !important;
+    animation: none !important;
   }
   .scenaries .scenaries_item .description .title_block h4 {
     width: -moz-max-content !important;
