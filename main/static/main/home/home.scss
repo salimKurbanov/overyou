@@ -822,6 +822,7 @@
             display: flex;
             align-items: center;
             gap: 4dvw;
+            overflow: hidden;
 
             @include common.mediaMaxWidth(768) {
                 display: none;
@@ -1040,5 +1041,98 @@
     }
     100% {
         transform: rotate(180deg);
+    }
+}
+
+.over_you {
+    margin-top: 200px;
+    position: relative;
+
+    .over_you_head {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: center;
+        grid-auto-rows: auto;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 34px;
+            text-transform: uppercase;
+
+            @include common.mediaMaxWidth(768) {
+                font-size: 24px;
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 4dvw;
+
+            .line {
+                height: 1px;
+                width: 100%;
+                background-color: var(--brown);
+
+                @include common.mediaMaxWidth(991) {
+                    display: none;
+                }
+            }
+
+            img {
+                display: block;
+                margin-left: auto;
+
+                @include common.mediaMaxWidth(768) {
+                    width: 44px;
+                }
+            }
+        }
+    }
+
+    .over_you_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 40px;
+
+        @include common.mediaMaxWidth(768) {
+            display: none;
+        }
+
+        .over_you_grid_item {
+            font-size: 16px;
+            line-height: 130%;
+            color: var(--green);
+            span {
+                font-weight: 600;
+            }
+
+            img {
+                border-radius: 16px;
+            }
+
+            &:nth-child(1) {
+
+            }
+            &:nth-child(2) {   
+
+            }
+            &:nth-child(3) {
+                p {
+                    width: 100%;
+                    max-width: 360px;
+                    text-align: end;
+                    margin-left: auto;
+                }
+            }
+            &:nth-child(4) {
+                img {
+                    width: 100%;
+                }
+            }
+        }
     }
 }
