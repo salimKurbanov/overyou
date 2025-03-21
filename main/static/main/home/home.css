@@ -619,6 +619,23 @@
   margin-top: 150px;
   position: relative;
 }
+.acquaintance .decor {
+  width: 300px;
+  position: absolute;
+  top: -95px;
+  left: -129px;
+  z-index: 0;
+}
+.acquaintance .decor img {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .acquaintance .decor {
+    width: 180px;
+    top: -53px;
+    left: -90px;
+  }
+}
 .acquaintance .acquaintance_link {
   font-size: 16px;
   color: var(--green);
@@ -681,6 +698,7 @@
   display: flex;
   align-items: center;
   gap: 4dvw;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .acquaintance .acquaintance_head .rigth {
@@ -908,4 +926,81 @@
   100% {
     transform: rotate(180deg);
   }
+}
+.over_you {
+  margin-top: 200px;
+  position: relative;
+}
+.over_you .over_you_head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  grid-auto-rows: auto;
+  margin-bottom: 50px;
+}
+.over_you .over_you_head h2 {
+  font-size: 34px;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .over_you .over_you_head h2 {
+    font-size: 24px;
+  }
+}
+.over_you .over_you_head .right {
+  display: flex;
+  align-items: center;
+  gap: 4dvw;
+}
+.over_you .over_you_head .right .line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--brown);
+}
+@media screen and (max-width: 991px) {
+  .over_you .over_you_head .right .line {
+    display: none;
+  }
+}
+.over_you .over_you_head .right img {
+  display: block;
+  margin-left: auto;
+}
+@media screen and (max-width: 768px) {
+  .over_you .over_you_head .right img {
+    width: 44px;
+  }
+}
+.over_you .over_you_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .over_you .over_you_grid {
+    display: none;
+  }
+}
+.over_you .over_you_grid .over_you_grid_item {
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--green);
+}
+.over_you .over_you_grid .over_you_grid_item span {
+  font-weight: 600;
+}
+.over_you .over_you_grid .over_you_grid_item img {
+  border-radius: 16px;
+}
+.over_you .over_you_grid .over_you_grid_item:nth-child(3) p {
+  width: 100%;
+  max-width: 360px;
+  text-align: end;
+  margin-left: auto;
+}
+.over_you .over_you_grid .over_you_grid_item:nth-child(4) img {
+  width: 100%;
 }/*# sourceMappingURL=home.css.map */
