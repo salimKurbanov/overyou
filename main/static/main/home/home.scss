@@ -1381,7 +1381,30 @@
     margin-top: 200px;
     position: relative;
 
+    .decor {
+        position: absolute;
+        top: -100px;
+        left: -158px;
+        z-index: 0;
+        width: 330px;
+        height: 300px;
+        background-image: url('./../images/over_you_decor.svg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        // backdrop-filter: blur(20px);
+        filter: blur(20px);
+
+        @include common.mediaMaxWidth(768) {
+            width: 220px;
+            height: 200px;
+            top: -79px;
+            left: -102px;
+        }
+    }
+
     .over_you_head {
+        position: relative;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1389,6 +1412,7 @@
         align-items: center;
         grid-auto-rows: auto;
         margin-bottom: 50px;
+        z-index: 2;
 
         h2 {
             font-size: 34px;
@@ -1426,6 +1450,8 @@
     }
 
     .over_you_grid {
+        position: relative;
+        z-index: 2;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
@@ -1470,6 +1496,8 @@
     }
 
     .over_you_splide {
+        position: relative;
+        z-index: 2;
         width: 100%;
         padding-bottom: 30px;
         @include common.mediaMinWidth(769) {
@@ -1513,6 +1541,30 @@
             .bload {
                 width: 100%;
                 max-width: 500px;
+            }
+        }
+
+        .splide__pagination__page {
+            width: 10px !important;
+            height: 10px !important;
+            background: transparent;
+            border: 1px solid var(--brown);
+
+            &.is-active {
+                background-color: var(--brown);
+                transform: scale(1) !important;
+            }
+        }
+        
+        .splide__pagination__page {
+            width: 10px !important;
+            height: 10px !important;
+            background: transparent;
+            border: 1px solid var(--brown);
+
+            &.is-active {
+                background-color: var(--brown);
+                transform: scale(1) !important;
             }
         }
     }
