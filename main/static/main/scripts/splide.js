@@ -23,5 +23,22 @@ document.addEventListener('DOMContentLoaded', function () {
       // fixedWidth : '160px',
       // fixedHeight: '240px',  
   
-  }).mount();
+    }).mount();
+
+    new Splide('#about_slider', {
+      type: 'fade',
+      perPage: 1,
+      arrows: true,
+      pagination: false,
+      rewind: true,
+      // fixedWidth : '160px',
+      // fixedHeight: '240px',  
+      breakpoints: {
+          768: {
+            arrows: false,
+            pagination: true,
+          }
+      }
+  
+    }).mount();
 });
