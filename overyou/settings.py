@@ -125,3 +125,14 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# email send
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'  # адрес вашего SMTP-сервера
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True 
+EMAIL_HOST_USER = 'your_email@gmail.com'  #ваш email
+EMAIL_HOST_PASSWORD = 'your_password'  #ваш пароль
+DEFAULT_FROM_EMAIL = 'your_email@gmail.com' # Адрес, который будет указан в поле "От"
