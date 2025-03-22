@@ -2739,6 +2739,16 @@
                     width: 100%;
                     height: 100%;
                     fill: none !important;
+                    transition: 0.3s;
+
+                    @include common.mediaMinWidth(992) {
+                        &:hover {
+                            fill: #6a58471f !important;
+                            rect {
+                                stroke: #6a58471f !important;
+                            }
+                        }
+                    }
                 }
             }
         }
