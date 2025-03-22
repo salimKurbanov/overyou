@@ -15,3 +15,56 @@ const openDescription = (e) => {
         parentElement.classList.toggle('active')
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#main_slider', {
+        // type: 'loop', 
+        // perPage: 6,
+        arrows: false,
+        pagination: false,
+        fixedWidth : '160px',
+        fixedHeight: '240px',
+        drag: false,
+        gap: '40px',
+        breakpoints: {
+            640: {
+              gap: '20px',
+            },
+            992: {
+              drag: true
+            }
+          },
+    }).mount();
+});
+
+
+const nature = document.querySelector('.nature_element_grid');
+const nature_items = nature.querySelectorAll('.grid_item');
+const main_element = nature.querySelector('.main_element');
+
+const openNatureElement = (e) => {
+    e.stopPropagation()
+
+    e.currentTarget.classList.toggle('open')
+
+    nature_items.forEach(item => {
+        if(item !== e.currentTarget) item.classList.remove('open')
+    })
+    
+    const noOpenClass = Array.from(nature_items).every(item => !item.classList.contains('open'));
+    
+    if(noOpenClass) {
+        main_element.classList.remove('open')
+    } else {
+        main_element.classList.add('open')
+    }
+}
+
+window.addEventListener('click', () => {
+    const noOpenClass = Array.from(nature_items).every(item => !item.classList.contains('open'));
+
+    if(noOpenClass) return
+
+    nature_items.forEach(item => item.classList.remove('open'))
+    main_element.classList.remove('open')
+})

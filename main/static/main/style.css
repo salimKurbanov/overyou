@@ -180,6 +180,48 @@ img {
   user-select: none;
 }
 
+.chat_button {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--white2);
+  outline: 10px solid transparent;
+  background-color: var(--brown);
+  transition: outline 0.3s, border 0.3s;
+  z-index: 100;
+}
+.chat_button .chat_modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--brown);
+  padding: 24px 30px;
+  border-radius: 16px 0 0 16px;
+}
+.chat_button img {
+  position: relative;
+  top: 1px;
+}
+@media screen and (max-width: 768px) {
+  .chat_button {
+    top: unset;
+    bottom: 100px;
+  }
+}
+@media screen and (min-width: 991px) {
+  .chat_button:hover {
+    border-color: var(--grey3);
+    outline-color: var(--grey3);
+  }
+}
+
 @keyframes Open {
   0% {
     opacity: 0;
