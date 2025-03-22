@@ -19,9 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       perPage: 1,
       arrows: false,
       pagination: true,
-      rewind: true,
-      // fixedWidth : '160px',
-      // fixedHeight: '240px',  
+      rewind: true, 
   
     }).mount();
 
@@ -30,13 +28,51 @@ document.addEventListener('DOMContentLoaded', function () {
       perPage: 1,
       arrows: true,
       pagination: false,
-      rewind: true,
-      // fixedWidth : '160px',
-      // fixedHeight: '240px',  
+      rewind: false,
       breakpoints: {
           768: {
             arrows: false,
             pagination: true,
+          }
+      }
+  
+    }).mount();
+
+    new Splide('#activities_slider_1', {
+      // type: 'loop',
+      // perPage: 1,
+      arrows: true,
+      pagination: false,
+      rewind: false,
+      gap: '40px',
+      breakpoints: {
+          991: {
+            arrows: false,
+          }
+      }
+  
+    }).mount();
+    new Splide('#activities_slider_2', {
+      // perPage: 1,
+      arrows: true,
+      pagination: false,
+      rewind: false,
+      gap: '40px',
+      breakpoints: {
+          991: {
+            arrows: false,
+          }
+      }
+  
+    }).mount();
+    new Splide('#activities_slider_3', {
+      arrows: true,
+      pagination: false,
+      rewind: false, 
+      gap: '40px',
+      breakpoints: {
+          991: {
+            arrows: false,
           }
       }
   
