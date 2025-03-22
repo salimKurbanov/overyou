@@ -35,6 +35,34 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           },
     }).mount();
+
+    new Splide('#over_you_slider', {
+        type: 'fade',
+        perPage: 1,
+        arrows: false,
+        pagination: true,
+        rewind: true,
+        // fixedWidth : '160px',
+        // fixedHeight: '240px',  
+    
+    }).mount();
+
+    new Splide('#about_slider', {
+        type: 'fade',
+        perPage: 1,
+        arrows: true,
+        pagination: false,
+        rewind: true,
+        // fixedWidth : '160px',
+        // fixedHeight: '240px',  
+        breakpoints: {
+            768: {
+              arrows: false,
+              pagination: true,
+            }
+        }
+    
+    }).mount();
 });
 
 
