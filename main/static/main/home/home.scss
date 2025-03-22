@@ -1,6 +1,5 @@
 @use './../common';
 
-
 .container.hidden_text {
     width: 100%;
     position: relative;
@@ -86,52 +85,9 @@
 
 .slider_container {
     position: relative;
-    margin-bottom: 170px;
     width: 100%;
-    @include common.adaptiveProperty(margin-top, 70, 40);
-
-    .chat_button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        border: 3px solid var(--white2);
-        background-color: var(--brown);
-
-        & img {
-            position: relative;
-            top: 1px;
-        }
-
-        &.desc {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-        }
-
-        &.mob {
-            margin-left: auto;
-            margin-top: 20px;
-            @include common.mediaMinWidth(769) {
-                display: none;
-            }
-        }
-
-        @include common.mediaMaxWidth(1400) {
-            &.desc {
-                top: 50%;
-                transform: translate(0, -50%);
-            }
-        }
-
-        @include common.mediaMaxWidth(768) {
-            &.desc {
-                display: none;
-            }
-        }
+    @include common.mediaMaxWidth(768) {
+        margin-top: 40px;
     }
 
     .splide {
@@ -156,6 +112,7 @@
         .splide__track {
             position: relative;
             padding: 0 100px !important;
+            padding-top: 70px !important; 
 
             .splide__list {
                 height: unset;
@@ -204,6 +161,8 @@
             position: relative;
             overflow: hidden;
             border-radius: 16px;
+            top: 0;
+            transition: 0.8s;
 
             img {
                 position: absolute;
@@ -212,6 +171,30 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+
+            .hover_text {
+                position: absolute;
+                bottom: 12px;
+                left: 12px;
+                white-space: nowrap;
+                font-size: 16px;
+                color: var(--white);
+                font-weight: 400;
+                z-index: 2;
+                margin-top: auto;
+                opacity: 0;
+                transition: 0.3s;
+            }
+
+            @include common.mediaMinWidth(991) {
+                &:hover {
+                    top: -70px;
+
+                    .hover_text {
+                        opacity: 1;
+                    }
+                }
             }
         }
     }
@@ -245,6 +228,7 @@
     
         & p.decor {
             position: relative;
+            width: max-content;
             font-weight: 400;
             font-size: 22px;
             left: 50%;
@@ -258,7 +242,7 @@
             @include common.mediaMaxWidth(700) {
                 left: unset;
                 margin-top: 20px;
-                text-align: end;
+                margin-left: auto;
             }
         }
     }
@@ -1568,6 +1552,778 @@
                 background-color: var(--brown);
                 transform: scale(1) !important;
             }
+        }
+    }
+}
+
+.nature_element {
+    margin-top: 141px;
+    margin-bottom: 100px;
+
+    @include common.mediaMinWidth(993) {
+        padding: 0 30px;
+        max-width: 1220px;
+    }
+
+    .title_flex {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 70px 40px;
+        margin-bottom: 93px;
+
+        @include common.mediaMaxWidth(768) {
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & h3 {
+                position: relative;
+                color: var(--green);
+                font-family: var(--anticva);
+                text-transform: uppercase;
+                z-index: 2;
+                @include common.adaptiveFont(34, 24);
+            }
+
+            .title_decor {
+                position: absolute;
+                top: -5px;
+                left: 0;
+                z-index: 1;
+                transform: translate(-50%, -40%);
+
+                @include common.mediaMaxWidth(768) {
+                    width: 200px;
+                }
+            }
+
+            .pattern {
+                width: 40px;
+
+                @include common.mediaMinWidth(769) {
+                    display: none;
+                }
+            }
+        }
+
+        .description {
+            position: relative;
+            padding-top: 38px;
+            flex: 1;
+            max-width: 560px;
+
+            @include common.mediaMaxWidth(1280) {
+                max-width: 460px;
+            }
+
+            @include common.mediaMaxWidth(768) {
+                max-width: unset;
+                text-align: center;
+            }
+
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+
+                @include common.mediaMaxWidth(768) {
+                    width: 53px;
+                }
+            }
+
+            & p {
+                position: relative;
+                text-indent: 1em;
+                font-size: 16px;
+                z-index: 2;
+
+                & span {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .nature_element_grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(100px, 440px) 280px minmax(100px, 440px);
+        grid-template-rows: 166px 166px;
+        grid-template-areas: 'a main b'
+                             'c main d';
+        gap: 68px 0;
+
+        @include common.mediaMaxWidth(768) {
+            flex-direction: column-reverse;
+            grid-template-columns: max-content max-content;
+            grid-template-rows: 166px 290px 166px;
+            grid-template-areas: 'a b'
+                                 'main main'
+                                 'c d';
+            justify-content: space-between;
+            gap: 0;
+            overflow: hidden;
+        }
+
+        .grid_item {
+            display: flex;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+
+            .name, .decor, .el_image {
+                transition: all 0.3s linear;
+                transition-delay: 0.2s;
+            }
+
+            .item_content {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                align-items: flex-start;
+                gap: 0px 16px;
+            }
+
+            &.open {
+                z-index: 10;
+                .name {opacity: 0;}
+                .decor {opacity: 0;}
+                &.a, &.b {
+                    .el_image.down {opacity: 0}
+                    .el_image.top {
+                        @include common.mediaMinWidth(993) {
+                            width: 48px;
+                        }
+                    }
+                }
+
+                &.c, &.d {
+                    .el_image.top {opacity: 0}
+                    .el_image.down {
+                        @include common.mediaMinWidth(993) {
+                            width: 48px;
+                        }
+                    }
+                }
+                
+                .element_description {
+                    z-index: 10;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+
+            @include common.mediaMaxWidth(992) {
+                position: static;
+
+                .item_content {
+                    align-items: center !important;
+                }
+            }
+
+            @include common.mediaMaxWidth(768) {
+                .item_content {
+                    flex-direction: column;
+                }
+            }
+
+            .name {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                & h4 {
+                    font-size: 32px;
+                    font-weight: 600;
+                    font-family: var(--lora);
+                    text-transform: uppercase;
+
+                    @include common.mediaMaxWidth(992) {
+                        display: none;
+                    }
+                }
+            }
+
+            .decor {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+                z-index: 0;
+
+                & img {
+                    position: absolute;
+                    height: 100%;
+                }
+
+                @include common.mediaMaxWidth(992) {
+                    display: none;
+                }
+            }
+
+            .el_image {
+                position: absolute;
+                width: 35px;
+
+                @include common.mediaMaxWidth(992) {
+                    position: static;
+                    transform: translate(0, 0) !important;
+                    width: 100px;
+                }
+
+                &.top {
+                    top: 0;
+                    z-index: 1;
+
+                    @include common.mediaMinWidth(993) {
+                        z-index: 11;
+                    }
+                }
+
+                &.down {
+                    bottom: 0;
+
+                    @include common.mediaMaxWidth(992) {
+                        display: none;
+                    }
+                }
+            }
+
+            .element_description {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+                transition: all 0.3s linear;
+                pointer-events: none;
+
+                @include common.mediaMinWidth(993) {
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .content {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--white);
+                    z-index: 2;
+
+                    @include common.mediaMaxWidth(700) {
+                        flex-direction: column;
+                        gap: 40px;
+                    }
+
+                    & p {
+                        font-size: 13px;
+                        color: var(--black);
+
+                        @include common.mediaMaxWidth(700) {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .coach_image {
+                        position: absolute;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        z-index: 2;
+
+                        @include common.mediaMaxWidth(700) {
+                            position: static;
+                            transform: translate(0, 0);
+                            width: 142px;
+                            align-self: flex-end;
+                        }
+                    }
+
+                    .corner {
+                        position: absolute;
+                        top: 0;
+                        z-index: -1;
+
+                        @include common.mediaMaxWidth(992) {
+                            display: none;
+                        }
+                    }
+
+                    .element_decor {
+                        position: absolute;
+                        bottom: 15px;
+                        left: 15px;
+                        z-index: 1;
+                        width: 260px;
+
+                        @include common.mediaMinWidth(701) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &.a {
+                grid-area: a;
+
+                .decor {
+                    right: 0;
+
+                    & img {
+                        transform: scale(-1, 1);
+                        right: 0;
+                    }
+                }
+
+                .el_image {
+
+                    &.top {
+                        right: 0;
+                        transform: translate(50%, -50%);
+                    }
+
+                    &.down {
+                        left: 0;
+                        transform: translate(-50%, 50%);
+                    }
+
+                    @include common.mediaMaxWidth(992) {
+                        order: 1;
+                    }
+                }
+
+                .name {
+                    @include common.mediaMaxWidth(992) {
+                        order: 2;
+                    }
+                }
+
+                .element_description {
+                    right: 0;
+                    padding-right: 106px;
+                    padding-left: 20px;
+
+                    .content {
+                        padding-left: 48px;
+                        border-radius: 16px 0 16px 5px;
+    
+                        & p {
+                            text-align: left;
+                        }
+    
+                        .coach_image {
+                            left: -48px;
+                        }
+    
+                        .corner {
+                            right: -90px;
+                            transform: scale(-1, 1);
+                        }
+                    }
+
+                    @include common.mediaMaxWidth(992) {
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        max-width: 50%;
+                        height: 100%;
+                        max-height: 50%;
+                        padding-right: 0;
+                        padding-left: 0;
+
+                        .content {
+                            padding-right: 47px;
+                            padding-left: 90px;
+                            border-radius: 50px 16px 16px 16px;
+
+                            .coach_image {
+                                left: -10px;
+                            }
+                        }
+
+                    }
+
+                    @include common.mediaMaxWidth(700) {
+                        max-width: unset;
+                        max-height: unset;
+                        padding-left: 0;
+
+                        .content {
+                            border-radius: 50px;
+                            padding: 37px 29px 37px 38px;
+                        }
+                    }
+                }
+
+                @include common.mediaMaxWidth(992) {
+                    align-items: flex-start;
+                    .item_content {
+                        height: max-content;
+                    }
+                }
+            }
+            &.b {
+                grid-area: b;
+
+                .item_content {
+                    justify-content: flex-end;
+                }
+
+                .decor {
+                    left: 0;
+
+                    & img {
+                        left: 0;
+                    }
+                }
+
+                .el_image {
+
+                    &.top {
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    &.down {
+                        right: 0;
+                        transform: translate(50%, 50%);
+                    }
+                }
+
+                .element_description {
+                    left: 0;
+                    padding-left: 106px;
+                    padding-right: 20px;
+
+                    .content {
+                        padding-right: 48px;
+                        border-radius: 0 16px 5px 16px;
+    
+                        & p {
+                            text-align: right;
+                        }
+    
+                        .coach_image {
+                            right: -48px;
+                        }
+    
+                        .corner {
+                            left: -90px;
+                        }
+                    }
+
+                    @include common.mediaMaxWidth(992) {
+                        top: 0;
+                        left: unset;
+                        right: 0;
+                        width: 100%;
+                        max-width: 50%;
+                        height: 100%;
+                        max-height: 50%;
+                        padding-left: 0;
+                        padding-right: 0;
+
+                        .content {
+                            padding-left: 47px;
+                            padding-right: 90px;
+                            border-radius: 16px 50px 16px 16px;
+
+                            .coach_image {
+                                right: -10px;
+                            }
+                        }
+                    }
+
+                    @include common.mediaMaxWidth(700) {
+                        max-width: unset;
+                        max-height: unset;
+                        padding-left: 0;
+
+                        .content {
+                            border-radius: 50px;
+                            padding: 37px 29px 37px 38px;
+                        }
+                    }
+                }
+
+                @include common.mediaMaxWidth(992) {
+                    align-items: flex-start;
+
+                    .item_content {
+                        height: max-content;
+                    }
+                }
+
+                @include common.mediaMaxWidth(768) {
+                    .item_content {
+                        flex-direction: column-reverse;
+                    }
+                }
+            }
+            &.c {
+                grid-area: c;
+
+                .item_content {
+                    align-items: flex-end;
+                }
+
+                .decor {
+                    right: 0;
+                    
+                    & img {
+                        right: 0;
+                        transform: rotate(180deg);
+                    }
+                }
+
+                .el_image {
+                    &.top {
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    &.down {
+                        right: 0;
+                        transform: translate(50%, 50%);
+
+                        @include common.mediaMinWidth(993) {
+                            z-index: 11;
+                        }
+                    }
+
+                    @include common.mediaMaxWidth(992) {
+                        order: 1;
+                    }
+                }
+
+                .name {
+                    @include common.mediaMaxWidth(992) {
+                        order: 2;
+                    }
+                }
+
+                .element_description {
+                    right: 0;
+                    padding-right: 106px;
+                    padding-left: 20px;
+
+                    .content {
+                        padding-left: 48px;
+                        border-radius: 5px 16px 0 16px;
+    
+                        & p {
+                            text-align: left;
+                        }
+    
+                        .coach_image {
+                            left: -48px;
+                        }
+    
+                        .corner {
+                            right: -90px;
+                            transform:rotate(180deg);
+                        }
+                    }
+
+                    @include common.mediaMaxWidth(992) {
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        max-width: 50%;
+                        height: 100%;
+                        max-height: 50%;
+                        padding-right: 0;
+                        padding-left: 0;
+
+                        .content {
+                            padding-right: 47px;
+                            padding-left: 90px;
+                            border-radius: 16px 16px 16px 50px;
+
+                            .coach_image {
+                                left: -10px;
+                            }
+                        }
+
+                    }
+
+                    @include common.mediaMaxWidth(700) {
+                        max-width: unset;
+                        max-height: unset;
+                        padding-left: 0;
+
+                        .content {
+                            border-radius: 50px;
+                            padding: 37px 29px 37px 38px;
+                        }
+                    }
+                }
+
+                @include common.mediaMaxWidth(992) {
+                    align-items: flex-end;
+                    .item_content {
+                        height: max-content;
+                    }
+                }
+
+                @include common.mediaMaxWidth(768) {
+                    .item_content {
+                        flex-direction: column-reverse;
+                    }
+                }
+            }   
+            &.d {
+                grid-area: d;
+
+                .item_content {
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                }
+
+                .decor {
+                    left: 0;
+                    
+                    & img {
+                        left: 0;
+                        transform: rotate(180deg) scale(-1, 1);
+                    }
+                }
+
+                .el_image {
+                    &.top {
+                        right: 0;
+                        transform: translate(50%, -50%);
+                    }
+
+                    &.down {
+                        left: 0;
+                        transform: translate(-50%, 50%);
+
+                        @include common.mediaMinWidth(993) {
+                            z-index: 11;
+                        }
+                    }
+                }
+
+                .element_description {
+                    left: 0;
+                    padding-left: 106px;
+                    padding-right: 20px;
+
+                    .content {
+                        padding-right: 48px;
+                        border-radius: 0 16px 5px 16px;
+                        border-radius: 16px 5px 16px 0;
+    
+                        & p {
+                            text-align: right;
+                        }
+    
+                        .coach_image {
+                            right: -48px;
+                        }
+    
+                        .corner {
+                            left: -90px;
+                            transform: scale(1, -1);
+                        }
+                    }
+
+                    @include common.mediaMaxWidth(992) {
+                        bottom: 0;
+                        left: unset;
+                        right: 0;
+                        width: 100%;
+                        max-width: 50%;
+                        height: 100%;
+                        max-height: 50%;
+                        padding-left: 0;
+                        padding-right: 0;
+
+                        .content {
+                            padding-left: 47px;
+                            padding-right: 90px;
+                            border-radius: 16px 16px 50px 16px;
+
+                            .coach_image {
+                                right: -10px;
+                            }
+                        }
+                    }
+
+                    @include common.mediaMaxWidth(700) {
+                        max-width: unset;
+                        max-height: unset;
+                        padding-left: 0;
+
+                        .content {
+                            border-radius: 50px;
+                            padding: 37px 29px 37px 38px;
+                        }
+                    }
+                }
+            }
+
+            @include common.mediaMaxWidth(992) {
+                align-items: flex-end;
+
+                .item_content {
+                    height: max-content;
+                }
+            }
+        }
+
+        .main_element {
+            position: relative;
+            grid-area: main;
+            z-index: 0;
+
+            & img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-135deg);
+                transform-origin: center;
+                transition: 1.5s;
+
+                @include common.mediaMaxWidth(500) {
+                    width: 360px;
+                }
+            }
+
+            &.open {
+                & img {
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+            }
+        }
+    }
+
+    @keyframes open {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes close {
+        0% {
+            display: block;
+        }
+        100% {
+            display: none;
         }
     }
 }

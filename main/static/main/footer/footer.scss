@@ -94,7 +94,14 @@ footer {
                 height: 40px;
                 flex-shrink: 0;
 
-                & img {
+                & svg {
+                    position: relative;
+                    transition: 0.4s;
+
+                    & path {
+                        transition: 0.4s;
+                    }
+
                     @include common.mediaMaxWidth(768) {
                         width: 28px;
                     }
@@ -106,7 +113,24 @@ footer {
                     
                     & span {
                         font-weight: 700;
+                        transition: 0.4s;
                         @include common.adaptiveFont(14, 21);
+                    }
+                }
+
+                @include common.mediaMinWidth(991) {
+                    &:hover {
+                        & svg {
+                            transform: scale(1.25);
+
+                            & path {
+                                fill: var(--grey);
+                            }
+                        }
+
+                        & span {
+                            color: var(--grey);
+                        }
                     }
                 }
             }
