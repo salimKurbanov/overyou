@@ -98,23 +98,50 @@
         </div>
     </div>
 
-    <button class="chat_button">
+    <button class="chat_button" onclick="openChat(event)">
         <img src="{% static 'main/images/chat.svg' %}" alt="">
+    </button>
 
-        <!-- <div class="chat_modal">
-            <h5></h5>
+    <div class="chat_modal" onclick="stopPropagation(event)">
+        <h4>Ваш запрос</h4>
 
-            <div class="body">
-                <div class="drop_list_wrapper">
-                    <div class="drop_list"></div>
+        <div class="body">
+            <div class="tabs">
+                <div class="tab_title" onclick="openChatTabs(event)">
+                    <h5>Выберите способ</h5>
+                    <img src="{% static 'main/images/arrow-down.svg' %}" alt="">
+                </div>
+
+                <div class="tab_list">
+                    <div class="tab_item" onclick="switchChatTab(event, 'telegram')">Телеграм</div>
+                    <div class="tab_item" onclick="switchChatTab(event, 'mail')">Email</div>
                 </div>
             </div>
 
-            <div class="button_block">
+            <form id="chat_form" action="" class="tab_content">
+                {% csrf_token %}
+                <div class="form" id="telegram_form">
+                    <input type="text" name="telegram" placeholder="Введите Ваш телеграм">
+    
+                    <input type="text" name="name_telegram" placeholder="Ваше имя">
+    
+                    <textarea placeholder="Ваш запрос" name="message_telegram" id="" cols="30" rows="10" id=""></textarea>
+                </div>
 
+                <div class="form" id="mail_form">
+                    <input type="text" name="email" placeholder="Введите Ваш email">
+    
+                    <input type="text" name="name_email" placeholder="Ваше имя">
+    
+                    <textarea placeholder="Ваш запрос" name="message_email" id="" cols="30" rows="10" id=""></textarea>
+                </div>
+            </form>
+
+            <div class="button_block">
+                <button id="chat_button" disabled onclick="sendForm(event)">Отправить</button>
             </div>
-        </div> -->
-    </button>
+        </div>
+    </div>
 
     {% block content %}{% endblock %}
     
