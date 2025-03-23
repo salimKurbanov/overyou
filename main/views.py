@@ -10,18 +10,24 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 def home(request):
 
     try: 
-        home = Seo.objects.get(page='Главная')
+        seo = Seo.objects.get(page='Главная')
         context = {
-            'title': home.title,
-            'description': home.description,
-            'keywords': home.keywords
+            'title': seo.title,
+            'description': seo.description,
+            'keywords': seo.keywords,
+            'h1': seo.h1,
+            'url': seo.url,
+            'image': seo.image
         }
 
     except Seo.DoesNotExist:
         context = {
             'title': 'Сверх Ты',
             'description': 'Сверх Ты',
-            'keywords': 'Сверх ты'
+            'keywords': 'Сверх ты',
+            'h1': '',
+            'url': '',
+            'image': ''
         }
 
     return render(request, 'main/home.html', context)
@@ -49,7 +55,7 @@ def process_form(request):
                 # )
                 pass
 
-            return JsonResponse({'message': 'Form submitted successfully!'})
+            return JsonResponse({'message': 'Form submitted successfully!'}, status=200)
         except json.JSONDecodeError:
             return JsonResponse({'error': 'Invalid JSON data'}, status=400)
         except Exception as e:
@@ -57,21 +63,28 @@ def process_form(request):
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)
     
+
 def fire_page (request):
 
     try: 
-        fire = Seo.objects.get(page='Станислав Саначев')
+        seo = Seo.objects.get(page='Станислав Саначев')
         context = {
-            'title': fire.title,
-            'description': fire.description,
-            'keywords': fire.keywords
+            'title': seo.title,
+            'description': seo.description,
+            'keywords': seo.keywords,
+            'h1': seo.h1,
+            'url': seo.url,
+            'image': seo.image
         }
 
     except Seo.DoesNotExist:
         context = {
             'title': 'Сверх ты',
             'description': 'Сверх ты',
-            'keywords': 'Сверх ты'
+            'keywords': '',
+            'h1': '',
+            'url': '',
+            'image': 'none'
         }
 
     return render(request, 'main/fire_page.html', context)
@@ -79,36 +92,48 @@ def fire_page (request):
 def air_page (request):
 
     try: 
-        air = Seo.objects.get(page='Ирина Свирина')
+        seo = Seo.objects.get(page='Ирина Свирина')
         context = {
-            'title': air.title,
-            'description': air.description,
-            'keywords': air.keywords
+            'title': seo.title,
+            'description': seo.description,
+            'keywords': seo.keywords,
+            'h1': seo.h1,
+            'url': seo.url,
+            'image': seo.image
         }
 
     except Seo.DoesNotExist:
         context = {
             'title': 'Сверх ты',
             'description': 'Сверх ты',
-            'keywords': 'Сверх ты'
+            'keywords': 'Сверх ты',
+            'h1': '',
+            'url': '',
+            'image': ''
         }
     return render(request, 'main/air_page.html', context)
 
 def water_page (request):
 
     try: 
-        water = Seo.objects.get(page='Ирина Лукацкая')
+        seo = Seo.objects.get(page='Ирина Лукацкая')
         context = {
-            'title': water.title,
-            'description': water.description,
-            'keywords': water.keywords
+            'title': seo.title,
+            'description': seo.description,
+            'keywords': seo.keywords,
+            'h1': seo.h1,
+            'url': seo.url,
+            'image': seo.image
         }
 
     except Seo.DoesNotExist:
         context = {
             'title': 'Сверх ты',
             'description': 'Сверх ты',
-            'keywords': 'Сверх ты'
+            'keywords': 'Сверх ты',
+            'h1': '',
+            'url': '',
+            'image': ''
         }
 
     return render(request, 'main/water_page.html', context)
@@ -116,18 +141,24 @@ def water_page (request):
 def earth_page (request):
 
     try: 
-        earth = Seo.objects.get(page='Ульяна Комарова')
+        seo = Seo.objects.get(page='Ульяна Комарова')
         context = {
-            'title': earth.title,
-            'description': earth.description,
-            'keywords': earth.keywords
+            'title': seo.title,
+            'description': seo.description,
+            'keywords': seo.keywords,
+            'h1': seo.h1,
+            'url': seo.url,
+            'image': seo.image
         }
 
     except Seo.DoesNotExist:
         context = {
             'title': 'Сверх ты',
             'description': 'Сверх ты',
-            'keywords': 'Сверх ты'
+            'keywords': 'Сверх ты',
+            'h1': '',
+            'url': '',
+            'image': ''
         }
 
-    return render(request, 'main/earth_page.html')
+    return render(request, 'main/earth_page.html', context)

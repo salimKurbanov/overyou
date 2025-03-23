@@ -211,7 +211,7 @@
             padding: 0 16px;
         }
 
-        & h3 {
+        & h1 {
             position: relative;
             color: var(--brown3);
             font-family: var(--anticva);
@@ -226,7 +226,7 @@
             }
         }
     
-        & p.decor {
+        & span.decor {
             position: relative;
             width: max-content;
             font-weight: 400;

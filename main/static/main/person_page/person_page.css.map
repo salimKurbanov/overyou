@@ -1,0 +1,1 @@
+{"version":3,"sources":["person_page.css","../common.scss","person_page.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,uCAAA;ACEA;EACI,kBAAA;EACA,iBAAA;EACA,WAAA;EACA,aAAA;EACA,gBAAA;EACA,wCAAA;EACA,SAAA;AFCJ;AECI;EACI,kBAAA;EACA,aAAA;AFCR;AECQ;EACI,WAAA;EACA,gBAAA;EACA,gBAAA;EACA,kBAAA;EACA,QAAA;EACA,OAAA;EACA,2BAAA;AFCZ","file":"person_page.css"}

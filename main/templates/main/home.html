@@ -3,7 +3,11 @@
 
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
+{% block headline %}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
+{% block url %}{{ url }}{% endblock %}
+{% block image %}{{ image }}{% endblock %}
+{% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'main/home/home.css' %}">
@@ -58,10 +62,10 @@
         </section>
 
         <div class="container">
-            <h3>Просто Психоанализ
+            <h1>Просто Психоанализ
 
-                <p class="decor">для просто Сверх тебя</p>
-            </h3>
+                <span class="decor">для просто Сверх тебя</span>
+            </h1>
         </div>
     </div>
 

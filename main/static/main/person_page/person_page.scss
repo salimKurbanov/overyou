@@ -1,0 +1,26 @@
+@use './../common';
+
+.person_top {
+    position: relative;
+    margin-top: 170px;
+    width: 100%;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 316fr 595fr 536fr;
+    gap: 40px;
+
+    .navigation {
+        position: relative;
+        height: 585px;
+
+        .main_element {
+            width: 180%;
+            max-width: 400px;
+            min-width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }   
+}
