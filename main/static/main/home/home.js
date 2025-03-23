@@ -9,7 +9,6 @@ const sliders = {
     3: document.getElementById('activities_slider_3'),
 }
 
-
 const openDescription = (e) => {
     const parentElement = e.target.closest('.scenaries_item')
     const windowWidth = window.innerWidth
@@ -36,7 +35,7 @@ const switchTab = (event, number) => {
     sliders[number].classList.add('active')
 }
 
-const openNatureElement = (e) => {
+const openNatureElement = (e, name) => {
     e.stopPropagation()
 
     e.currentTarget.classList.toggle('open')
@@ -48,9 +47,9 @@ const openNatureElement = (e) => {
     const noOpenClass = Array.from(nature_items).every(item => !item.classList.contains('open'));
     
     if(noOpenClass) {
-        main_element.classList.remove('open')
+        main_element.className = 'main_element';
     } else {
-        main_element.classList.add('open')
+        main_element.className = `main_element ${name}`
     }
 }
 
@@ -60,11 +59,13 @@ window.addEventListener('click', () => {
     if(noOpenClass) return
 
     nature_items.forEach(item => item.classList.remove('open'))
-    main_element.classList.remove('open')
+    main_element.className = 'main_element';
 })
 
 document.addEventListener('DOMContentLoaded', function () {
     new Splide('#main_slider', {
+        // type: 'loop', 
+        // perPage: 6,
         arrows: false,
         pagination: false,
         fixedWidth : '160px',
@@ -140,4 +141,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     
       }).mount();
+
+    new Splide('#method_slider', {
+        type: 'fade',
+        perPage: 1,
+        arrows: false,
+        pagination: true,
+        rewind: true,
+    }).mount();
 });
