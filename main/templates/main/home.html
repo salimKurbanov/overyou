@@ -3,6 +3,7 @@
 
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
+{% block keywords %}{{ keywords }}{% endblock %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'main/home/home.css' %}">
@@ -429,9 +430,7 @@
 
     <div class="over_you container">
 
-        <div class="decor">
-            <!-- <img src="{% static 'main/images/over_you_decor.svg' %}" alt=""> -->
-        </div>
+        <div class="decor"></div>
 
         <div class="over_you_head">
             <h2>сверх ты</h2>
@@ -797,6 +796,219 @@
                 </ul>
             </div>
         </section>
+    </div>
+
+    <div class="activities container">
+
+        <div class="decor"></div>
+
+        <div class="activities_head">
+            <h2>Активности</h2>
+
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab(event, 1)">Психоанализ</div>
+                <div class="tab" onclick="switchTab(event, 2)">Индивидуальная терапия</div>
+                <div class="tab" onclick="switchTab(event, 3)">Отвлечемся</div>
+            </div>
+
+            <img src="{% static 'main/images/activities_decor.svg' %}" alt="">
+        </div>
+
+        <div class="tabs mob">
+            <div class="tab active" onclick="switchTab(event, 1)">Психоанализ</div>
+            <div class="tab" onclick="switchTab(event, 2)">Индивидуальная терапия</div>
+            <div class="tab" onclick="switchTab(event, 3)">Отвлечемся</div>
+        </div>
+    
+    </div>
+
+    <div class="activities_slider_container">
+
+        <section id="activities_slider_1" class="activities_slider splide active" aria-label="Splide Basic HTML Example">
+            
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/brain.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/physic.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+            </div>
+
+        </section>
+        
+        <section id="activities_slider_2" class="activities_slider splide" aria-label="Splide Basic HTML Example">
+            
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/brain.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/brain.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/physic.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+            </div>
+
+        </section>
+        
+        <section id="activities_slider_3" class="activities_slider splide" aria-label="Splide Basic HTML Example">
+
+            
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+                        
+                        <img src="{% static 'main/images/physic.jpg' %}" alt="">
+                        
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+                        
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+                        
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/brain.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+            </div>
+
+        </section>
+
     </div>
 
 {% endblock %}
