@@ -133,7 +133,7 @@ const sendForm = async (e) => {
     console.log(data)
 
     try {
-        const res = await fetch('api', {
+        const res = await fetch('/process_form/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
