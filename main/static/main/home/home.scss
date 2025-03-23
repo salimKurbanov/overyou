@@ -159,41 +159,73 @@
         }
         .splide__slide {
             position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            top: 0;
-            transition: 0.8s;
-
-            img {
-                position: absolute;
+            
+            .image_wrapper {
+                position: relative;
+                width: 160px;
+                height: 224px;
                 top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+                border-radius: 16px;
+                overflow: hidden;
+                transition: 0.8s;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background: rgba(156, 92, 82, 1);
+                    opacity: 0.5;
+                    z-index: 2;
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: 1;
+                    // object-position: left;
+
+                    &.center {
+                        object-position: center;
+                    }
+
+                    &.left {
+                        object-position: left;
+                    }
+                }
+    
+                .hover_text {
+                    position: absolute;
+                    bottom: 12px;
+                    left: 12px;
+                    white-space: nowrap;
+                    font-size: 16px;
+                    color: var(--white);
+                    font-weight: 400;
+                    z-index: 3;
+                    margin-top: auto;
+                    opacity: 0;
+                    transition: 0.3s;
+                }
             }
 
-            .hover_text {
-                position: absolute;
-                bottom: 12px;
-                left: 12px;
-                white-space: nowrap;
-                font-size: 16px;
-                color: var(--white);
-                font-weight: 400;
-                z-index: 2;
-                margin-top: auto;
-                opacity: 0;
-                transition: 0.3s;
-            }
 
             @include common.mediaMinWidth(991) {
                 &:hover {
-                    top: -70px;
+                    .image_wrapper {
+                        top: -70px;
 
-                    .hover_text {
-                        opacity: 1;
+                        .hover_text {
+                            opacity: 1;
+                        }
                     }
+
                 }
             }
         }
@@ -1832,6 +1864,14 @@
 
                         @include common.mediaMaxWidth(700) {
                             font-size: 16px;
+                        }
+
+                        @include common.mediaMinWidth(769) {
+                            display: -webkit-box; /* Включаем flexbox для ограничения строк */
+                            -webkit-box-orient: vertical; /* Вертикальное направление */
+                            -webkit-line-clamp: 10; /* Ограничиваем количество строк */
+                            overflow: hidden; /* Скрываем текст, который не помещается */
+                            text-overflow: ellipsis;
                         }
                     }
 

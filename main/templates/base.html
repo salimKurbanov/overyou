@@ -94,11 +94,11 @@
         </div>
     </div>
 
-    <button class="chat_button">
+    <button class="chat_button" onclick="openChat(event)">
         <img src="{% static 'main/images/chat.svg' %}" alt="">
     </button>
 
-    <div class="chat_modal">
+    <div class="chat_modal" onclick="stopPropagation(event)">
         <h4>Ваш запрос</h4>
 
         <div class="body">
@@ -114,26 +114,27 @@
                 </div>
             </div>
 
-            <form action="" class="tab_content">
+            <form id="chat_form" action="" class="tab_content">
+                {% csrf_token %}
                 <div class="form" id="telegram_form">
-                    <input type="text" placeholder="Введите Ваш телеграм">
+                    <input type="text" name="telegram" placeholder="Введите Ваш телеграм">
     
-                    <input type="text" placeholder="Ваше имя">
+                    <input type="text" name="name_telegram" placeholder="Ваше имя">
     
-                    <textarea placeholder="Ваш запрос" name="" id="" cols="30" rows="10" id=""></textarea>
+                    <textarea placeholder="Ваш запрос" name="message_telegram" id="" cols="30" rows="10" id=""></textarea>
                 </div>
 
                 <div class="form" id="mail_form">
-                    <input type="text" placeholder="Введите Ваш email">
+                    <input type="text" name="email" placeholder="Введите Ваш email">
     
-                    <input type="text" placeholder="Ваше имя">
+                    <input type="text" name="name_email" placeholder="Ваше имя">
     
-                    <textarea placeholder="Ваш запрос" name="" id="" cols="30" rows="10" id=""></textarea>
+                    <textarea placeholder="Ваш запрос" name="message_email" id="" cols="30" rows="10" id=""></textarea>
                 </div>
-            </div>
+            </form>
 
             <div class="button_block">
-                <button>Отправить</button>
+                <button id="chat_button" disabled onclick="sendForm(event)">Отправить</button>
             </div>
         </div>
     </div>
