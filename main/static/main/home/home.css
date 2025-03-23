@@ -174,12 +174,28 @@
 }
 .slider_container .splide .splide__slide {
   position: relative;
-  overflow: hidden;
-  border-radius: 16px;
+}
+.slider_container .splide .splide__slide .image_wrapper {
+  position: relative;
+  width: 160px;
+  height: 224px;
   top: 0;
+  border-radius: 16px;
+  overflow: hidden;
   transition: 0.8s;
 }
-.slider_container .splide .splide__slide img {
+.slider_container .splide .splide__slide .image_wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(156, 92, 82);
+  opacity: 0.5;
+  z-index: 2;
+}
+.slider_container .splide .splide__slide .image_wrapper img {
   position: absolute;
   top: 0;
   left: 0;
@@ -187,8 +203,17 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: 1;
 }
-.slider_container .splide .splide__slide .hover_text {
+.slider_container .splide .splide__slide .image_wrapper img.center {
+  -o-object-position: center;
+     object-position: center;
+}
+.slider_container .splide .splide__slide .image_wrapper img.left {
+  -o-object-position: left;
+     object-position: left;
+}
+.slider_container .splide .splide__slide .image_wrapper .hover_text {
   position: absolute;
   bottom: 12px;
   left: 12px;
@@ -196,16 +221,16 @@
   font-size: 16px;
   color: var(--white);
   font-weight: 400;
-  z-index: 2;
+  z-index: 3;
   margin-top: auto;
   opacity: 0;
   transition: 0.3s;
 }
 @media screen and (min-width: 991px) {
-  .slider_container .splide .splide__slide:hover {
+  .slider_container .splide .splide__slide:hover .image_wrapper {
     top: -70px;
   }
-  .slider_container .splide .splide__slide:hover .hover_text {
+  .slider_container .splide .splide__slide:hover .image_wrapper .hover_text {
     opacity: 1;
   }
 }
@@ -1715,6 +1740,15 @@
     font-size: 16px;
   }
 }
+@media screen and (min-width: 769px) {
+  .nature_element .nature_element_grid .grid_item .element_description .content p {
+    display: -webkit-box; /* Включаем flexbox для ограничения строк */
+    -webkit-box-orient: vertical; /* Вертикальное направление */
+    -webkit-line-clamp: 10; /* Ограничиваем количество строк */
+    overflow: hidden; /* Скрываем текст, который не помещается */
+    text-overflow: ellipsis;
+  }
+}
 .nature_element .nature_element_grid .grid_item .element_description .content .coach_image {
   position: absolute;
   top: 50%;
@@ -2395,7 +2429,6 @@
 
 .method {
   margin-top: 200px;
-  margin-bottom: 200px;
 }
 .method .head {
   display: flex;
