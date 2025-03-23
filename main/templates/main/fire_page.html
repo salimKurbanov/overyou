@@ -16,15 +16,52 @@
 {% block content %}
 
     <div class="person_top">
+
+        <div class="title_mob">
+            СТАНИСЛАВ
+            <span> САНАЧЕВ</span>
+        </div>
+
         <div class="navigation">
-            <img src="{% static 'main/images/main_element.png' %}" alt="" class="main_element">
+            <a href="{% url 'air_page' %}" class="person_link a">
+                <img src="{% static 'main/images/person_page/air_person.png' %}" alt="">
+            </a>
+            <div class="person_link b active">
+                <img src="{% static 'main/images/person_page/fire_person_active.svg' %}" alt="">
+            </div>
+            <a href="{% url 'water_page' %}" class="person_link d">
+                <img src="{% static 'main/images/person_page/water_person.png' %}" alt="">
+            </a>
+            <a href="{% url 'earth_page' %}" class="person_link c">
+                <img src="{% static 'main/images/person_page/earth_person.png' %}" alt="">
+            </a>
+            <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element">
         </div>
 
         <div class="description">
+            <h1>
+                СТАНИСЛАВ
+                <span>САНАЧЕВ</span>
+            </h1>
 
+            <div class="slogans_block">
+                <p class="top">
+                    Ты есть <span class="upper">такой</span> – какой бы <span style="white-space: nowrap;">ты хотел быть</span>?
+                </p>
+    
+                <p class="middle">
+                    А может быть – это хотел <span class="upper">не ты</span>?
+                </p>
+    
+                <p class="bottom">
+                    Но где во всем окружающем <span class="upper">настоящий ты</span>?
+                </p>
+            </div>
         </div>
-
-        <img src="{% static 'main/images/fire.jpg' %}" alt="">
+        
+        <div class="image_block">
+            <img src="{% static 'main/images/person_page/stanislav.jpg' %}" alt="">
+        </div>
     </div>
 
 {% endblock %}
