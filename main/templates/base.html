@@ -4,19 +4,23 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+<head itemscope itemtype="https://schema.org/WebPage">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{% block title %}{% endblock %}</title>
-    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="description" content="{% block description %}{% endblock %}" itemprop="description">
     <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <meta itemprop="headline" content="{% block headline %}{% endblock %}">
+    <meta itemprop="url" content="{% block url %}{% endblock %}">
+    <meta itemprop="image" content="{% block image %}{% endblock %}">
+    <meta itemprop="about" content="{% block about %}{% endblock %}">
+
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
     <link rel="stylesheet" href="{% static 'main/header/header.css' %}">
     <link rel="stylesheet" href="{% static 'main/footer/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'main/splide/splide.min.css' %}">
     {% block css %}{% endblock %}
     <script src="{% static 'main/scripts/script.js' %}" defer></script>
-    <script src="{% static 'main/scripts/splide.min.js' %}" defer></script>
 </head>
 <body>
 
@@ -75,7 +79,7 @@
                 <div class="link_list">
                     <a href="" class="link">О нас</a>
                     <div class="links_block">
-                        <a href="" class="link">Станислав Саначев</a>
+                        <a href="{% url 'fire_page' %}" class="link">Станислав Саначев</a>
                         <a href="" class="link">Ульяна Комарова</a>
                         <a href="" class="link">Ирина Лукацкая</a>
                         <a href="" class="link">Ирина Свирина</a>

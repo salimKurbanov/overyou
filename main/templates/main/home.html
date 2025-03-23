@@ -3,10 +3,16 @@
 
 {% block title %}{{ title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
+{% block headline %}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
+{% block url %}{{ url }}{% endblock %}
+{% block image %}{{ image }}{% endblock %}
+{% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'main/home/home.css' %}">
+    <link rel="stylesheet" href="{% static 'main/splide/splide.min.css' %}">
+    <script src="{% static 'main/scripts/splide.min.js' %}" defer></script>
     <script src="{% static 'main/home/home.js' %}" defer></script>
 {% endblock %}
 
@@ -68,10 +74,10 @@
         </section>
 
         <div class="container">
-            <h3>Просто Психоанализ
+            <h1>Просто Психоанализ
 
-                <p class="decor">для просто Сверх тебя</p>
-            </h3>
+                <span class="decor">для просто Сверх тебя</span>
+            </h1>
         </div>
     </div>
 
