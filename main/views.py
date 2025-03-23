@@ -38,14 +38,18 @@ def process_form(request):
         try:
             data = json.loads(request.body)
             type = data.get('type')
-            name = data.get('name')
-            email = data.get('email')
-            message = data.get('message')
+            
 
             if type == 'telegram': 
+                telegram = data.get('telegram')
+                name = data.get('name')
+                message = data.get('message')
                 pass
 
             if type == 'email':
+                email = data.get('email')
+                name = data.get('name')
+                message = data.get('message')
                 # send_mail(
                 #     'Contact Form Submission',
                 #     f'Name: {name}\nEmail: {email}\nMessage: {message}',
