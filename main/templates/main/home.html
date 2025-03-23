@@ -477,6 +477,188 @@
 
     </div>
 
+    <div class="nature_element container">
+        <div class="title_flex">
+            <div class="title">
+                <h3>СТИХИИ</h3>
+                
+                <img class="title_decor" src="{% static 'main/images/nature_elements.png' %}" alt="">
+
+                <img class="pattern" src="{% static 'main/images/pattern.svg' %}" alt="">
+            </div>
+            
+            <div class="description">
+                <img src="{% static 'main/images/marks.png' %}" alt="">
+
+                <p>
+                    Принято считать, что секрет <span>здоровья и благополучия</span> человека заключён в особом балансе всех <span>четырех стихий.</span> Выявление доминирующей Стихии и исследование, какие Стихии находятся в избытке, а какие недостаточно проявлены, позволяют нам понять, как с помощью их <span>балансировки добиться</span> позитивных <span>изменений</span> в жизни
+                </p>
+            </div>
+        </div>
+
+        <div class="nature_element_grid">
+            <div class="grid_item a" onclick="openNatureElement(event, 'water')">
+                <div class="item_content">
+                    <div class="name">
+                        <h4>ВОДА</h4>
+                        
+                        <img src="{% static 'main/images/nature_elements/arrow_right_down.svg' %}" alt="">
+                    </div>
+    
+                    <img class="el_image top" src="{% static 'main/images/nature_elements/water.svg' %}" alt="">
+                    <img class="el_image down" src="{% static 'main/images/nature_elements/water.svg' %}" alt="">
+    
+                    <div class="decor">
+                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="element_description">
+                    <div class="content">
+                        <p>
+                            Вода – это символ жизни, то, что наполняет, питает и без чего жизнь невозможна. Своим умиротворяющим потоком вода очищает от старого, возрождает, наполняет новой энергией.
+                        </p>
+    
+                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach4.svg' %}" alt="">
+
+                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
+
+                        <img class="element_decor" src="{% static 'main/images/nature_elements/water_decor.svg' %}" alt="" >
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid_item b " onclick="openNatureElement(event, 'flame')">
+                <div class="item_content">
+                    <div class="name">
+                        <img src="{% static 'main/images/nature_elements/arrow_left_down.svg' %}" alt="">
+                        <h4>ОГОНЬ</h4>
+                    </div>
+    
+                    <img class="el_image top" src="{% static 'main/images/nature_elements/fire.svg' %}" alt="">
+                    <img class="el_image down" src="{% static 'main/images/nature_elements/fire.svg' %}" alt="">
+    
+                    <div class="decor">
+                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="element_description">
+                    <div class="content">
+                        <p>
+                            Может быть отблеск внутри тебя готов сиять естественным образом.
+                            Чувствовать пылкий азарт открытий - это принимать свое пламя, не сжигая остальные стихии в себе.
+                        </p>
+    
+                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach3.svg' %}" alt="">
+
+                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
+
+                        <img class="element_decor" src="{% static 'main/images/nature_elements/flame_decor.svg' %}" alt="" >
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main_element" >
+                <img src="{% static 'main/images/main_element.png' %}" alt="">
+            </div>
+
+            <div class="grid_item c " onclick="openNatureElement(event, 'ground')">
+                <div class="item_content">
+                    <div class="name">
+                        <h4>ЗЕМЛЯ</h4>
+                        <img src="{% static 'main/images/nature_elements/arrow_right_up.svg' %}" alt="">
+                    </div>
+    
+                    <img class="el_image top" src="{% static 'main/images/nature_elements/ground.svg' %}" alt="">
+                    <img class="el_image down" src="{% static 'main/images/nature_elements/ground.svg' %}" alt="">
+    
+                    <div class="decor">
+                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="element_description">
+                    <div class="content">
+                        <p>
+                            Стихия Земля как символ опоры. То, что дает нам чувствовать себя устойчиво во время шторма и хаоса. Поиск внутренних опор является важнейшей частью на пути познания себя. Опора - это знание. Знание того кто я, чего я хочу, а чего точно НЕ хочется. Что меня успокаивает, расстраивает, вдохновляет? Психотерапия даст возможность обрести ответы на все волнующие вопросы и “заземлиться”.
+                        </p>
+    
+                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach2.svg' %}" alt="">
+
+                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
+
+                        <img class="element_decor" src="{% static 'main/images/nature_elements/ground_decor.svg' %}" alt="" >
+                    </div>
+                </div>
+            </div>
+            <div class="grid_item d " onclick="openNatureElement(event, 'air')">
+                <div class="item_content">
+                    <div class="name">
+                        <img src="{% static 'main/images/nature_elements/arrow_left_up.svg' %}" alt="">
+                        <h4>ВОЗДУХ</h4>
+                    </div>
+    
+                    <img class="el_image top" src="{% static 'main/images/nature_elements/air.svg' %}" alt="">
+                    <img class="el_image down" src="{% static 'main/images/nature_elements/air.svg' %}" alt="">
+    
+                    <div class="decor">
+                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="element_description">
+                    <div class="content">
+                        <p>
+                            Воздух - это то, что  невозможно увидеть глазами, но без чего невозможно наше существование. Мы ощущаем его кожей, наполняем им свои легкие, заполняем пространство, когда открываем окно. В рамках наших психотерапевтических сессий мы сможем создать эту невидимую связь, которая будет наполнять и давать новый опыт проживания жизни. 
+                        </p>
+    
+                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach1.svg' %}" alt="">
+
+                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
+
+                        <img class="element_decor" src="{% static 'main/images/nature_elements/air_decor.svg' %}" alt="" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coach_team container">
+        <a href="" class="coach_item">
+            <img class="decor" src="{% static 'main/images/coach/air.svg' %}" alt="">
+            <img class="coach" src="{% static 'main/images/coach/coach1.svg' %}" alt="">
+            <div class="link">
+                <h4>Ирина</h4>
+                <img src="{% static 'main/images/coach/arrow.svg' %}" alt="">
+            </div>
+        </a>
+        <a href="" class="coach_item">
+            <img class="decor" src="{% static 'main/images/coach/earth.svg' %}" alt="">
+            <img class="coach" src="{% static 'main/images/coach/coach2.svg' %}" alt="">
+            <div class="link">
+                <h4>Ульяна</h4>
+                <img src="{% static 'main/images/coach/arrow.svg' %}" alt="">
+            </div>
+        </a>
+        <a href="" class="coach_item">
+            <img class="decor" src="{% static 'main/images/coach/fire.svg' %}" alt="">
+            <img class="coach" src="{% static 'main/images/coach/coach3.svg' %}" alt="">
+            <div class="link">
+                <h4>Станислав</h4>
+                <img src="{% static 'main/images/coach/arrow.svg' %}" alt="">
+            </div>
+        </a>
+        <a href="" class="coach_item">
+            <img class="decor" src="{% static 'main/images/coach/water.svg' %}" alt="">
+            <img class="coach" src="{% static 'main/images/coach/coach4.svg' %}" alt="">
+            <div class="link">
+                <h4>Ирина</h4>
+                <img src="{% static 'main/images/coach/arrow.svg' %}" alt="">
+            </div>
+        </a>
+    </div>
+
     <div class="about container">
 
         <div class="decor">
@@ -530,154 +712,91 @@
 
     </div>
 
-    <div class="nature_element container">
-        <div class="title_flex">
+    <div class="method container">
+        <div class="head">
             <div class="title">
-                <h3>СТИХИИ</h3>
+                <h3>Метод</h3>
                 
-                <img class="title_decor" src="{% static 'main/images/nature_elements.png' %}" alt="">
-
-                <img class="pattern" src="{% static 'main/images/pattern.svg' %}" alt="">
+                <img class="title_decor" src="{% static 'main/images/method/blue_star.png' %}" alt="">
             </div>
-            
-            <div class="description">
-                <img src="{% static 'main/images/marks.png' %}" alt="">
 
-                <p>
-                    Принято считать, что секрет <span>здоровья и благополучия</span> человека заключён в особом балансе всех <span>четырех стихий.</span> Выявление доминирующей Стихии и исследование, какие Стихии находятся в избытке, а какие недостаточно проявлены, позволяют нам понять, как с помощью их <span>балансировки добиться</span> позитивных <span>изменений</span> в жизни
-                </p>
+            <div class="line"></div>
+
+            <img src="{% static 'main/images/method/brown_star.svg' %}" alt="">
+        </div>
+
+        <div class="content">
+            <div class="grid_item">
+                <div class="image_container">
+                    <div class="image_wrapper">
+                        <img class="image" src="{% static 'main/images/method/image1.svg' %}" alt="">
+                    </div>
+                    <div class="image_wrapper mob">
+                        <img class="image" src="{% static 'main/images/method/image2.svg' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="text">
+                    <p>Психоаналитический <span>метод помогает</span> обнаружить уникальность каждого человека, выстроить взаимосвязи прошлого с настоящим, привычные и повторяющиеся сценарии, реакции, которые когда‑то являлись защитами от боли, но теперь не дают полноценно и свободно жить, являются препятствием к тому, что доставит <span>удовольствие и удовлетворение.</span></p>
+                </div>
+            </div>
+
+            <div class="grid_item">
+                <div class="text">
+                    <img src="{% static 'main/images/method/work.svg' %}" alt="">
+
+                    <p><span>Работа с нами</span> — это путешествие на глубину своей души. Деликатное открытие и познание тех мест, которые были недоступны для исследования в одиночку.</p>
+                </div>
+
+                <div class="text">
+                    <img src="{% static 'main/images/method/star.svg' %}" alt="">
+
+                    <p><span>Цель</span> психоанализа не состоит в том, чтобы вспомнить все детские воспоминания (события). <span>Важно вспомнить</span> лишь то, что причиняет боль для того, чтобы (это проработать и отпустить) навсегда забыть. <span>Обрести свободу</span> действовать по‑другому, получить новый опыт.</p>
+                </div>
+
+                <img class="image" src="{% static 'main/images/method/image3.svg' %}" alt="">
             </div>
         </div>
 
-        <div class="nature_element_grid">
-            <div class="grid_item a" onclick="openNatureElement(event)">
-                <div class="item_content">
-                    <div class="name">
-                        <h4>ВОДА</h4>
-                        
-                        <img src="{% static 'main/images/nature_elements/arrow_right_down.svg' %}" alt="">
-                    </div>
-    
-                    <img class="el_image top" src="{% static 'main/images/nature_elements/water.svg' %}" alt="">
-                    <img class="el_image down" src="{% static 'main/images/nature_elements/water.svg' %}" alt="">
-    
-                    <div class="decor">
-                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
-                    </div>
-                </div>
-
-                <div class="element_description">
-                    <div class="content">
-                        <p>
-                            Может быть отблеск внутри тебя готов сиять естественным образом.
-                            Чувствовать пылкий азарт открытий - это принимать свое пламя, не сжигая остальные стихии в себе.
-                        </p>
-    
-                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach.svg' %}" alt="">
-
-                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
-
-                        <img class="element_decor" src="{% static 'main/images/nature_elements/water_decor.svg' %}" alt="" >
-                    </div>
-                </div>
-            </div>
+        <section id="method_slider" class="splide method_splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="grid_item">
+                            <div class="image_container">
+                                <div class="image_wrapper">
+                                    <img class="image" src="{% static 'main/images/method/image1.svg' %}" alt="">
+                                </div>
+                                <div class="image_wrapper mob">
+                                    <img class="image" src="{% static 'main/images/method/image2.svg' %}" alt="">
+                                </div>
+                            </div>
             
-            <div class="grid_item b " onclick="openNatureElement(event)">
-                <div class="item_content">
-                    <div class="name">
-                        <img src="{% static 'main/images/nature_elements/arrow_left_down.svg' %}" alt="">
-                        <h4>ОГОНЬ</h4>
-                    </div>
-    
-                    <img class="el_image top" src="{% static 'main/images/nature_elements/fire.svg' %}" alt="">
-                    <img class="el_image down" src="{% static 'main/images/nature_elements/fire.svg' %}" alt="">
-    
-                    <div class="decor">
-                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
-                    </div>
-                </div>
-
-                <div class="element_description">
-                    <div class="content">
-                        <p>
-                            Может быть отблеск внутри тебя готов сиять естественным образом.
-                            Чувствовать пылкий азарт открытий - это принимать свое пламя, не сжигая остальные стихии в себе.
-                        </p>
-    
-                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach.svg' %}" alt="">
-
-                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
-
-                        <img class="element_decor" src="{% static 'main/images/nature_elements/flame_decor.svg' %}" alt="" >
-                    </div>
-                </div>
-            </div>
+                            <div class="text mob">
+                                <p>Психоаналитический <span>метод помогает</span> обнаружить уникальность каждого человека, выстроить взаимосвязи прошлого с настоящим, привычные и повторяющиеся сценарии, реакции, которые когда‑то являлись защитами от боли, но теперь не дают полноценно и свободно жить, являются препятствием к тому, что доставит <span>удовольствие и удовлетворение.</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="grid_item">
+                            <div class="text">
+                                <img src="{% static 'main/images/method/work.svg' %}" alt="">
             
-            <div class="main_element" >
-                <img src="{% static 'main/images/main_element.png' %}" alt="">
+                                <p><span>Работа с нами</span> — это путешествие на глубину своей души. Деликатное открытие и познание тех мест, которые были недоступны для исследования в одиночку.</p>
+                            </div>
+            
+                            <div class="text">
+                                <img src="{% static 'main/images/method/star.svg' %}" alt="">
+            
+                                <p><span>Цель</span> психоанализа не состоит в том, чтобы вспомнить все детские воспоминания (события). <span>Важно вспомнить</span> лишь то, что причиняет боль для того, чтобы (это проработать и отпустить) навсегда забыть. <span>Обрести свободу</span> действовать по‑другому, получить новый опыт.</p>
+                            </div>
+            
+                            <img class="image mob" src="{% static 'main/images/method/image3.svg' %}" alt="">
+                        </div>
+                    </li>
+                </ul>
             </div>
-
-            <div class="grid_item c " onclick="openNatureElement(event)">
-                <div class="item_content">
-                    <div class="name">
-                        <h4>ЗЕМЛЯ</h4>
-                        <img src="{% static 'main/images/nature_elements/arrow_right_up.svg' %}" alt="">
-                    </div>
-    
-                    <img class="el_image top" src="{% static 'main/images/nature_elements/ground.svg' %}" alt="">
-                    <img class="el_image down" src="{% static 'main/images/nature_elements/ground.svg' %}" alt="">
-    
-                    <div class="decor">
-                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
-                    </div>
-                </div>
-
-                <div class="element_description">
-                    <div class="content">
-                        <p>
-                            Может быть отблеск внутри тебя готов сиять естественным образом.
-                            Чувствовать пылкий азарт открытий - это принимать свое пламя, не сжигая остальные стихии в себе.
-                        </p>
-    
-                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach.svg' %}" alt="">
-
-                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
-
-                        <img class="element_decor" src="{% static 'main/images/nature_elements/ground_decor.svg' %}" alt="" >
-                    </div>
-                </div>
-            </div>
-            <div class="grid_item d " onclick="openNatureElement(event)">
-                <div class="item_content">
-                    <div class="name">
-                        <img src="{% static 'main/images/nature_elements/arrow_left_up.svg' %}" alt="">
-                        <h4>ВОЗДУХ</h4>
-                    </div>
-    
-                    <img class="el_image top" src="{% static 'main/images/nature_elements/air.svg' %}" alt="">
-                    <img class="el_image down" src="{% static 'main/images/nature_elements/air.svg' %}" alt="">
-    
-                    <div class="decor">
-                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
-                    </div>
-                </div>
-
-                <div class="element_description">
-                    <div class="content">
-                        <p>
-                            Может быть отблеск внутри тебя готов сиять естественным образом.
-                            Чувствовать пылкий азарт открытий - это принимать свое пламя, не сжигая остальные стихии в себе.
-                        </p>
-    
-                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach.svg' %}" alt="">
-
-                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
-
-                        <img class="element_decor" src="{% static 'main/images/nature_elements/air_decor.svg' %}" alt="" >
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
 
 {% endblock %}

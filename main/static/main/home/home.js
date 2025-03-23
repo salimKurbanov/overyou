@@ -63,6 +63,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     
     }).mount();
+
+    new Splide('#method_slider', {
+        type: 'fade',
+        perPage: 1,
+        arrows: false,
+        pagination: true,
+        rewind: true,
+        // fixedWidth : '160px',
+        // fixedHeight: '240px', 
+    }).mount();
 });
 
 
@@ -70,7 +80,7 @@ const nature = document.querySelector('.nature_element_grid');
 const nature_items = nature.querySelectorAll('.grid_item');
 const main_element = nature.querySelector('.main_element');
 
-const openNatureElement = (e) => {
+const openNatureElement = (e, name) => {
     e.stopPropagation()
 
     e.currentTarget.classList.toggle('open')
@@ -82,9 +92,9 @@ const openNatureElement = (e) => {
     const noOpenClass = Array.from(nature_items).every(item => !item.classList.contains('open'));
     
     if(noOpenClass) {
-        main_element.classList.remove('open')
+        main_element.className = 'main_element';
     } else {
-        main_element.classList.add('open')
+        main_element.className = `main_element ${name}`
     }
 }
 
@@ -94,5 +104,5 @@ window.addEventListener('click', () => {
     if(noOpenClass) return
 
     nature_items.forEach(item => item.classList.remove('open'))
-    main_element.classList.remove('open')
+    main_element.className = 'main_element';
 })
