@@ -1,7 +1,6 @@
 import json
 from django.shortcuts import render
 from .models import Seo
-from .forms import ContactForm
 from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
