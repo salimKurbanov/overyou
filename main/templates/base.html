@@ -96,21 +96,47 @@
 
     <button class="chat_button">
         <img src="{% static 'main/images/chat.svg' %}" alt="">
+    </button>
 
-        <!-- <div class="chat_modal">
-            <h5></h5>
+    <div class="chat_modal">
+        <h4>Ваш запрос</h4>
 
-            <div class="body">
-                <div class="drop_list_wrapper">
-                    <div class="drop_list"></div>
+        <div class="body">
+            <div class="tabs">
+                <div class="tab_title" onclick="openChatTabs(event)">
+                    <h5>Выберите способ</h5>
+                    <img src="{% static 'main/images/arrow-down.svg' %}" alt="">
+                </div>
+
+                <div class="tab_list">
+                    <div class="tab_item" onclick="switchChatTab(event, 'telegram')">Телеграм</div>
+                    <div class="tab_item" onclick="switchChatTab(event, 'mail')">Email</div>
+                </div>
+            </div>
+
+            <form action="" class="tab_content">
+                <div class="form" id="telegram_form">
+                    <input type="text" placeholder="Введите Ваш телеграм">
+    
+                    <input type="text" placeholder="Ваше имя">
+    
+                    <textarea placeholder="Ваш запрос" name="" id="" cols="30" rows="10" id=""></textarea>
+                </div>
+
+                <div class="form" id="mail_form">
+                    <input type="text" placeholder="Введите Ваш email">
+    
+                    <input type="text" placeholder="Ваше имя">
+    
+                    <textarea placeholder="Ваш запрос" name="" id="" cols="30" rows="10" id=""></textarea>
                 </div>
             </div>
 
             <div class="button_block">
-
+                <button>Отправить</button>
             </div>
-        </div> -->
-    </button>
+        </div>
+    </div>
 
     {% block content %}{% endblock %}
     
