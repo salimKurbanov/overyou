@@ -657,9 +657,183 @@
 }
 
 .svirina_bottom {
-    margin-top: 200px;
     width: 100%;
     overflow: hidden;
 
     
+    .container {
+        position: relative;
+        z-index: 3;
+        padding-top: 260px;
+        padding-bottom: 130px;
+        margin-bottom: 150px;
+        .bird_block {
+            position: absolute;
+            top: 160px;
+            right: 60px;
+            width: 392px;
+
+            .bird {
+                opacity: 0.2;
+            }
+    
+           .light {
+            width: 550px;
+            height: 550px;
+            position: absolute;
+            top: -180px;
+            left: 0;
+            z-index: -1;
+            border: 50%;
+           } 
+        }
+
+        .circle {
+            position: absolute;
+            bottom: 0;
+            left: -65px;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .light_main {
+            position: absolute;
+            top: 0;
+            left: -231px;
+            z-index: 0;
+        }
+
+        .top {
+            position: relative;
+            z-index: 3;
+            display: grid;
+            grid-template-columns: 530fr 556fr;
+            grid-template-areas: 'a b';
+            
+            @include common.mediaMaxWidth(1200) {
+                grid-template-areas: 'b a';
+                gap: 40px;
+            }
+
+            @include common.mediaMaxWidth(800) {
+                grid-template-columns: 1fr;
+                gap: 0;
+                grid-template-areas: 'a';
+            }
+            p {
+                grid-area: a;
+                span {
+                    width: 100%;
+                    max-width: 391px;
+                    text-align: end;
+                    display: block;
+                    margin-left: auto;
+                    font-size: 20px;
+                    line-height: 120%;
+                    font-weight: 600;
+
+                    @include common.mediaMaxWidth(1200) {
+                        max-width: 460px;
+                        text-align: start;
+                        margin-left: 0;
+                    }
+
+                    @include common.mediaMaxWidth(800) {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .middle {
+            position: relative;
+            z-index: 3;
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 530fr 556fr;
+            grid-template-areas: 'b a';
+            gap: 40p;
+            
+            @include common.mediaMaxWidth(1200) {
+                grid-template-areas: 'a b';
+            }
+
+            @include common.mediaMaxWidth(800) {
+                grid-template-columns: 1fr;
+                gap: 0;
+                grid-template-areas: 'a';
+                margin-top: 40px;
+            }
+            p {
+                grid-area: a;
+                span {
+                    width: 100%;
+                    max-width: 300px;
+                    display: block;
+                    font-size: 20px;
+                    line-height: 120%;
+                    font-weight: 600;
+
+                    @include common.mediaMaxWidth(1200) {
+                        text-align: end;
+                        margin-left: auto;
+                        margin-right: -80px;
+                    }
+
+                    @include common.mediaMaxWidth(800) {
+                        margin-right: 0;
+                        max-width: 358px;
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            position: relative;
+            z-index: 3;
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 530fr 556fr;
+            grid-template-areas: 'a b';
+            
+            @include common.mediaMaxWidth(1200) {
+                grid-template-areas: 'b a';
+                gap: 40px;
+            }
+
+            @include common.mediaMaxWidth(800) {
+                grid-template-columns: 1fr;
+                gap: 0;
+                grid-template-areas: 'a';
+                margin-top: 40px;
+            }
+            p {
+                grid-area: a;
+                span {
+                    width: 100%;
+                    max-width: 300px;
+                    text-align: end;
+                    display: block;
+                    margin-left: auto;
+                    font-size: 20px;
+                    line-height: 120%;
+                    font-weight: 600;
+
+                    @include common.mediaMaxWidth(1200) {
+                        max-width: 300px;
+                        text-align: start;
+                        margin-left: 0;
+                    }
+
+                    @include common.mediaMaxWidth(800) {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
 }
