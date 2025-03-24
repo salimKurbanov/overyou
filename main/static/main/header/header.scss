@@ -10,6 +10,10 @@
     overflow: hidden; //Исправить
     transition: 0.3s;
 
+    @include common.mediaMaxWidth(768) {
+        top: 32px;
+    }
+
     &::before {
         content: "";
         position: absolute;
@@ -123,6 +127,7 @@ header {
     z-index: 100;
 
     .header_wrapper {
+        position: relative;
         display: grid;
         grid-template-columns: 3fr 2fr 1fr;
         align-items: center;
@@ -133,9 +138,27 @@ header {
             justify-content: space-between;
         }
 
-        
+        .decor {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: -108px;
+            left: -95px;
+            z-index: -1;
+            background-image: url('./../images/header_decor.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: blur(20px);
 
-
+            @include common.mediaMaxWidth(768) {
+                width: 230px;
+                height: 230px;
+                filter: blur(10px);
+                top: -88px;
+                left: -80px;
+            }
+        }
 
         .logo {
             display: flex;
@@ -144,6 +167,10 @@ header {
 
             img {
                 width: 80px;
+
+                @include common.mediaMaxWidth(768) {
+                    width: 50px;
+                }
             }
             p {
                 display: flex;

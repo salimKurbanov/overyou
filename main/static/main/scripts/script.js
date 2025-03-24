@@ -118,19 +118,17 @@ const sendForm = async (e) => {
     const data = {type: type}
 
     if(type == 'telegram') {
-        data['telegram'] = formData.get('telegram')
+        data['contact'] = formData.get('telegram')
         data['name'] = formData.get('name_telegram')
         data['message'] = formData.get('message_telegram')
     } else {
-        data['email'] = formData.get('email')
+        data['contact'] = formData.get('email')
         data['name'] = formData.get('name_email')
         data['message'] = formData.get('message_email')
     }
 
     // formData.forEach((value, key) => data[key] = value)
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-
-    console.log(data)
 
     try {
         const res = await fetch('/process_form/', {

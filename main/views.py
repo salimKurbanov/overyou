@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import render
-from .models import Seo
+from .models import Seo, Applications
 from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -38,26 +38,19 @@ def process_form(request):
         try:
             data = json.loads(request.body)
             type = data.get('type')
+            contact = data.get('telegram')
+            name = data.get('name')
+            message = data.get('message')
             
+            Applications.objects.create(type=type, contact=contact, name=name, message=message)
 
-            if type == 'telegram': 
-                telegram = data.get('telegram')
-                name = data.get('name')
-                message = data.get('message')
-                pass
-
-            if type == 'email':
-                email = data.get('email')
-                name = data.get('name')
-                message = data.get('message')
-                # send_mail(
-                #     'Contact Form Submission',
-                #     f'Name: {name}\nEmail: {email}\nMessage: {message}',
-                #     'from@example.com',  #адрес отправителя
-                #     ['to@example.com'],  #адрес получателя
-                #     fail_silently=False,
-                # )
-                pass
+            # send_mail(
+            #     'Заявка на обратную связь',
+            #     f'Имя: {name}\Контакт: {contact}\Сообщение: {message}',
+            #     'ego@sverhty.ru',  #адрес отправителя
+            #     ['ego@sverhty.ru'],  #адрес получателя
+            #     fail_silently=False,
+            # )
 
             return JsonResponse({'message': 'Form submitted successfully!'}, status=200)
         except json.JSONDecodeError:

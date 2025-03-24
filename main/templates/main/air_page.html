@@ -10,9 +10,103 @@
 {% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
-
+    <link rel="stylesheet" href="{% static 'main/person_page/person_page.css' %}">
 {% endblock %}
 
 {% block content %}
+
+    <div class="person_top">
+
+        <div class="title_mob svirina">
+            Ирина
+            <span> Свирина</span>
+        </div>
+
+        <div class="navigation">
+            <a href="{% url 'earth_page' %}" class="person_link a">
+                <img src="{% static 'main/images/person_page/earth_person.png' %}" alt="">
+            </a>
+            <div class="person_link b active">
+                <img src="{% static 'main/images/person_page/air_person_active.png' %}" alt="">
+            </div>
+            <a href="{% url 'fire_page' %}" class="person_link d">
+                <img src="{% static 'main/images/person_page/fire_person.png' %}" alt="">
+            </a>
+            <a href="{% url 'water_page' %}" class="person_link c">
+                <img src="{% static 'main/images/person_page/water_person.png' %}" alt="">
+            </a>
+            <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element air">
+        </div>
+
+        <div class="description">
+            <h1 class="svirina">
+                Ирина
+                <span>Свирина</span>
+            </h1>
+
+            <div class="slogans_block svirina">
+                <p class="top">
+                    <span class="upper">Помни</span>
+                </p>
+
+                <p class="middle">
+                    что в тебе уже есть <span class="upper">все что нужно</span> для того
+                </p>
+
+                <p class="bottom">
+                    чтобы <span class="upper">быть собой</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="image_block">
+            <img src="{% static 'main/images/person_page/irina_svirina.jpg' %}" alt="">
+        </div>
+    </div>
+
+    <div class="person_middle">
+
+        <div class="container svirina">
+            <div class="image_block">
+                <img src="{% static 'main/images/person_page/bird.svg' %}" alt="">
+            </div>
+    
+            <div class="description">
+                <p>Я психоаналитически ориентированный психолог. Работаю с неврозами, тревогами, страхами, сферой отношений, а также активно изучаю и работаю с проблемой невротического заикания у взрослых.</p>
+    
+                <p>Иногда, то что мы знаем о себе не соответствует тому, кто мы есть на самом деле. Мы хотим проявлять те замечательные качества, мысли и идеи, которые внутри нас, но порой к ним нет доступа и наше проявление выглядит странно искаженно и доставляет ряд негативных эмоций. Быть собой во всех проявлениях и не бояться вербальной  коммуникации - это великий дар, который дан только человеку.</p>
+    
+                <p>Я постараюсь помочь вам  найти себя, справиться с внутренней путаницей и тревогой, обрести внутреннее равновесие и достичь здоровой координации своих чувств и действий, в том числе непринужденной здоровой речи.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="svirina_bottom">
+
+        <div class="container">
+            <div class="top">
+                <p>
+                    <span>Осознать непонятое – расстаться с навязчивыми мыслями, которые скрывали главное</span>
+                </p>
+            </div>
+            <div class="middle">
+                <p>
+                    <span>Понять смысл своего симптома – освободиться от него навсегда</span>
+                </p>
+            </div>
+            <div class="bottom">
+                <p>
+                    <span>Обрести безопасность внутри себя – проститься с тревогой</span>
+                </p>
+            </div>
+
+            <div class="bird_block">
+                <img src="{% static 'main/images/person_page/blue_light.svg' %}" alt="" class="light">
+                <img class="bird" src="{% static 'main/images/person_page/opacity_bird.svg' %}" alt="">
+            </div>
+            <img class="circle" src="{% static 'main/images/person_page/circle.svg' %}" alt="">
+            <img src="{% static 'main/images/person_page/blue_light2.svg' %}" alt="" class="light_main">
+        </div>
+    </div>
 
 {% endblock %}
