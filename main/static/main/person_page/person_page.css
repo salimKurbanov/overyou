@@ -316,6 +316,9 @@
     align-self: flex-end;
   }
 }
+.person_top .description .slogans_block.svirina {
+  align-items: center;
+}
 .person_top .description .slogans_block.svirina p.top {
   max-width: 290px;
   align-self: flex-end;
