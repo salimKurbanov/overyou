@@ -667,24 +667,65 @@
         padding-top: 260px;
         padding-bottom: 130px;
         margin-bottom: 150px;
+
+        @include common.mediaMaxWidth(1280) {
+            margin-top: -50px;
+        }
+
+        @include common.mediaMaxWidth(800) {
+            padding-top: 0px;   
+            margin-top: 80px;
+            margin-bottom: 800px;
+        }
+
         .bird_block {
             position: absolute;
             top: 160px;
             right: 60px;
             width: 392px;
 
+            @include common.mediaMaxWidth(1280) {
+                top: 240px;
+                right: auto;
+                left: 80px;
+            }
+
+            @include common.mediaMaxWidth(1100) {
+                left: -100px;
+            }
+
+            @include common.mediaMaxWidth(800) {
+                width: 500px;
+                top: 0px;
+                right: auto;   
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: center;
+            }
+
             .bird {
                 opacity: 0.2;
+
+                @include common.mediaMaxWidth(800) {
+                    width: 330px;
+                }
             }
     
            .light {
-            width: 550px;
-            height: 550px;
-            position: absolute;
-            top: -180px;
-            left: 0;
-            z-index: -1;
-            border: 50%;
+                width: 550px;
+                height: 550px;
+                position: absolute;
+                top: -180px;
+                left: 0;
+                z-index: -1;
+                border: 50%;
+
+                @include common.mediaMaxWidth(800) {
+                    top: 0px;
+                    right: -120px;
+                    left: auto;
+                }
            } 
         }
 
@@ -694,6 +735,16 @@
             left: -65px;
             opacity: 0.2;
             z-index: 1;
+
+            @include common.mediaMaxWidth(1280) {
+                bottom: 60px;
+                right: -65px;
+                left: auto;
+            }
+
+            @include common.mediaMaxWidth(800) {
+                display: none;
+            }
         }
 
         .light_main {
@@ -701,6 +752,16 @@
             top: 0;
             left: -231px;
             z-index: 0;
+
+            @include common.mediaMaxWidth(1280) {
+                top: 133px;
+                right: -64px;
+                left: auto;
+            }
+
+            @include common.mediaMaxWidth(800) {
+                display: none;
+            }
         }
 
         .top {
@@ -710,7 +771,7 @@
             grid-template-columns: 530fr 556fr;
             grid-template-areas: 'a b';
             
-            @include common.mediaMaxWidth(1200) {
+            @include common.mediaMaxWidth(1280) {
                 grid-template-areas: 'b a';
                 gap: 40px;
             }
@@ -732,7 +793,7 @@
                     line-height: 120%;
                     font-weight: 600;
 
-                    @include common.mediaMaxWidth(1200) {
+                    @include common.mediaMaxWidth(1280) {
                         max-width: 460px;
                         text-align: start;
                         margin-left: 0;
@@ -755,7 +816,7 @@
             grid-template-areas: 'b a';
             gap: 40p;
             
-            @include common.mediaMaxWidth(1200) {
+            @include common.mediaMaxWidth(1280) {
                 grid-template-areas: 'a b';
             }
 
@@ -775,7 +836,7 @@
                     line-height: 120%;
                     font-weight: 600;
 
-                    @include common.mediaMaxWidth(1200) {
+                    @include common.mediaMaxWidth(1280) {
                         text-align: end;
                         margin-left: auto;
                         margin-right: -80px;
@@ -799,7 +860,7 @@
             grid-template-columns: 530fr 556fr;
             grid-template-areas: 'a b';
             
-            @include common.mediaMaxWidth(1200) {
+            @include common.mediaMaxWidth(1280) {
                 grid-template-areas: 'b a';
                 gap: 40px;
             }
@@ -822,7 +883,7 @@
                     line-height: 120%;
                     font-weight: 600;
 
-                    @include common.mediaMaxWidth(1200) {
+                    @include common.mediaMaxWidth(1280) {
                         max-width: 300px;
                         text-align: start;
                         margin-left: 0;
