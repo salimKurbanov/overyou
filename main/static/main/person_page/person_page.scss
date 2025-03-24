@@ -36,6 +36,10 @@
         padding: 0 16px;
         margin-bottom: -45px;
 
+        &.svirina {
+            max-width: 400px;
+        }
+
         span {
             display: block;
             width: max-content;
@@ -90,6 +94,11 @@
             left: 0;
             transform: translateY(-50%) translateX(-70%);
             z-index: 1;
+            transform-origin: center;
+
+            &.air {
+                transform: translateY(-50%) translateX(-70%) rotate(85deg) scaleX(-1);
+            }
 
             @include common.mediaMaxWidth(1450) {
                 width: 350px;
@@ -187,7 +196,7 @@
             font-weight: 400;
             margin-left: auto;
 
-            @include common.mediaMaxWidth(1450) {
+            @include common.mediaMaxWidth(1520) {
                 font-size: 54px;
             }
             @include common.mediaMaxWidth(1150) {
@@ -205,6 +214,14 @@
                 display: block;
                 margin-left: auto;
                 width: max-content;
+            }
+
+            &.svirina {
+                max-width: 365px;
+
+                span {
+                    margin-top: 10px;
+                }
             }
         }
 
@@ -264,6 +281,42 @@
                         align-self: flex-end;
                     }
                 }
+
+            }
+
+            &.svirina {
+                p {
+                    &.top {
+                        max-width: 290px;
+                        align-self: flex-end;
+                        text-align: start;
+                        @include common.mediaMaxWidth(800) {
+                            align-self: flex-end;
+                            width: max-content;
+                        }
+                    }
+                    &.middle {
+                        max-width: 470px;
+                        text-align: end;
+                        @include common.mediaMaxWidth(1300) {
+                            align-self: flex-end;
+                        }
+                        @include common.mediaMaxWidth(800) {
+                            align-self: flex-start;
+                            max-width: 359px;
+                            text-align: start;
+                        }
+                    }
+                    &.bottom {
+                        max-width: 425px;
+                        @include common.mediaMaxWidth(1450) {
+                            align-self: flex-start;
+                        }
+                        @include common.mediaMaxWidth(800) {
+                            align-self: flex-end;
+                        }
+                    }
+                }
             }
 
             span.upper {
@@ -308,9 +361,48 @@
 
     .container {
         display: grid;
-        grid-template-columns: 43fr 56fr;
+        grid-template-columns: 530fr 556fr;
         gap: 4dvw;
         align-items: center;
+
+        &.svirina {
+            .image_block {
+                display: flex;
+                justify-content: flex-end;
+                @include common.mediaMaxWidth(800) {
+                    justify-content: center;
+                }
+                @include common.mediaMaxWidth(450) {
+                    justify-content: flex-end;
+                }
+                img {
+                    width: 127%;
+                    @include common.mediaMaxWidth(991) {
+                        width: 147%;
+                        transform: translateX(0%);
+                    }
+    
+                    @include common.mediaMaxWidth(800) {
+                        width: 120%;
+                        max-width: 400px;
+                    }
+                }
+            }
+            @include common.mediaMaxWidth(991) {
+                grid-template-columns: 530fr 596fr;
+            }
+
+            @include common.mediaMaxWidth(800) {
+                grid-template-columns: 1fr;
+            }
+
+            .description {
+                @include common.mediaMaxWidth(800) {
+                    display: flex;
+                    margin-top: 80px;
+                }
+            }
+        }
 
         @include common.mediaMaxWidth(991) {
             grid-template-columns: 20fr 46fr;
@@ -562,4 +654,12 @@
             }
         }
     }
+}
+
+.svirina_bottom {
+    margin-top: 200px;
+    width: 100%;
+    overflow: hidden;
+
+    
 }
