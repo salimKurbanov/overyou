@@ -441,7 +441,7 @@
         .label {
             position: absolute;
             width: max-content;
-            max-width: 100%;
+            // max-width: 100%;
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -726,6 +726,7 @@
                 &:hover {
                     .label {
                         top: 20%;
+                        opacity: 0;
                     }
                 }
             }

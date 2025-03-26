@@ -437,7 +437,6 @@
   position: absolute;
   width: -moz-max-content;
   width: max-content;
-  max-width: 100%;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -695,6 +694,7 @@
 @media screen and (min-width: 992px) {
   .scenaries .scenaries_item.s6:hover .label {
     top: 20%;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {

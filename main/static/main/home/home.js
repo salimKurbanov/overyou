@@ -31,6 +31,8 @@ const openDescription = (e) => {
 
 const switchDescription = () => {
 
+    const windowWidth = window.innerWidth
+
     const main_scenaries = document.querySelectorAll('.scenaries_item.main')
     const secondary_scenaries = document.querySelectorAll('.scenaries_item.secondary')
 
@@ -39,6 +41,13 @@ const switchDescription = () => {
 
     const randomSecondaryIndex = Math.floor(Math.random() * secondary_scenaries.length);
     const randomSecondaryElement = secondary_scenaries[randomSecondaryIndex]
+
+    if(randomMainElement.classList.contains('active')) {
+        console.log('active');
+        
+        switchDescription()
+        return
+    }
 
     const mainAttribute = randomMainElement.getAttribute('data-id')
     const secondaryAttribute = randomSecondaryElement.getAttribute('data-id')
@@ -51,17 +60,13 @@ const switchDescription = () => {
 
     randomSecondaryElement.setAttribute('data-id', mainAttribute)
     randomSecondaryElement.classList.remove('secondary')
+    randomSecondaryElement.classList.remove(secondaryAttribute)
     randomSecondaryElement.classList.add('main')
     randomSecondaryElement.classList.add(mainAttribute)
-
-    if(randomMainElement.classList.contains('active')) {
-        randomMainElement.classList.remove('active')
-        randomSecondaryElement.classList.add('active')
-    }
     
 }
 
-const interval = () => setInterval(switchDescription, 5000)
+const interval = () => setInterval(switchDescription, 2000)
 
 const stopSwitch = () => {
   clearInterval(interval)
