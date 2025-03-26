@@ -139,10 +139,17 @@
                     <textarea placeholder="Ваш запрос" name="message_email" id="" cols="30" rows="10" id=""></textarea>
                 </div>
             </form>
+           
 
             <div class="button_block">
                 <button id="chat_button" disabled onclick="sendForm(event)">Отправить</button>
             </div>
+        </div>
+
+        <div class="success_message">
+            <h4>Ваш запрос отправлен!</h4>
+
+            <img src="{% static 'main/images/rocket.svg' %}" alt="">
         </div>
     </div>
 
