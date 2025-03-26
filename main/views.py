@@ -38,7 +38,7 @@ def process_form(request):
         try:
             data = json.loads(request.body)
             type = data.get('type')
-            contact = data.get('telegram')
+            contact = data.get('contact')
             name = data.get('name')
             message = data.get('message')
             

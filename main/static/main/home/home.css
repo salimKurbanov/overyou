@@ -416,6 +416,11 @@
   border-radius: 16px;
   font-size: 16px;
 }
+.scenaries .scenaries_item.l {
+  grid-area: l;
+  display: none;
+  overflow: hidden;
+}
 @media screen and (max-width: 768px) {
   .scenaries .scenaries_item {
     height: 55px;

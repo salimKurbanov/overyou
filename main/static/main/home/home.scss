@@ -431,6 +431,12 @@
         border-radius: 16px;
         font-size: 16px;
 
+        &.l {
+            grid-area: l;
+            display: none;
+            overflow: hidden;
+        }
+
         @include common.mediaMaxWidth(768) {
             height: 55px;
         }

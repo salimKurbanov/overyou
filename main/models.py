@@ -28,3 +28,9 @@ class Applications(models.Model):
     class Meta:
         verbose_name = 'Заявка'
         verbose_name_plural = 'Заявки'
+
+
+class Scenaries(models.Model):
+    title = models.CharField('Название', max_length=100, null=True, blank=True)
+    description = models.TextField('Описание', null=True, blank=True)
+    label_image = models.FileField(upload_to='images/scenaries/', null=True, blank=True, verbose_name='Лэйбл')

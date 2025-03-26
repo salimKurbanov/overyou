@@ -17,11 +17,11 @@ const openDescription = (e) => {
 
     if(windowWidth > 768) {
         if(!parentElement.classList.contains('active')) {
-            scenaries_items.forEach(item => item.classList.remove('active'))
-            parentElement.classList.add('active')
+          parentElement.classList.add('active')
         }
-    } else{
-        parentElement.classList.toggle('active')
+      } else{
+        scenaries_items.forEach(item => item.classList.remove('active'))
+        parentElement.classList.add('active')
     }
 }
 
