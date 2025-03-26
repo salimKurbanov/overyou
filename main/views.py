@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import render
-from .models import Seo, Applications
+from .models import Seo, Applications, Scenaries
 from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -29,6 +29,9 @@ def home(request):
             'url': '',
             'image': ''
         }
+
+    scenaries = Scenaries.objects.all()
+    context['scenaries'] = scenaries
 
     return render(request, 'main/home.html', context)
 

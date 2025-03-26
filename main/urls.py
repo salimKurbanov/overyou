@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -9,4 +11,4 @@ urlpatterns = [
     path('irina_lukatskaya/', views.water_page, name='water_page'),
     path('ulyana_komarova/', views.earth_page, name='earth_page'),
     path('process_form/', views.process_form, name='process_form'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

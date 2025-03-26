@@ -34,3 +34,10 @@ class Scenaries(models.Model):
     title = models.CharField('Название', max_length=100, null=True, blank=True)
     description = models.TextField('Описание', null=True, blank=True)
     label_image = models.FileField(upload_to='images/scenaries/', null=True, blank=True, verbose_name='Лэйбл')
+
+    def __str__(self):
+        return f'{self.title}'
+    
+    class Meta:
+        verbose_name = 'Сценарии'
+        verbose_name_plural = 'Сценарии'
