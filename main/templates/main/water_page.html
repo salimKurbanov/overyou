@@ -10,9 +10,185 @@
 {% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
-    
+    <link rel="stylesheet" href="{% static 'main/person_page/person_page.css' %}">
+    <link rel="stylesheet" href="{% static 'main/splide/splide.min.css' %}">
+    <script src="{% static 'main/scripts/splide.min.js' %}" defer></script>
+    <script src="{% static 'main/person_page/person_page.js' %}" defer></script>
 {% endblock %}
 
 {% block content %}
+
+<div class="irina_lukatskaya_page">
+
+    <div class="person_top">
     
+        <div class="title_mob">
+            ИРИНА
+            <span> Лукацкая</span>
+        </div>
+    
+        <div class="navigation">
+            <a href="{% url 'fire_page' %}" class="person_link a">
+                <img src="{% static 'main/images/person_page/fire_person.png' %}" alt="">
+            </a>
+            <div class="person_link b active">
+                <img src="{% static 'main/images/person_page/water_person_active.svg' %}" alt="">
+            </div>
+            <a href="{% url 'earth_page' %}" class="person_link d">
+                <img src="{% static 'main/images/person_page/earth_person.png' %}" alt="">
+            </a>
+            <a href="{% url 'air_page' %}" class="person_link c">
+                <img src="{% static 'main/images/person_page/air_person.png' %}" alt="">
+            </a>
+            <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element">
+        </div>
+    
+        <div class="description irina">
+            <h1 class="irina">
+                ИРИНА
+                <span>Лукацкая</span>
+            </h1>
+    
+            <div class="slogans_block irina">
+                <p class="top">
+                    «Я <span class="upper">чувствую,</span>  а значит, я <span class="upper">живу…</span>»
+                </p>
+    
+                <p class="middle">
+                    В. Скорых
+                </p>
+            </div>
+        </div>
+        
+        <div class="image_block">
+            <img src="{% static 'main/images/person_page/irina_lukatskaya.svg' %}" alt="">
+        </div>
+    </div>
+    
+
+    <div class="irina_grid_container container">
+        <div class="flex_container top desc">
+            <div class="grid_item">
+                <div class="title">
+                    <img class="decor" src="{% static 'main/images/person_page/irina_grid_decor.png' %}" alt="">
+        
+                    <h4 class="bold">жизнь</h4>
+            
+                    <h4>путь</h4>
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="text">
+                    <p>Терапия – <span>это про жизнь.</span>
+                    <p>Терапия – это <span>про отношения. Про чувства, про любовь, про ненависть.</span></p>
+                    <p>Это пространство, где прошлое переплетается с настоящим, и множество «слайдов» твоей личной истории «выходят на сцену».  Они или сменяют друг друга, или прячутся под большим и массивным замком, словно их и не было вовсе.</p>
+                    <p>Потому что терапия – это <span>еще и про боль.</span> А с ней, порой, так страшно столкнуться…</p>
+                    <p>Но, чтобы боль отпустила, ее <span>важно увидеть, прожить, проплакать, прокричать.</span> Столько, сколько нужно, чтобы она ослабла или ушла.</p>
+                    <p>И тогда <span>появятся новые силы</span>, новый, более осмысленный взгляд на жизнь, на себя, на других людей, на ситуации и обстоятельства – это будет уже другое внутреннее состояние. Оно откроет путь новым возможностям и изменениям.</p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex_container middle desc">
+            <div class="grid_item">
+                <div class="text">
+                    <p>К психологу не обращаются просто так. С какой бы болью ни пришел пациент, часто он задается вопросом «Почему это происходит со мной? Что делать, чтобы все было по-другому? Как это изменить?»</p>
+                    <p>Как бы ни было тяжело сейчас,<span>новый день будет уже другим.</span> Главное, не останавливаться и сделать <span>шаг к другому завтрашнему дню.</span></p>
+                    <p>Я поддержу Вас  на этом пути и разделю с Вами Вашу боль и переживания.</p>
+                    <p>Здесь будет то неизменное и стабильное пространство, которое позволит безопасно проявлять любые эмоции и чувства и даст<span>возможность погрузится внутрь себя.</span></p>
+                </div>
+            </div>
+            <div class="grid_item title">
+                <div class="title">
+                    <img class="decor" src="{% static 'main/images/person_page/irina_grid_decor.png' %}" alt="">
+            
+                    <h4>новый</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex_container bottom desc">
+            <div class="grid_item title">
+                <div class="title">
+                    <img class="decor" src="{% static 'main/images/person_page/irina_grid_decor.png' %}" alt="">
+                    
+                    <img class="title_img" src="{% static 'main/images/person_page/irina_middle_decor.svg' %}" alt="">
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="text">
+                    <p>Я – психолог, закончила русско-французскую магистерскую программу в НИУ ВШЭ “Психоанализ. Психоаналитическая психотерапия”. В своей работе применяю психоаналитический метод. Я люблю свою работу и считаю, что с окончанием университета, учеба не заканчивается.</p>
+                    <p>Перед каждым пациентом чувствую ответственность,  поэтому, прохожу собственный анализ у члена международной психоаналитической ассоциации (IPA и SPP), регулярно посещаю супервизии ведущих психоаналитиков, <span>учусь и продолжаю посещать семинары и конференции</span> с участием как российских, так и зарубежных мэтров психоанализа.</p>
+                </div>
+            </div>
+        </div>
+        
+        <section id="water_slider" class="splide water_splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="flex_container top">
+                            <div class="grid_item">
+                                <div class="title">
+                                    <img class="decor" src="{% static 'main/images/person_page/irina_grid_decor.png' %}" alt="">
+                        
+                                    <h4 class="bold">жизнь</h4>
+                            
+                                    <h4>путь</h4>
+                                </div>
+                            </div>
+                            <div class="grid_item">
+                                <div class="text">
+                                    <p>Терапия – <span>это про жизнь.</span>
+                                    <p>Терапия – это <span>про отношения. Про чувства, про любовь, про ненависть.</span></p>
+                                    <p>Это пространство, где прошлое переплетается с настоящим, и множество «слайдов» твоей личной истории «выходят на сцену».  Они или сменяют друг друга, или прячутся под большим и массивным замком, словно их и не было вовсе.</p>
+                                    <p>Потому что терапия – это <span>еще и про боль.</span> А с ней, порой, так страшно столкнуться…</p>
+                                    <p>Но, чтобы боль отпустила, ее <span>важно увидеть, прожить, проплакать, прокричать.</span> Столько, сколько нужно, чтобы она ослабла или ушла.</p>
+                                    <p>И тогда <span>появятся новые силы</span>, новый, более осмысленный взгляд на жизнь, на себя, на других людей, на ситуации и обстоятельства – это будет уже другое внутреннее состояние. Оно откроет путь новым возможностям и изменениям.</p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="flex_container middle">
+                            <div class="grid_item">
+                                <div class="text">
+                                    <p>К психологу не обращаются просто так. С какой бы болью ни пришел пациент, часто он задается вопросом «Почему это происходит со мной? Что делать, чтобы все было по-другому? Как это изменить?»</p>
+                                    <p>Как бы ни было тяжело сейчас,<span>новый день будет уже другим.</span> Главное, не останавливаться и сделать <span>шаг к другому завтрашнему дню.</span></p>
+                                    <p>Я поддержу Вас  на этом пути и разделю с Вами Вашу боль и переживания.</p>
+                                    <p>Здесь будет то неизменное и стабильное пространство, которое позволит безопасно проявлять любые эмоции и чувства и даст<span>возможность погрузится внутрь себя.</span></p>
+                                </div>
+                            </div>
+                            <div class="grid_item title">
+                                <div class="title">
+                                    <img class="decor" src="{% static 'main/images/person_page/irina_grid_decor.png' %}" alt="">
+                            
+                                    <h4>новый</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="flex_container bottom">
+                            <div class="grid_item title">
+                                <div class="title">
+                                    <img class="decor" src="{% static 'main/images/person_page/irina_grid_decor.png' %}" alt="">
+                                    
+                                    <img class="title_img" src="{% static 'main/images/person_page/irina_middle_decor.svg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="grid_item">
+                                <div class="text">
+                                    <p>Я – психолог, закончила русско-французскую магистерскую программу в НИУ ВШЭ “Психоанализ. Психоаналитическая психотерапия”. В своей работе применяю психоаналитический метод. Я люблю свою работу и считаю, что с окончанием университета, учеба не заканчивается.</p>
+                                    <p>Перед каждым пациентом чувствую ответственность,  поэтому, прохожу собственный анализ у члена международной психоаналитической ассоциации (IPA и SPP), регулярно посещаю супервизии ведущих психоаналитиков, <span>учусь и продолжаю посещать семинары и конференции</span> с участием как российских, так и зарубежных мэтров психоанализа.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</div>
 {% endblock %}
