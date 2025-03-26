@@ -433,12 +433,6 @@
 .scenaries .scenaries_item.g p span {
   font-weight: 700;
 }
-.scenaries .scenaries_item h4 {
-  width: -moz-min-content;
-  width: min-content;
-  font-size: 16px;
-  line-height: 130%;
-}
 .scenaries .scenaries_item .label {
   position: absolute;
   width: -moz-max-content;
@@ -457,6 +451,10 @@
 }
 .scenaries .scenaries_item .label h4 {
   text-transform: lowercase;
+  width: -moz-min-content;
+  width: min-content;
+  font-size: 16px;
+  line-height: 130%;
 }
 @media screen and (max-width: 768px) {
   .scenaries .scenaries_item .label {
@@ -493,6 +491,10 @@
   gap: 15px;
   margin-bottom: 7.5px;
 }
+.scenaries .scenaries_item .description .title_block h4 {
+  width: -moz-max-content;
+  width: max-content;
+}
 .scenaries .scenaries_item .description p {
   font-size: 14px;
   line-height: 130%;
@@ -515,7 +517,7 @@
 }
 .scenaries .scenaries_item.s1 .label {
   top: 88px;
-  left: 0;
+  left: 0px;
   transition: 0.2s cubic-bezier(0.48, -1.68, 0.55, 1.9);
 }
 .scenaries .scenaries_item.s1 .description {
@@ -536,6 +538,7 @@
   .scenaries .scenaries_item.s1:hover .label {
     transform: translateX(10%);
     top: 70px;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {

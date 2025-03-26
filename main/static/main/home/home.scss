@@ -438,12 +438,6 @@
             }
         }
 
-        h4 {
-            width: min-content;
-            font-size: 16px;
-            line-height: 130%;
-        }
-
         .label {
             position: absolute;
             width: max-content;
@@ -462,6 +456,9 @@
 
             h4 {
                 text-transform: lowercase;
+                width: min-content;
+                font-size: 16px;
+                line-height: 130%;
             }
 
             @include common.mediaMaxWidth(768) {
@@ -499,6 +496,10 @@
                 align-items: flex-start;
                 gap: 15px;
                 margin-bottom: 7.5px;
+
+                h4 {
+                    width: max-content;
+                }
             }
             p {
                 font-size: 14px;
@@ -526,7 +527,7 @@
             grid-area: s1;
             .label {
                 top: 88px;
-                left: 0;
+                left: 0px;
                 transition: 0.2s cubic-bezier(.48,-1.68,.55,1.9);
             }
             .description {
@@ -547,6 +548,7 @@
                     .label {
                         transform: translateX(10%);
                         top: 70px;
+                        opacity: 0;
                     }
                 }
             }

@@ -14,6 +14,46 @@
     <link rel="stylesheet" href="{% static 'main/splide/splide.min.css' %}">
     <script src="{% static 'main/scripts/splide.min.js' %}" defer></script>
     <script src="{% static 'main/person_page/person_page.js' %}" defer></script>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Person",
+          "name": "[ФИО] Психоаналитик",
+          "image": "https://example.com/фото-психолога.jpg",
+          "description": "Опытный психоаналитик с многолетней практикой. Помогаю разобраться в глубинных причинах психологических проблем.",
+          "jobTitle": "Психоаналитик",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Улица, дом, офис",
+            "addressLocality": "Город",
+            "addressRegion": "Регион",
+            "postalCode": "Индекс"
+          },
+          "telephone": "+71234567890",
+          "email": "info@example.com",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "10:00",
+              "closes": "20:00"
+            }
+          ],
+          "knowsAbout": "Психоанализ",
+          "url": "https://example.com/услуги",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://example.com/психолог" // URL вашей страницы!
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block content %}

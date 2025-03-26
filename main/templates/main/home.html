@@ -97,7 +97,7 @@
                     </p>
                 </div>
             {% else %}
-                <div class="scenaries_item s{{ forloop.counter }} {% if forloop.counter == 1 %}active{% endif %} {% if forloop.counter < 12 %}main{% else %}secondary{% endif %}" data-id="s{{ forloop.counter }}" onclick="openDescription(event)">
+                <div class="scenaries_item s{{ forloop.counter }} {% if forloop.counter == 1 %}active{% endif %} {% if forloop.counter < 12 %}main{% else %}secondary{% endif %}" data-id="s{{ forloop.counter }}" onclick="openDescription(event)" onmousedown="stopSwitch()">
                     <div class="description">
                         <div class="title_block">
                             <h4>{{ scenary.title }}</h4>
