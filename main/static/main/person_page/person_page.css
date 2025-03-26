@@ -100,6 +100,9 @@
   z-index: 1;
   transform-origin: center;
 }
+.person_top .navigation .main_element.earth {
+  transform: translateY(-50%) translateX(-70%) rotate(0deg) scaleX(-1);
+}
 .person_top .navigation .main_element.air {
   transform: translateY(-50%) translateX(-70%) rotate(85deg) scaleX(-1);
 }
@@ -198,6 +201,10 @@
     padding: 0 16px;
   }
 }
+.person_top .description.irina {
+  display: flex;
+  flex-direction: column;
+}
 .person_top .description h1 {
   width: 100%;
   max-width: 595px;
@@ -247,6 +254,15 @@
 .person_top .description h1.komarova span {
   margin-top: 10px;
   padding-left: 45px;
+}
+.person_top .description h1.irina {
+  position: relative;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+.person_top .description h1.irina span {
+  margin-top: 10px;
+  padding-left: 16px;
 }
 .person_top .description .slogans_block {
   display: flex;
@@ -391,6 +407,32 @@
 .person_top .description .slogans_block.komarova .bottom {
   width: unset;
   align-self: center;
+}
+.person_top .description .slogans_block.irina {
+  gap: 37px;
+}
+@media (max-width: 768px) {
+  .person_top .description .slogans_block.irina {
+    margin-top: calc(100px + 102 * (100vw - 390px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .person_top .description .slogans_block.irina {
+    margin-top: calc(100px + 60 * 0.0520833333vw);
+  }
+}
+@media screen and (max-width: 800px) {
+  .person_top .description .slogans_block.irina {
+    margin-top: 0;
+  }
+}
+.person_top .description .slogans_block.irina .top {
+  line-height: 1.3;
+  max-width: 540px;
+}
+.person_top .description .slogans_block.irina .middle {
+  max-width: 540px;
+  text-align: end;
 }
 .person_top .description .slogans_block span.upper {
   font-size: 32px;
@@ -1356,4 +1398,123 @@
   .komarova_bottom .grid_item.d img {
     border-radius: 16px;
   }
+}
+
+.irina_lukatskaya_page {
+  overflow: hidden;
+}
+
+.irina_grid_container {
+  margin-top: 168px;
+  margin-bottom: 100px;
+}
+.irina_grid_container .flex_container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .irina_grid_container .flex_container.desc {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .irina_grid_container .flex_container {
+    flex-direction: column;
+  }
+  .irina_grid_container .flex_container.middle {
+    flex-direction: column-reverse;
+  }
+  .irina_grid_container .flex_container .text {
+    text-align: center !important;
+  }
+}
+@media screen and (min-width: 769px) {
+  .irina_grid_container .flex_container.top {
+    margin-bottom: 94px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .irina_grid_container .flex_container.middle {
+    margin-bottom: 113px;
+  }
+}
+.irina_grid_container .flex_container.middle .text {
+  text-align: end;
+}
+.irina_grid_container .flex_container.middle .title {
+  height: 280px;
+}
+.irina_grid_container .flex_container.middle .title img {
+  transform: translate(-55%, -40%);
+}
+.irina_grid_container .flex_container.bottom .title .title_img {
+  position: relative;
+}
+.irina_grid_container .flex_container.bottom .title .decor {
+  transform: translate(-50%, -50%);
+}
+.irina_grid_container .grid_item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.irina_grid_container .grid_item .title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 105px;
+}
+.irina_grid_container .grid_item .decor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+.irina_grid_container .grid_item h4 {
+  position: relative;
+  font-size: 73px;
+}
+.irina_grid_container .grid_item h4.bold {
+  margin-left: 36px;
+  font-weight: 600;
+}
+.irina_grid_container .grid_item .text {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  z-index: 2;
+}
+.irina_grid_container .grid_item .text p {
+  font-size: 16px;
+  line-height: 1.3;
+}
+.irina_grid_container .grid_item .text p span {
+  font-weight: 600;
+}
+.irina_grid_container .splide.water_splide {
+  padding-bottom: 30px;
+}
+@media screen and (min-width: 769px) {
+  .irina_grid_container .splide.water_splide {
+    display: none;
+  }
+}
+.irina_grid_container .splide.water_splide .splide__track {
+  overflow: visible;
+}
+.irina_grid_container .splide.water_splide .splide__list {
+  height: unset;
+}
+.irina_grid_container .splide.water_splide .splide__pagination__page {
+  width: 10px !important;
+  height: 10px !important;
+  background: transparent;
+  border: 1px solid var(--brown);
+}
+.irina_grid_container .splide.water_splide .splide__pagination__page.is-active {
+  background-color: var(--brown);
+  transform: scale(1) !important;
 }/*# sourceMappingURL=person_page.css.map */

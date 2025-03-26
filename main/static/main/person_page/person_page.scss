@@ -101,6 +101,10 @@
             z-index: 1;
             transform-origin: center;
 
+            &.earth {
+                transform: translateY(-50%) translateX(-70%) rotate(0deg) scaleX(-1);
+            }
+
             &.air {
                 transform: translateY(-50%) translateX(-70%) rotate(85deg) scaleX(-1);
             }
@@ -193,6 +197,12 @@
             margin: 0;
             padding: 0 16px;
         }
+
+        &.irina {
+            display: flex;
+            flex-direction: column;
+        }
+
         h1 {
             width: 100%;
             max-width: 595px;
@@ -237,6 +247,16 @@
                 span {
                     margin-top: 10px;
                     padding-left: 45px;
+                }
+            }
+
+            &.irina {
+                position: relative;
+                max-width: min-content;
+
+                span {
+                    margin-top: 10px;
+                    padding-left: 16px;
                 }
             }
         }
@@ -357,6 +377,24 @@
                 .bottom {
                     width: unset;
                     align-self: center;
+                }
+            }
+
+            &.irina {
+                gap: 37px;
+                @include common.adaptiveProperty(margin-top, 160, 100);
+
+                @include common.mediaMaxWidth(800) {
+                    margin-top: 0;
+                }
+
+                .top {
+                    line-height: 1.3;
+                    max-width: 540px;
+                }
+                .middle {
+                    max-width: 540px;
+                    text-align: end;
                 }
             }
 
@@ -1306,6 +1344,146 @@
                 @include common.mediaMaxWidth(640) {
                     border-radius: 16px;
                 }
+            }
+        }
+    }
+}
+
+.irina_lukatskaya_page {
+    overflow: hidden;
+}
+
+.irina_grid_container {
+    margin-top: 168px;
+    margin-bottom: 100px;
+    
+    .flex_container {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        gap: 40px;
+
+        &.desc {
+            @include common.mediaMaxWidth(768) {
+                display: none;
+            }
+        }
+
+        @include common.mediaMaxWidth(768) {
+            flex-direction: column;
+
+            &.middle {
+                flex-direction: column-reverse;
+            }
+
+            .text {
+                text-align: center !important;
+            }
+        }
+
+        &.top { 
+            @include common.mediaMinWidth(769) {
+                margin-bottom: 94px;
+            }
+        }
+
+        &.middle {
+            @include common.mediaMinWidth(769){
+                margin-bottom: 113px;
+            }
+
+            .text {
+                text-align: end;
+            }
+
+            .title {
+                height: 280px;
+
+                & img {
+                    transform: translate(-55%, -40%);
+                }
+            }
+        }
+
+        &.bottom {
+            .title {
+                .title_img {
+                    position: relative;
+                }
+                .decor {
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+
+
+    .grid_item {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        
+        .title {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 105px;
+        }
+
+        .decor {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+        }
+
+        & h4 {
+            position: relative;
+            font-size: 73px;
+
+            &.bold {
+                margin-left: 36px;
+                font-weight: 600;
+            }
+        }
+
+        .text {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            z-index: 2;
+
+            & p {
+                font-size: 16px;
+                line-height: 1.3;
+
+                & span {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .splide.water_splide {
+        padding-bottom: 30px;
+        @include common.mediaMinWidth(769) {
+            display: none;
+        }
+        .splide__track {
+            overflow: visible;
+        }
+        .splide__list {
+            height: unset;
+        }
+        .splide__pagination__page {
+            width: 10px !important;
+            height: 10px !important;
+            background: transparent;
+            border: 1px solid var(--brown);
+    
+            &.is-active {
+                background-color: var(--brown);
+                transform: scale(1) !important;
             }
         }
     }
