@@ -195,6 +195,7 @@ img {
         margin-bottom: 15px;
         color: var(--white);
         text-align: center;
+        transition: opacity 0.5s;
     }
 
     .body {
@@ -300,6 +301,31 @@ img {
                     display: flex;
                 }
             }
+        }
+    }
+
+    .success_message {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        display: none;
+        opacity: 0;
+        animation: Open 0.7s forwards;
+        animation-delay: 0.5s;
+        z-index: 1;
+
+        &.active {
+            display: flex;
+        }
+
+        & h4 {
+            max-width: 120px;
         }
     }
 
