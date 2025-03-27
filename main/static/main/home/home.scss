@@ -784,7 +784,7 @@
             grid-area: s8;
             .label {
                 top: 0px;
-                left: 40%;
+                right: 10%;
                 transition: 0.3s cubic-bezier(.56,-0.64,.42,1.5);
             }
             .description {
@@ -818,7 +818,7 @@
             @include common.mediaMinWidth(992) {
                 &:hover {
                     .label {
-                        left: 30px;
+                        right: 30%;
                         opacity: 0;
                     }
                 }
@@ -826,7 +826,7 @@
             @include common.mediaMaxWidth(991) {
                 &.active {
                     .label {
-                        left: 30px;
+                        right: 30%;
                         opacity: 0;
                     }
                     .description {

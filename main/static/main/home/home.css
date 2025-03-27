@@ -732,7 +732,7 @@
 }
 .scenaries .scenaries_item.s8 .label {
   top: 0px;
-  left: 40%;
+  right: 10%;
   transition: 0.3s cubic-bezier(0.56, -0.64, 0.42, 1.5);
 }
 .scenaries .scenaries_item.s8 .description {
@@ -765,13 +765,13 @@
 }
 @media screen and (min-width: 992px) {
   .scenaries .scenaries_item.s8:hover .label {
-    left: 30px;
+    right: 30%;
     opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s8.active .label {
-    left: 30px;
+    right: 30%;
     opacity: 0;
   }
   .scenaries .scenaries_item.s8.active .description .title_block {
