@@ -3,7 +3,7 @@ from django.db import models
 class Seo(models.Model):
     page = models.CharField('Название страницы', max_length=100)
     title = models.CharField('Заглавие', max_length=100, blank=True)
-    description = models.CharField('Описание страницы', max_length=500, blank=True)
+    description = models.TextField('Описание страницы', blank=True)
     keywords = models.CharField('Ключевые слова', max_length=500, blank=True)
     h1 = models.CharField('Заголовок', max_length=300, null=True, blank=True)
     url = models.CharField('Ссылка', max_length=500, null=True, blank=True)
@@ -28,3 +28,16 @@ class Applications(models.Model):
     class Meta:
         verbose_name = 'Заявка'
         verbose_name_plural = 'Заявки'
+
+
+class Scenaries(models.Model):
+    title = models.CharField('Название', max_length=100, null=True, blank=True)
+    description = models.TextField('Описание', null=True, blank=True)
+    label_image = models.FileField(upload_to='images/scenaries/', null=True, blank=True, verbose_name='Лэйбл')
+
+    def __str__(self):
+        return f'{self.title}'
+    
+    class Meta:
+        verbose_name = 'Сценарии'
+        verbose_name_plural = 'Сценарии'

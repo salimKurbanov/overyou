@@ -6,7 +6,7 @@
 {% block headline %}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
 {% block url %}{{ url }}{% endblock %}
-{% block image %}{{ image }}{% endblock %}
+{% block image %}{{ image.url }}{% endblock %}
 {% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
@@ -14,10 +14,50 @@
     <link rel="stylesheet" href="{% static 'main/splide/splide.min.css' %}">
     <script src="{% static 'main/scripts/splide.min.js' %}" defer></script>
     <script src="{% static 'main/person_page/person_page.js' %}" defer></script>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "[ФИО] Психоаналитик",
+          "image": "https://example.com/фото-психолога.jpg",
+          "description": "Опытный психоаналитик с многолетней практикой. Помогаю разобраться в глубинных причинах психологических проблем.",
+          "jobTitle": "Психоаналитик",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Улица, дом, офис",
+            "addressLocality": "Город",
+            "addressRegion": "Регион",
+            "postalCode": "Индекс"
+          },
+          "telephone": "+71234567890",
+          "email": "info@example.com",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "10:00",
+              "closes": "20:00"
+            }
+          ],
+          "knowsAbout": ["Психоанализ", "Психотерапия", "Фрейдизм"],
+          "url": "https://example.com/услуги",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://example.com/психолог" // URL вашей страницы!
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block content %}
-
+    
     <div class="person_top">
 
         <div class="title_mob">
@@ -27,16 +67,16 @@
 
         <div class="navigation">
             <a href="{% url 'air_page' %}" class="person_link a">
-                <img src="{% static 'main/images/person_page/air_person.png' %}" alt="">
+                <img src="{% static 'main/images/person_page/air_person.png' %}" alt="Переход на страницу Ирина Свирина">
             </a>
             <div class="person_link b active">
-                <img src="{% static 'main/images/person_page/fire_person_active.svg' %}" alt="">
+                <img src="{% static 'main/images/person_page/fire_person_active.svg' %}" alt="Страница Станислав Саначев">
             </div>
             <a href="{% url 'water_page' %}" class="person_link d">
-                <img src="{% static 'main/images/person_page/water_person.png' %}" alt="">
+                <img src="{% static 'main/images/person_page/water_person.png' %}" alt="Переход на страницу Ульяна Лукацкая">
             </a>
             <a href="{% url 'earth_page' %}" class="person_link c">
-                <img src="{% static 'main/images/person_page/earth_person.png' %}" alt="">
+                <img src="{% static 'main/images/person_page/earth_person.png' %}" alt="Переход на страницу Ульяна Комарова">
             </a>
             <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element">
         </div>
@@ -63,7 +103,7 @@
         </div>
         
         <div class="image_block">
-            <img src="{% static 'main/images/person_page/stanislav.jpg' %}" alt="">
+            <img src="{% static 'main/images/person_page/stanislav.webp' %}" alt="">
         </div>
     </div>
 

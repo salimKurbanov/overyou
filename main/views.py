@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import render
-from .models import Seo, Applications
+from .models import Seo, Applications, Scenaries
 from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -30,6 +30,9 @@ def home(request):
             'image': ''
         }
 
+    scenaries = Scenaries.objects.all()
+    context['scenaries'] = scenaries
+
     return render(request, 'main/home.html', context)
 
 @ensure_csrf_cookie
@@ -38,7 +41,7 @@ def process_form(request):
         try:
             data = json.loads(request.body)
             type = data.get('type')
-            contact = data.get('telegram')
+            contact = data.get('contact')
             name = data.get('name')
             message = data.get('message')
             
