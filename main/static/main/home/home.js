@@ -51,8 +51,6 @@ const switchDescription = () => {
     const secondaryAttribute = randomSecondaryElement.getAttribute('data-id')
 
     randomMainElement.classList.remove('main')
-
-    setTimeout(() => {
       randomMainElement.setAttribute('data-id', secondaryAttribute)
       randomMainElement.classList.remove(mainAttribute)
       randomMainElement.classList.add('secondary')
@@ -62,8 +60,7 @@ const switchDescription = () => {
       randomSecondaryElement.classList.remove('secondary')
       randomSecondaryElement.classList.remove(secondaryAttribute)
       randomSecondaryElement.classList.add('main')
-      randomSecondaryElement.classList.add(mainAttribute)  
-    }, 2000)
+      randomSecondaryElement.classList.add(mainAttribute)
 }
 
 // Идентификатор интервала

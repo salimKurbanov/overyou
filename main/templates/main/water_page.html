@@ -6,7 +6,7 @@
 {% block headline %}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
 {% block url %}{{ url }}{% endblock %}
-{% block image %}{{ image }}{% endblock %}
+{% block image %}{{ image.url }}{% endblock %}
 {% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
@@ -14,6 +14,45 @@
     <link rel="stylesheet" href="{% static 'main/splide/splide.min.css' %}">
     <script src="{% static 'main/scripts/splide.min.js' %}" defer></script>
     <script src="{% static 'main/person_page/person_page.js' %}" defer></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "[ФИО] Психоаналитик",
+          "image": "https://example.com/фото-психолога.jpg",
+          "description": "Опытный психоаналитик с многолетней практикой. Помогаю разобраться в глубинных причинах психологических проблем.",
+          "jobTitle": "Психоаналитик",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Улица, дом, офис",
+            "addressLocality": "Город",
+            "addressRegion": "Регион",
+            "postalCode": "Индекс"
+          },
+          "telephone": "+71234567890",
+          "email": "info@example.com",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "10:00",
+              "closes": "20:00"
+            }
+          ],
+          "knowsAbout": ["Психоанализ", "Психотерапия", "Фрейдизм"],
+          "url": "https://example.com/услуги",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://example.com/психолог" // URL вашей страницы!
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block content %}
@@ -40,7 +79,7 @@
             <a href="{% url 'air_page' %}" class="person_link c">
                 <img src="{% static 'main/images/person_page/air_person.png' %}" alt="">
             </a>
-            <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element">
+            <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element water">
         </div>
     
         <div class="description irina">

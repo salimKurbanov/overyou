@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.exceptions import PermissionDenied
+
 
 class Seo(models.Model):
     page = models.CharField('Название страницы', max_length=100)
@@ -15,6 +17,7 @@ class Seo(models.Model):
     class Meta:
         verbose_name = 'SEO'
         verbose_name_plural = 'SEO'
+
 
 class Applications(models.Model):
     type = models.CharField('Тип', max_length=100, null=True, blank=True)
