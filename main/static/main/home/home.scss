@@ -387,9 +387,12 @@
         position: relative;
         border-radius: 16px;
         font-size: 16px;
-        transition: 0.8s;
+
         &.main {
             // opacity: 1;
+            width: auto;
+            height: auto;
+            overflow: visible;
             .label {
                 h4 {
                     opacity: 1;
@@ -402,6 +405,9 @@
         &.secondary {
             // transition: 0s;
             // opacity: 0;
+            height: 0;
+            width: 0;
+            overflow: hidden;
             .label {
                 h4 {
                     opacity: 0;

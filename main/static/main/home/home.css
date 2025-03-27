@@ -383,13 +383,22 @@
   position: relative;
   border-radius: 16px;
   font-size: 16px;
-  transition: 0.8s;
+}
+.scenaries .scenaries_item.main {
+  width: auto;
+  height: auto;
+  overflow: visible;
 }
 .scenaries .scenaries_item.main .label h4 {
   opacity: 1;
 }
 .scenaries .scenaries_item.main .label img {
   opacity: 1;
+}
+.scenaries .scenaries_item.secondary {
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
 .scenaries .scenaries_item.secondary .label h4 {
   opacity: 0;
