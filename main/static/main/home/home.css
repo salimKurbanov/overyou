@@ -383,13 +383,22 @@
   position: relative;
   border-radius: 16px;
   font-size: 16px;
-  transition: 0.8s;
+}
+.scenaries .scenaries_item.main {
+  width: auto;
+  height: auto;
+  overflow: visible;
 }
 .scenaries .scenaries_item.main .label h4 {
   opacity: 1;
 }
 .scenaries .scenaries_item.main .label img {
   opacity: 1;
+}
+.scenaries .scenaries_item.secondary {
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
 .scenaries .scenaries_item.secondary .label h4 {
   opacity: 0;
@@ -732,7 +741,7 @@
 }
 .scenaries .scenaries_item.s8 .label {
   top: 0px;
-  left: 40%;
+  right: 10%;
   transition: 0.3s cubic-bezier(0.56, -0.64, 0.42, 1.5);
 }
 .scenaries .scenaries_item.s8 .description {
@@ -765,13 +774,13 @@
 }
 @media screen and (min-width: 992px) {
   .scenaries .scenaries_item.s8:hover .label {
-    left: 30px;
+    right: 30%;
     opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s8.active .label {
-    left: 30px;
+    right: 30%;
     opacity: 0;
   }
   .scenaries .scenaries_item.s8.active .description .title_block {

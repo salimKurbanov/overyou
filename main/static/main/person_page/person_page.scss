@@ -108,6 +108,10 @@
             &.air {
                 transform: translateY(-50%) translateX(-70%) rotate(85deg) scaleX(-1);
             }
+            
+            &.water {
+                transform: translateY(-50%) translateX(-70%) rotate(-90deg) scaleX(-1);
+            }
 
             @include common.mediaMaxWidth(1450) {
                 width: 350px;
@@ -967,7 +971,7 @@
         @include common.mediaMaxWidth(800) {
             padding-top: 0px;   
             margin-top: 80px;
-            margin-bottom: 800px;
+            margin-bottom: 100px;
         }
 
         .bird_block {
@@ -1244,6 +1248,7 @@
     justify-content: space-between;
     gap: 38px 25px;
     grid-template-rows: 192px auto;
+    margin-bottom: 100px;
 
     @include common.mediaMaxWidth(640) {
         grid-template-columns: 1fr 1fr;

@@ -387,9 +387,12 @@
         position: relative;
         border-radius: 16px;
         font-size: 16px;
-        transition: 0.8s;
+
         &.main {
             // opacity: 1;
+            width: auto;
+            height: auto;
+            overflow: visible;
             .label {
                 h4 {
                     opacity: 1;
@@ -402,6 +405,9 @@
         &.secondary {
             // transition: 0s;
             // opacity: 0;
+            height: 0;
+            width: 0;
+            overflow: hidden;
             .label {
                 h4 {
                     opacity: 0;
@@ -784,7 +790,7 @@
             grid-area: s8;
             .label {
                 top: 0px;
-                left: 40%;
+                right: 10%;
                 transition: 0.3s cubic-bezier(.56,-0.64,.42,1.5);
             }
             .description {
@@ -818,7 +824,7 @@
             @include common.mediaMinWidth(992) {
                 &:hover {
                     .label {
-                        left: 30px;
+                        right: 30%;
                         opacity: 0;
                     }
                 }
@@ -826,7 +832,7 @@
             @include common.mediaMaxWidth(991) {
                 &.active {
                     .label {
-                        left: 30px;
+                        right: 30%;
                         opacity: 0;
                     }
                     .description {

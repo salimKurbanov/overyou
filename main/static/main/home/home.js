@@ -4,6 +4,7 @@ const main_element = nature.querySelector('.main_element');
 const scenaries_items = document.querySelectorAll('.scenaries_item');
 const tabs = document.querySelectorAll('.tab')
 let intervalId; // Глобальная переменная для хранения ID
+const intervalTime = 10000
 const sliders = {
     1: document.getElementById('activities_slider_1'),
     2: document.getElementById('activities_slider_2'),
@@ -49,26 +50,23 @@ const switchDescription = () => {
 
     const mainAttribute = randomMainElement.getAttribute('data-id')
     const secondaryAttribute = randomSecondaryElement.getAttribute('data-id')
-
+    
     randomMainElement.classList.remove('main')
+    randomMainElement.setAttribute('data-id', secondaryAttribute)
+    randomMainElement.classList.remove(mainAttribute)
+    randomMainElement.classList.add('secondary')
+    randomMainElement.classList.add(secondaryAttribute)
 
-    setTimeout(() => {
-      randomMainElement.setAttribute('data-id', secondaryAttribute)
-      randomMainElement.classList.remove(mainAttribute)
-      randomMainElement.classList.add('secondary')
-      randomMainElement.classList.add(secondaryAttribute)
-  
-      randomSecondaryElement.setAttribute('data-id', mainAttribute)
-      randomSecondaryElement.classList.remove('secondary')
-      randomSecondaryElement.classList.remove(secondaryAttribute)
-      randomSecondaryElement.classList.add('main')
-      randomSecondaryElement.classList.add(mainAttribute)  
-    }, 2000)
+    randomSecondaryElement.setAttribute('data-id', mainAttribute)
+    randomSecondaryElement.classList.remove('secondary')
+    randomSecondaryElement.classList.remove(secondaryAttribute)
+    randomSecondaryElement.classList.add('main')
+    randomSecondaryElement.classList.add(mainAttribute)
 }
 
 // Идентификатор интервала
 const interval = () => {
-  intervalId = setInterval(switchDescription, 3000);
+  intervalId = setInterval(switchDescription, intervalTime);
 };
 
 // Запуск интервала
@@ -88,7 +86,7 @@ const startSwitch = () => {
   const windowWidth = window.innerWidth
 
   if(windowWidth > 991) {
-    intervalId = setInterval(switchDescription, 3000); 
+    intervalId = setInterval(switchDescription, intervalTime); 
   }
 }
 
