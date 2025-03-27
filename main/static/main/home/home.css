@@ -374,7 +374,7 @@
 }
 @media screen and (max-width: 991px) {
   .scenaries {
-    grid-template-areas: "s6 s6 s6 s1 s1 s1 e e e e e e" "s6 s6 s6 s1 s1 s1 s9 s9 s9 s9 s9 s9" "g g g g g g s4 s4 s4 s4 s4 s4" "s3 s3 s3 s3 s3 s3 s2 s2 s2 s2 s2 s2" "s11 s11 s11 s11 s11 s11 s11 s11 s8 s8 s8 s8" "s10 s10 s10 s10 s10 s10 s10 s10 l l l l";
+    grid-template-areas: "s6 s6 s6 s1 s1 s1 e e e e e e" "s6 s6 s6 s1 s1 s1 s9 s9 s9 s9 s9 s9" "g g g g g g s4 s4 s4 s4 s4 s4" "s3 s3 s3 s3 s3 s3 s2 s2 s2 s2 s2 s2" "s11 s11 s11 s11 s11 s11 s11 s11 s8 s8 s8 s8" "s10 s10 s10 s10 s10 s10 s10 s10 s10 s10 s10 s10";
     grid-template-rows: 185px 202px 202px 140px 133px 133px;
   }
 }
@@ -384,10 +384,16 @@
   font-size: 16px;
   transition: 0.8s;
 }
-.scenaries .scenaries_item.main {
+.scenaries .scenaries_item.main .label h4 {
   opacity: 1;
 }
-.scenaries .scenaries_item.secondary {
+.scenaries .scenaries_item.main .label img {
+  opacity: 1;
+}
+.scenaries .scenaries_item.secondary .label h4 {
+  opacity: 0;
+}
+.scenaries .scenaries_item.secondary .label img {
   opacity: 0;
 }
 @media screen and (max-width: 768px) {
@@ -447,6 +453,7 @@
 }
 .scenaries .scenaries_item .label img {
   min-width: 20px;
+  transition: 1s;
 }
 .scenaries .scenaries_item .label h4 {
   text-transform: lowercase;
@@ -454,6 +461,7 @@
   width: min-content;
   font-size: 16px;
   line-height: 130%;
+  transition: 1s;
 }
 @media screen and (max-width: 768px) {
   .scenaries .scenaries_item .label {
@@ -544,6 +552,7 @@
   .scenaries .scenaries_item.s1.active .label {
     transform: translateX(10%);
     top: 70px;
+    opacity: 0;
   }
 }
 .scenaries .scenaries_item.s2 {
@@ -577,11 +586,13 @@
 @media screen and (min-width: 992px) {
   .scenaries .scenaries_item.s2:hover .label {
     left: 30px;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s2.active .label {
     left: 30px;
+    opacity: 0;
   }
   .scenaries .scenaries_item.s2.active .description .title_block {
     left: 0;
@@ -591,10 +602,9 @@
   grid-area: s3;
 }
 .scenaries .scenaries_item.s3 .label {
-  top: 50%;
+  top: calc(50% - 25px);
   left: 30%;
   transition: 0.3s cubic-bezier(0.56, -0.64, 0.42, 1.5);
-  transform: translateY(-50%);
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s3 .label {
@@ -633,12 +643,14 @@
   .scenaries .scenaries_item.s3:hover .label {
     top: 30%;
     left: 10%;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s3.active .label {
     top: 30%;
     left: 10%;
+    opacity: 0;
   }
   .scenaries .scenaries_item.s3.active .description .title_block {
     transition-delay: 0.1s;
@@ -666,10 +678,18 @@
   grid-area: s6;
 }
 .scenaries .scenaries_item.s6 .label {
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(50% - 25px);
   left: 0;
   transition: 0.3s cubic-bezier(0.48, -1.68, 0.55, 1.9);
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  gap: 6px;
+}
+.scenaries .scenaries_item.s6 .label h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .scenaries .scenaries_item.s6 .description {
   background-image: url("./../images/mount_back.svg");
@@ -700,6 +720,7 @@
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s6.active .label {
     top: 20%;
+    opacity: 0;
   }
   .scenaries .scenaries_item.s6.active .description .title_block {
     top: 0;
@@ -744,11 +765,13 @@
 @media screen and (min-width: 992px) {
   .scenaries .scenaries_item.s8:hover .label {
     left: 30px;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s8.active .label {
     left: 30px;
+    opacity: 0;
   }
   .scenaries .scenaries_item.s8.active .description .title_block {
     transition-delay: 0.1s;
@@ -760,10 +783,9 @@
   grid-area: s9;
 }
 .scenaries .scenaries_item.s9 .label {
-  top: 50%;
+  top: calc(50% - 25px);
   left: 30%;
   transition: 0.3s cubic-bezier(0.56, -0.64, 0.42, 1.5);
-  transform: translateY(-50%);
 }
 .scenaries .scenaries_item.s9 .description {
   background-image: url("./../images/air_back.svg");
@@ -792,12 +814,14 @@
   .scenaries .scenaries_item.s9:hover .label {
     top: 30%;
     left: 10%;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s9.active .label {
     top: 30%;
     left: 10%;
+    opacity: 0;
   }
   .scenaries .scenaries_item.s9.active .description .title_block {
     transition-delay: 0.1s;
@@ -841,11 +865,13 @@
 @media screen and (min-width: 992px) {
   .scenaries .scenaries_item.s10:hover .label {
     left: 30px;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s10.active .label {
     left: 30px;
+    opacity: 0;
   }
   .scenaries .scenaries_item.s10.active .description .title_block {
     left: 0;
@@ -892,11 +918,13 @@
 @media screen and (min-width: 992px) {
   .scenaries .scenaries_item.s11:hover .label {
     left: 30px;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 991px) {
   .scenaries .scenaries_item.s11.active .label {
     left: 30px;
+    opacity: 0;
   }
   .scenaries .scenaries_item.s11.active .description .title_block {
     left: 0;

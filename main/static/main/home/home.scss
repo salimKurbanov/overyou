@@ -377,7 +377,7 @@
             'g g g g g g s4 s4 s4 s4 s4 s4'
             's3 s3 s3 s3 s3 s3 s2 s2 s2 s2 s2 s2'
             's11 s11 s11 s11 s11 s11 s11 s11 s8 s8 s8 s8'
-            's10 s10 s10 s10 s10 s10 s10 s10 l l l l'
+            's10 s10 s10 s10 s10 s10 s10 s10 s10 s10 s10 s10'
         ;
         grid-template-rows: 185px 202px 202px 140px 133px 133px;
     }
@@ -388,10 +388,27 @@
         font-size: 16px;
         transition: 0.8s;
         &.main {
-            opacity: 1;
+            // opacity: 1;
+            .label {
+                h4 {
+                    opacity: 1;
+                }
+                img {
+                    opacity: 1;
+                }
+            }
         }
         &.secondary {
-            opacity: 0;
+            // transition: 0s;
+            // opacity: 0;
+            .label {
+                h4 {
+                    opacity: 0;
+                }
+                img {
+                    opacity: 0;
+                }
+            }
         }
 
         @include common.mediaMaxWidth(768) {
@@ -450,8 +467,10 @@
             background-color: var(--white);
             overflow: hidden;
 
+
             img {
                 min-width: 20px;
+                transition: 1s;
             }
 
             h4 {
@@ -459,6 +478,7 @@
                 width: min-content;
                 font-size: 16px;
                 line-height: 130%;
+                transition: 1s;
             }
 
             @include common.mediaMaxWidth(768) {
@@ -557,6 +577,7 @@
                     .label {
                         transform: translateX(10%);
                         top: 70px;
+                        opacity: 0;
                     }
                 }
             }
@@ -594,6 +615,7 @@
                 &:hover {
                     .label {
                         left: 30px;
+                        opacity: 0;
                     }
                 }
             }
@@ -601,6 +623,7 @@
                 &.active {
                     .label {
                         left: 30px;
+                        opacity: 0;
                     }
                     .description {
                         .title_block {
@@ -613,10 +636,9 @@
         &.s3 {
             grid-area: s3;
             .label {
-                top: 50%;
+                top: calc(50% - 25px);
                 left: 30%;
                 transition: 0.3s cubic-bezier(.56,-0.64,.42,1.5);
-                transform: translateY(-50%);
                 @include common.mediaMaxWidth(991) {
                     left: 54%;
                 }
@@ -654,6 +676,7 @@
                     .label {
                         top: 30%;
                         left: 10%;
+                        opacity: 0;
                     }
                 }
             }
@@ -662,6 +685,7 @@
                     .label {
                         top: 30%;
                         left: 10%;
+                        opacity: 0;
                     }
                     .description {
                         .title_block {
@@ -692,10 +716,17 @@
         &.s6 {
             grid-area: s6;
             .label {
-                top: 50%;
-                transform: translateY(-50%);
+                top: calc(50% - 25px);
                 left: 0;
                 transition: 0.3s cubic-bezier(.48,-1.68,.55,1.9);
+                width: max-content;
+                max-width: 100%;
+                gap:6px;
+                h4 {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
             .description {
                 background-image: url('./../images/mount_back.svg');
@@ -707,6 +738,9 @@
                     left: 0;
                     transition: 0.3s cubic-bezier(.56,-0.64,.42,1.5);
                     // transition-delay: 0.1s;
+                    h4 {
+                        // word-break: break-word
+                    }
                 }
                 p {
                     -webkit-line-clamp: 18;
@@ -734,6 +768,7 @@
                 &.active {
                     .label {
                         top: 20%;
+                        opacity: 0;
                     }
                     .description {
                         .title_block {
@@ -783,6 +818,7 @@
                 &:hover {
                     .label {
                         left: 30px;
+                        opacity: 0;
                     }
                 }
             }
@@ -790,6 +826,7 @@
                 &.active {
                     .label {
                         left: 30px;
+                        opacity: 0;
                     }
                     .description {
                         .title_block {
@@ -805,10 +842,9 @@
         &.s9 {
             grid-area: s9;
             .label {
-                top: 50%;
+                top: calc(50% - 25px);
                 left: 30%;
                 transition: 0.3s cubic-bezier(.56,-0.64,.42,1.5);
-                transform: translateY(-50%);
             }
             .description {
                 background-image: url('./../images/air_back.svg');
@@ -840,6 +876,7 @@
                     .label {
                         top: 30%;
                         left: 10%;
+                        opacity: 0;
                     }
                 }
             }
@@ -848,6 +885,7 @@
                     .label {
                         top: 30%;
                         left: 10%;
+                        opacity: 0;
                     }
                     .description {
                         .title_block {
@@ -895,6 +933,7 @@
                 &:hover {
                     .label {
                         left: 30px;
+                        opacity: 0;
                     }
                 }
             }
@@ -902,6 +941,7 @@
                 &.active {
                     .label {
                         left: 30px;
+                        opacity: 0;
                     }
                     .description {
                         .title_block {
@@ -951,6 +991,7 @@
                 &:hover {
                     .label {
                         left: 30px;
+                        opacity: 0;
                     }
                 }
             }
@@ -958,6 +999,7 @@
                 &.active {
                     .label {
                         left: 30px;
+                        opacity: 0;
                     }
                     .description {
                         .title_block {

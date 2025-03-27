@@ -3,6 +3,7 @@ const nature_items = nature.querySelectorAll('.grid_item');
 const main_element = nature.querySelector('.main_element');
 const scenaries_items = document.querySelectorAll('.scenaries_item');
 const tabs = document.querySelectorAll('.tab')
+let intervalId; // Глобальная переменная для хранения ID
 const sliders = {
     1: document.getElementById('activities_slider_1'),
     2: document.getElementById('activities_slider_2'),
@@ -29,9 +30,8 @@ const openDescription = (e) => {
     }
 }
 
+// Переключение сценариев
 const switchDescription = () => {
-
-    const windowWidth = window.innerWidth
 
     const main_scenaries = document.querySelectorAll('.scenaries_item.main')
     const secondary_scenaries = document.querySelectorAll('.scenaries_item.secondary')
@@ -43,8 +43,6 @@ const switchDescription = () => {
     const randomSecondaryElement = secondary_scenaries[randomSecondaryIndex]
 
     if(randomMainElement.classList.contains('active')) {
-        console.log('active');
-        
         switchDescription()
         return
     }
@@ -52,28 +50,49 @@ const switchDescription = () => {
     const mainAttribute = randomMainElement.getAttribute('data-id')
     const secondaryAttribute = randomSecondaryElement.getAttribute('data-id')
 
-    randomMainElement.setAttribute('data-id', secondaryAttribute)
     randomMainElement.classList.remove('main')
-    randomMainElement.classList.remove(mainAttribute)
-    randomMainElement.classList.add('secondary')
-    randomMainElement.classList.add(secondaryAttribute)
 
-    randomSecondaryElement.setAttribute('data-id', mainAttribute)
-    randomSecondaryElement.classList.remove('secondary')
-    randomSecondaryElement.classList.remove(secondaryAttribute)
-    randomSecondaryElement.classList.add('main')
-    randomSecondaryElement.classList.add(mainAttribute)
-    
+    setTimeout(() => {
+      randomMainElement.setAttribute('data-id', secondaryAttribute)
+      randomMainElement.classList.remove(mainAttribute)
+      randomMainElement.classList.add('secondary')
+      randomMainElement.classList.add(secondaryAttribute)
+  
+      randomSecondaryElement.setAttribute('data-id', mainAttribute)
+      randomSecondaryElement.classList.remove('secondary')
+      randomSecondaryElement.classList.remove(secondaryAttribute)
+      randomSecondaryElement.classList.add('main')
+      randomSecondaryElement.classList.add(mainAttribute)  
+    }, 2000)
 }
 
-const interval = () => setInterval(switchDescription, 2000)
+// Идентификатор интервала
+const interval = () => {
+  intervalId = setInterval(switchDescription, 3000);
+};
 
+// Запуск интервала
+interval(); 
+
+// Остановка интервала
 const stopSwitch = () => {
-  clearInterval(interval)
+  const windowWidth = window.innerWidth
+
+  if(windowWidth > 991) {
+    clearInterval(intervalId); 
+  }
+};
+
+// Запуск интервала
+const startSwitch = () => {
+  const windowWidth = window.innerWidth
+
+  if(windowWidth > 991) {
+    intervalId = setInterval(switchDescription, 3000); 
+  }
 }
 
-interval()
-
+// Переключение табов
 const switchTab = (event, number) => {
     if(event.target.classList.contains('active')) return
 
@@ -111,6 +130,7 @@ window.addEventListener('click', () => {
     main_element.className = 'main_element';
 })
 
+// Слайдеры
 document.addEventListener('DOMContentLoaded', function () {
     new Splide('#main_slider', {
         // type: 'loop', 
