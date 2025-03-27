@@ -6,7 +6,7 @@
 {% block headline %}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
 {% block url %}{{ url }}{% endblock %}
-{% block image %}{{ image.url }}{% endblock %}
+{% block image %}{% if image %}{{ image.url }}{% endif %}{% endblock %}
 {% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
