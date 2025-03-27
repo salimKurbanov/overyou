@@ -1,7 +1,787 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Сверх ТЫ{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block headline %}{% endblock %}
+{% block keywords %}{{ keywords }}{% endblock %}
+{% block url %}{{ url }}{% endblock %}
+{% block image %}{{ image.url }}{% endblock %}
+{% block about %}{{ keywords }}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main/home/home.css' %}">
+    <link rel="stylesheet" href="{% static 'main/splide/splide.min.css' %}">
+    <script src="{% static 'main/scripts/splide.min.js' %}" defer></script>
+    <script src="{% static 'main/home/home.js' %}" defer></script>
+{% endblock %}
 
 {% block content %}
+    <div class="container hidden_text noselect">
+        <div class="focus_state">
+            <h2 class="state one">
+                С<img class="romb" src="{% static 'main/images/romb.svg' %}" alt="">вершай себя
+            </h2>
+            <h2 class="state two">
+                <span>СВЕРШАЙ СЕБЯ</span>
+                <img class="man" src="{% static 'main/images/man.png' %}" alt="">
+            </h2>
+        </div>
+    </div>
+
+    <div class="slider_container">
+        <section id="main_slider" class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="image_wrapper">
+                            <img class="left" src="{% static 'main/images/main_slider/image1.jpg' %}" alt="">
+                            <p class="hover_text">Открытие себя</p>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="image_wrapper">
+                            <img class="left" src="{% static 'main/images/main_slider/image2.jpg' %}" alt="">
+                            <p class="hover_text">Открытие себя</p>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="image_wrapper">
+                            <img class="left" src="{% static 'main/images/main_slider/image3.jpg' %}" alt="">
+                            <p class="hover_text">Открытие себя</p>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="image_wrapper">
+                            <img src="{% static 'main/images/main_slider/image4.jpg' %}" alt="">
+                            <p class="hover_text">Открытие себя</p>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="image_wrapper">
+                            <img class="center" src="{% static 'main/images/main_slider/image5.jpg' %}" alt="">
+                            <p class="hover_text">Открытие себя</p>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="image_wrapper">
+                            <img src="{% static 'main/images/main_slider/image6.jpg' %}" alt="">
+                            <p class="hover_text">Открытие себя</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container">
+            <h1>Просто Психоанализ
+
+                <span class="decor">для просто Сверх тебя</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="container scenaries">
+
+        {% for scenary in scenaries %}
+            {% if scenary.title == 'Приветствие' %}
+                <div class="scenaries_item e" onclick="openDescription(event)">
+                    <p>
+                        Мы рады приветствовать вас в нашем <span>открытом</span> и в то же время очень приватном <span>пространстве</span>, так как психотерапия это про тонкое взаимодействие двоих в поиске <span>истины</span>
+                    </p>
+                </div>
+            {% elif scenary.title == 'Индивидуальная терапия' %}
+                <div class="scenaries_item g" onclick="openDescription(event)">
+                    <p>
+                        Если вы ощущаете нечто, что заставляет вас увязать в старых сценариях, <span>ходить по кругу</span> или любой другой дискомфорт, который не позволяет получать удовольствие от жизни, мы готовы стать <span>Вашим проводником</span> для познания истинного Себя
+                    </p>
+                </div>
+            {% else %}
+                <div 
+                    class="scenaries_item s{{ forloop.counter }} {% if forloop.counter == 1 %}active{% endif %} {% if forloop.counter < 12 %}main{% else %}secondary{% endif %}" 
+                    data-id="s{{ forloop.counter }}" 
+                    onclick="openDescription(event)" 
+                    onmouseover="stopSwitch()"
+                    onmouseleave="startSwitch()"
+                >
+                    <div class="description">
+                        <div class="title_block">
+                            <h4>{{ scenary.title }}</h4>
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="0.6">
+                                <path d="M18.05 8.03461C18.0527 7.83487 17.9746 7.64253 17.8333 7.50128C17.6921 7.36003 17.4997 7.28189 17.3 7.28461C16.8858 7.28461 16.55 7.62039 16.55 8.03461V16.1046L7.21999 6.76461C7.03302 6.56395 6.75144 6.48136 6.4857 6.54922C6.21997 6.61709 6.01247 6.82459 5.94461 7.09032C5.87674 7.35605 5.95934 7.63764 6.15999 7.82461L15.5 17.1646H7.42999C7.01578 17.1646 6.67999 17.5004 6.67999 17.9146C6.67999 18.3288 7.01578 18.6646 7.42999 18.6646H17.31C17.7242 18.6646 18.06 18.3288 18.06 17.9146L18.05 8.03461Z" fill="#31443A"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <p>{{ scenary.description }}</p>
+                    </div>
+                    
+                    <div class="label">
+                        <img src="{{ scenary.label_image.url }}" alt="">
+                        <h4>{{ scenary.title }}</h4>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="acquaintance container">
+
+        <div class="decor">
+            <img src="{% static 'main/images/acquaintances_decor.svg' %}" alt="">
+        </div>
+
+        <div class="acquaintance_head">
+            <div class="acquaintance_title">
+                <h2>Знакомство с собой настоящим открывает дверь в новое будущее</h2>
+            </div>
+            
+            <div class="rigth">
+                <div class="link_block">
+                    <a class="acquaintance_link" href="">подробнее о нас</a>
+                </div>
+                <img src="{% static 'main/images/Rotate.svg' %}" alt="">
+            </div>
+
+        </div>
+
+        <div class="acquaintance_grid">
+            <div class="image_block">
+                <img src="{% static 'main/images/acquaintances.svg' %}" alt="">
+                <a class="acquaintance_link from_image" href="">подробнее о нас</a>
+            </div>
+
+            <div class="factors">
+                <h3>Нашу жизнь формируют множество <span>факторов</span></h3>
+                <div class="factors_grid">
+                    <div class="factor_item border">
+                        <img src="{% static 'main/images/Rotate.svg' %}" alt="">
+                        <p>наше взаимодействие с нашими родителями в раннем детстве</p>
+                    </div>
+                    <div class="factor_item">
+                        <img src="{% static 'main/images/Rotate.svg' %}" alt="">
+                        <p>привычная сформированная реакция на те или иные события</p>
+                    </div>
+                    <div class="factor_item border">
+                        <img src="{% static 'main/images/Rotate.svg' %}" alt="">
+                        <p>убеждения</p>
+                    </div>
+                    <div class="factor_item">
+                        <img src="{% static 'main/images/Rotate.svg' %}" alt="">
+                        <p>полученный опыт</p>
+                    </div>
+                    <div class="factor_item border">
+                        <img src="{% static 'main/images/Rotate.svg' %}" alt="">
+                        <p>социальные нормы</p>
+                    </div>
+                    <div class="factor_item border">
+                        <img src="{% static 'main/images/Rotate.svg' %}" alt="">
+                        <p>культура</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description_block">
+                <p>
+                    Все сферы жизни буквально пронизаны этими <span>кластерами</span> и со временем они врезаются в наше сознание как наскальная живопись, заставляя нас встраивать свою судьбу в их трафарет. Плывя по заданному <span>не нами курсу</span> мы порой не замечаем как вновь и вновь оказываемся в ловушке повторяющихся прежних событий и ситуаций, не понимая, что выход из <span>замкнутого круга</span> находится на глубине нашего бессознательного
+                </p>
+            </div>
+
+            <div class="mob_top_description">Все сферы жизни буквально пронизаны этими <span>кластерами</span> и со временем они врезаются в наше сознание как наскальная живопись, заставляя нас встраивать свою судьбу в их трафарет.</div>
+
+            <div class="mob_description">
+                <p>Плывя по заданному <span>не нами курсу</span> мы порой не замечаем как вновь и вновь оказываемся в ловушке повторяющихся прежних событий и ситуаций, не понимая, что выход из <span>замкнутого круга</span> находится на глубине нашего бессознательного</p>
+                <a class="acquaintance_link" href="">подробнее о нас</a>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+    <div class="over_you container">
+
+        <div class="decor"></div>
+
+        <div class="over_you_head">
+            <h2>сверх ты</h2>
+
+            <div class="right">
+                <div class="line"></div>
+                <img src="{% static 'main/images/over_you.svg' %}" alt="">
+            </div>
+        </div>
+
+        <div class="over_you_grid">
+            <div class="over_you_grid_item">
+            <img src="{% static 'main/images/human.svg' %}" alt="">
+            </div>
+            <div class="over_you_grid_item"><span>Наша работа</span> будет направлена на изучение и открытие уникальных глубин вашего психического мира, так как все сокровища, как известно, скрыты от посторонних глаз и имеют ценность только, когда их находят. <span>Понять себя</span> — значит вновь обрести себя, но уже в новом качестве, а значит построить и прожить новую, более счастливую жизнь. <span>Познавая и понимая</span> себя, беря <span>ответственность</span> за свою судьбу, вы обретаете равновесие в своей душе и можете двигать свой корабль по заданному вами курсу, зная, что <span>справитесь</span> с любой непогодой.</div>
+            <div class="over_you_grid_item">
+                <p>В нашем пространстве вы получите <span>надёжного проводника</span> на пути нового знакомства с собой, а также научитесь понимать себя и другого ибо все пережитое ранее формирует наш <span>внутренний мир</span>, внешнее неразрывно связано с внутренним, прошлое имеет свои отклики в актуальном, и влияет на дальнейшую судьбу, способность выстраивать <span>гармоничные отношения</span> с другими, <span>любить</span> и быть счастливым.</p>
+            </div>
+            <div class="over_you_grid_item">
+                <img src="{% static 'main/images/boat.jpg' %}" alt="">
+            </div>
+        </div>
+
+        <section id="over_you_slider" class="over_you_splide splide" aria-label="Splide Basic HTML Example">
+
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img class="bload" src="{% static 'main/images/boat.jpg' %}" alt="">
+                        <p>
+                            <span>Наша работа</span> будет направлена на изучение и открытие уникальных глубин вашего психического мира, так как все сокровища, как известно, скрыты от посторонних глаз и имеют ценность только, когда их находят. <span>Понять себя</span> — значит вновь обрести себя, но уже в новом качестве, а значит построить и прожить новую, более счастливую жизнь. <span>Познавая и понимая</span> себя, беря <span>ответственность</span> за свою судьбу, вы обретаете равновесие в своей душе и можете двигать свой корабль по заданному вами курсу, зная, что <span>справитесь</span> с любой непогодой.
+                        </p>
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{% static 'main/images/human.svg' %}" alt="">
+                        <p class="max">
+                            В нашем пространстве вы получите <span>надёжного проводника</span> на пути нового знакомства с собой, а также научитесь понимать себя и другого ибо все пережитое ранее формирует наш <span>внутренний мир</span>, внешнее неразрывно связано с внутренним, прошлое имеет свои отклики в актуальном, и влияет на дальнейшую судьбу, способность выстраивать <span>гармоничные отношения</span> с другими, <span>любить</span> и быть счастливым.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="nature_element container">
+        <div class="title_flex">
+            <div class="title">
+                <h3>СТИХИИ</h3>
+                
+                <img class="title_decor" src="{% static 'main/images/nature_elements.png' %}" alt="">
+
+                <img class="pattern" src="{% static 'main/images/pattern.svg' %}" alt="">
+            </div>
+            
+            <div class="description">
+                <img src="{% static 'main/images/marks.png' %}" alt="">
+
+                <p>
+                    Принято считать, что секрет <span>здоровья и благополучия</span> человека заключён в особом балансе всех <span>четырех стихий.</span> Выявление доминирующей Стихии и исследование, какие Стихии находятся в избытке, а какие недостаточно проявлены, позволяют нам понять, как с помощью их <span>балансировки добиться</span> позитивных <span>изменений</span> в жизни
+                </p>
+            </div>
+        </div>
+
+        <div class="nature_element_grid">
+            <div class="grid_item a" onclick="openNatureElement(event, 'water')">
+                <div class="item_content">
+                    <div class="name">
+                        <h4>ВОДА</h4>
+                        
+                        <img src="{% static 'main/images/nature_elements/arrow_right_down.svg' %}" alt="">
+                    </div>
+    
+                    <img class="el_image top" src="{% static 'main/images/nature_elements/water.svg' %}" alt="">
+                    <img class="el_image down" src="{% static 'main/images/nature_elements/water.svg' %}" alt="">
+    
+                    <div class="decor">
+                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="element_description">
+                    <div class="content">
+                        <p>
+                            Вода – это символ жизни, то, что наполняет, питает и без чего жизнь невозможна. Своим умиротворяющим потоком вода очищает от старого, возрождает, наполняет новой энергией.
+                        </p>
+    
+                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach4.svg' %}" alt="">
+
+                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
+
+                        <img class="element_decor" src="{% static 'main/images/nature_elements/water_decor.svg' %}" alt="" >
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid_item b " onclick="openNatureElement(event, 'flame')">
+                <div class="item_content">
+                    <div class="name">
+                        <img src="{% static 'main/images/nature_elements/arrow_left_down.svg' %}" alt="">
+                        <h4>ОГОНЬ</h4>
+                    </div>
+    
+                    <img class="el_image top" src="{% static 'main/images/nature_elements/fire.svg' %}" alt="">
+                    <img class="el_image down" src="{% static 'main/images/nature_elements/fire.svg' %}" alt="">
+    
+                    <div class="decor">
+                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="element_description">
+                    <div class="content">
+                        <p>
+                            Может быть отблеск внутри тебя готов сиять естественным образом.
+                            Чувствовать пылкий азарт открытий - это принимать свое пламя, не сжигая остальные стихии в себе.
+                        </p>
+    
+                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach3.svg' %}" alt="">
+
+                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
+
+                        <img class="element_decor" src="{% static 'main/images/nature_elements/flame_decor.svg' %}" alt="" >
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main_element" >
+                <img src="{% static 'main/images/main_element.png' %}" alt="">
+            </div>
+
+            <div class="grid_item c " onclick="openNatureElement(event, 'ground')">
+                <div class="item_content">
+                    <div class="name">
+                        <h4>ЗЕМЛЯ</h4>
+                        <img src="{% static 'main/images/nature_elements/arrow_right_up.svg' %}" alt="">
+                    </div>
+    
+                    <img class="el_image top" src="{% static 'main/images/nature_elements/ground.svg' %}" alt="">
+                    <img class="el_image down" src="{% static 'main/images/nature_elements/ground.svg' %}" alt="">
+    
+                    <div class="decor">
+                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="element_description">
+                    <div class="content">
+                        <p>
+                            Стихия Земля как символ опоры. То, что дает нам чувствовать себя устойчиво во время шторма и хаоса. Поиск внутренних опор является важнейшей частью на пути познания себя. Опора - это знание. Знание того кто я, чего я хочу, а чего точно НЕ хочется. Что меня успокаивает, расстраивает, вдохновляет? Психотерапия даст возможность обрести ответы на все волнующие вопросы и “заземлиться”.
+                        </p>
+    
+                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach2.svg' %}" alt="">
+
+                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
+
+                        <img class="element_decor" src="{% static 'main/images/nature_elements/ground_decor.svg' %}" alt="" >
+                    </div>
+                </div>
+            </div>
+            <div class="grid_item d " onclick="openNatureElement(event, 'air')">
+                <div class="item_content">
+                    <div class="name">
+                        <img src="{% static 'main/images/nature_elements/arrow_left_up.svg' %}" alt="">
+                        <h4>ВОЗДУХ</h4>
+                    </div>
+    
+                    <img class="el_image top" src="{% static 'main/images/nature_elements/air.svg' %}" alt="">
+                    <img class="el_image down" src="{% static 'main/images/nature_elements/air.svg' %}" alt="">
+    
+                    <div class="decor">
+                        <img src="{% static 'main/images/nature_elements/subtract1.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="element_description">
+                    <div class="content">
+                        <p>
+                            Воздух - это то, что  невозможно увидеть глазами, но без чего невозможно наше существование. Мы ощущаем его кожей, наполняем им свои легкие, заполняем пространство, когда открываем окно. В рамках наших психотерапевтических сессий мы сможем создать эту невидимую связь, которая будет наполнять и давать новый опыт проживания жизни. 
+                        </p>
+    
+                        <img class="coach_image" src="{% static 'main/images/nature_elements/coach1.svg' %}" alt="">
+
+                        <img class="corner" src="{% static 'main/images/nature_elements/slice.svg' %}" alt="" >
+
+                        <img class="element_decor" src="{% static 'main/images/nature_elements/air_decor.svg' %}" alt="" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coach_team container">
+        <a href="{% url 'air_page' %}" class="coach_item">
+            <img class="decor" src="{% static 'main/images/coach/air.svg' %}" alt="">
+            <img class="coach" src="{% static 'main/images/coach/coach1.svg' %}" alt="">
+            <div class="link">
+                <h4>Ирина</h4>
+                <img src="{% static 'main/images/coach/arrow.svg' %}" alt="">
+            </div>
+        </a>
+        <a href="{% url 'earth_page' %}" class="coach_item">
+            <img class="decor" src="{% static 'main/images/coach/earth.svg' %}" alt="">
+            <img class="coach" src="{% static 'main/images/coach/coach2.svg' %}" alt="">
+            <div class="link">
+                <h4>Ульяна</h4>
+                <img src="{% static 'main/images/coach/arrow.svg' %}" alt="">
+            </div>
+        </a>
+        <a href="{% url 'fire_page' %}" class="coach_item">
+            <img class="decor" src="{% static 'main/images/coach/fire.svg' %}" alt="">
+            <img class="coach" src="{% static 'main/images/coach/coach3.svg' %}" alt="">
+            <div class="link">
+                <h4>Станислав</h4>
+                <img src="{% static 'main/images/coach/arrow.svg' %}" alt="">
+            </div>
+        </a>
+        <a href="{% url 'water_page' %}" class="coach_item">
+            <img class="decor" src="{% static 'main/images/coach/water.svg' %}" alt="">
+            <img class="coach" src="{% static 'main/images/coach/coach4.svg' %}" alt="">
+            <div class="link">
+                <h4>Ирина</h4>
+                <img src="{% static 'main/images/coach/arrow.svg' %}" alt="">
+            </div>
+        </a>
+    </div>
+
+    <div class="about container">
+
+        <div class="decor">
+        </div>
+
+        <div class="about_head">
+            <h2>НЕМНОГО О НАС</h2>
+
+            <div class="right">
+                <div class="line"></div>
+                <img src="{% static 'main/images/about.svg' %}" alt="">
+            </div>
+        </div>
+
+        <div class="about_image">
+            <img src="{% static 'main/images/about_main.jpg' %}" alt="">
+        </div>
+
+        <section id="about_slider" class="about_splide splide" aria-label="Splide Basic HTML Example">
+
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.90004 22.94L21.9 8.93999C22.2859 8.56486 22.8426 8.42408 23.3603 8.57066C23.8781 8.71725 24.2784 9.12895 24.4103 9.65067C24.5423 10.1724 24.3859 10.7249 24 11.1L12.58 22.5H39.04C39.8685 22.5 40.54 23.1716 40.54 24C40.54 24.8284 39.8685 25.5 39.04 25.5H12.6L24 36.9C24.2859 37.1786 24.4472 37.5608 24.4472 37.96C24.4472 38.3592 24.2859 38.7414 24 39.02C23.7244 39.3093 23.3395 39.469 22.94 39.46C22.5419 39.4619 22.1598 39.3033 21.88 39.02L7.88004 25.02C7.29513 24.4344 7.29513 23.4856 7.88004 22.9L7.90004 22.94Z" fill="#333333"/>
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.90004 22.94L21.9 8.93999C22.2859 8.56486 22.8426 8.42408 23.3603 8.57066C23.8781 8.71725 24.2784 9.12895 24.4103 9.65067C24.5423 10.1724 24.3859 10.7249 24 11.1L12.58 22.5H39.04C39.8685 22.5 40.54 23.1716 40.54 24C40.54 24.8284 39.8685 25.5 39.04 25.5H12.6L24 36.9C24.2859 37.1786 24.4472 37.5608 24.4472 37.96C24.4472 38.3592 24.2859 38.7414 24 39.02C23.7244 39.3093 23.3395 39.469 22.94 39.46C22.5419 39.4619 22.1598 39.3033 21.88 39.02L7.88004 25.02C7.29513 24.4344 7.29513 23.4856 7.88004 22.9L7.90004 22.94Z" fill="#333333"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        Мы — <span>группа</span> дипломированных практикующих психоаналитически ориентированных психотерапевтов, которые продолжают учиться и получать новый опыт в своей профессии. Каждый из нас прошёл или проходит свой путь в собственной терапии и <span>готов поделиться своим опытом</span> в процессе прохождения вашего пути к СверхТы
+                    </li>
+                    <li class="splide__slide">
+                        Мы не волшебники, чтобы в миг устранять проблемы и менять жизни людей, но волшебство может произойти, когда появится честность к самому себе и доверие к тому, кому интересен твой внутренний мир. Каждый из нас по- своему уникален и имеет свою специфику.
+                    </li>
+                    <li class="splide__slide">
+                        Мы создали это пространство для тех, кто захочет улучшить  качество своей жизни и обрести шанс познакомиться с собой заново, держа за руку того, кто уже прошел этот непростой путь.
+                    </li>
+                </ul>
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+    <div class="method container">
+        <div class="head">
+            <div class="title">
+                <h3>Метод</h3>
+                
+                <img class="title_decor" src="{% static 'main/images/method/blue_star.png' %}" alt="">
+            </div>
+
+            <div class="line"></div>
+
+            <img src="{% static 'main/images/method/brown_star.svg' %}" alt="">
+        </div>
+
+        <div class="content">
+            <div class="grid_item">
+                <div class="image_container">
+                    <div class="image_wrapper">
+                        <img class="image" src="{% static 'main/images/method/image1.svg' %}" alt="">
+                    </div>
+                    <div class="image_wrapper mob">
+                        <img class="image" src="{% static 'main/images/method/image2.svg' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="text">
+                    <p>Психоаналитический <span>метод помогает</span> обнаружить уникальность каждого человека, выстроить взаимосвязи прошлого с настоящим, привычные и повторяющиеся сценарии, реакции, которые когда‑то являлись защитами от боли, но теперь не дают полноценно и свободно жить, являются препятствием к тому, что доставит <span>удовольствие и удовлетворение.</span></p>
+                </div>
+            </div>
+
+            <div class="grid_item">
+                <div class="text">
+                    <img src="{% static 'main/images/method/work.svg' %}" alt="">
+
+                    <p><span>Работа с нами</span> — это путешествие на глубину своей души. Деликатное открытие и познание тех мест, которые были недоступны для исследования в одиночку.</p>
+                </div>
+
+                <div class="text">
+                    <img src="{% static 'main/images/method/star.svg' %}" alt="">
+
+                    <p><span>Цель</span> психоанализа не состоит в том, чтобы вспомнить все детские воспоминания (события). <span>Важно вспомнить</span> лишь то, что причиняет боль для того, чтобы (это проработать и отпустить) навсегда забыть. <span>Обрести свободу</span> действовать по‑другому, получить новый опыт.</p>
+                </div>
+
+                <img class="image" src="{% static 'main/images/method/image3.svg' %}" alt="">
+            </div>
+        </div>
+
+        <section id="method_slider" class="splide method_splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="grid_item">
+                            <div class="image_container">
+                                <div class="image_wrapper">
+                                    <img class="image" src="{% static 'main/images/method/image1.svg' %}" alt="">
+                                </div>
+                                <div class="image_wrapper mob">
+                                    <img class="image" src="{% static 'main/images/method/image2.svg' %}" alt="">
+                                </div>
+                            </div>
+            
+                            <div class="text mob">
+                                <p>Психоаналитический <span>метод помогает</span> обнаружить уникальность каждого человека, выстроить взаимосвязи прошлого с настоящим, привычные и повторяющиеся сценарии, реакции, которые когда‑то являлись защитами от боли, но теперь не дают полноценно и свободно жить, являются препятствием к тому, что доставит <span>удовольствие и удовлетворение.</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="grid_item">
+                            <div class="text">
+                                <img src="{% static 'main/images/method/work.svg' %}" alt="">
+            
+                                <p><span>Работа с нами</span> — это путешествие на глубину своей души. Деликатное открытие и познание тех мест, которые были недоступны для исследования в одиночку.</p>
+                            </div>
+            
+                            <div class="text">
+                                <img src="{% static 'main/images/method/star.svg' %}" alt="">
+            
+                                <p><span>Цель</span> психоанализа не состоит в том, чтобы вспомнить все детские воспоминания (события). <span>Важно вспомнить</span> лишь то, что причиняет боль для того, чтобы (это проработать и отпустить) навсегда забыть. <span>Обрести свободу</span> действовать по‑другому, получить новый опыт.</p>
+                            </div>
+            
+                            <img class="image mob" src="{% static 'main/images/method/image3.svg' %}" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="activities container">
+
+        <div class="decor"></div>
+
+        <div class="activities_head">
+            <h2>Активности</h2>
+
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab(event, 1)">Психоанализ</div>
+                <div class="tab" onclick="switchTab(event, 2)">Индивидуальная терапия</div>
+                <div class="tab" onclick="switchTab(event, 3)">Отвлечемся</div>
+            </div>
+
+            <img src="{% static 'main/images/activities_decor.svg' %}" alt="">
+        </div>
+
+        <div class="tabs mob">
+            <div class="tab active" onclick="switchTab(event, 1)">Психоанализ</div>
+            <div class="tab" onclick="switchTab(event, 2)">Индивидуальная терапия</div>
+            <div class="tab" onclick="switchTab(event, 3)">Отвлечемся</div>
+        </div>
+    
+    </div>
+
+    <div class="activities_slider_container">
+
+        <section id="activities_slider_1" class="activities_slider splide active" aria-label="Splide Basic HTML Example">
+            
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/brain.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/physic.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+            </div>
+
+        </section>
+        
+        <section id="activities_slider_2" class="activities_slider splide" aria-label="Splide Basic HTML Example">
+            
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/brain.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/brain.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/physic.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+            </div>
+
+        </section>
+        
+        <section id="activities_slider_3" class="activities_slider splide" aria-label="Splide Basic HTML Example">
+
+            
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+                        
+                        <img src="{% static 'main/images/physic.jpg' %}" alt="">
+                        
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+                        
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+                        
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/brain.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                    <li class="splide__slide">
+                        <h4>Познание и свершение  себя через судьбы героев кинокартин</h4>
+
+                        <img src="{% static 'main/images/head.jpg' %}" alt="">
+
+                        <a href="">подробнее</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.5" y="0.5" width="47" height="47" rx="23.5" transform="matrix(-1 0 0 1 47 0)" stroke="#6A5847"/>
+                        <path d="M15.95 23.47L22.95 16.47C23.1429 16.2824 23.4213 16.212 23.6802 16.2853C23.9391 16.3586 24.1392 16.5645 24.2052 16.8253C24.2711 17.0862 24.1929 17.3624 24 17.55L18.29 23.25H31.52C31.9342 23.25 32.27 23.5858 32.27 24C32.27 24.4142 31.9342 24.75 31.52 24.75H18.3L24 30.45C24.143 30.5893 24.2236 30.7804 24.2236 30.98C24.2236 31.1796 24.143 31.3707 24 31.51C23.8622 31.6546 23.6698 31.7345 23.47 31.73C23.271 31.7309 23.0799 31.6516 22.94 31.51L15.94 24.51C15.6476 24.2172 15.6476 23.7428 15.94 23.45L15.95 23.47Z" fill="#6A5847"/>
+                    </svg>
+                </button>
+            </div>
+
+        </section>
+
+    </div>
 
 {% endblock %}

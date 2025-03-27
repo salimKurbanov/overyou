@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block headline %}{% endblock %}
+{% block keywords %}{{ keywords }}{% endblock %}
+{% block url %}{{ url }}{% endblock %}
+{% block image %}{% if image %}{{ image.url }}{% endif %}{% endblock %}
+{% block about %}{{ keywords }}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main/person_page/person_page.css' %}">
+    <link rel="stylesheet" href="{% static 'main/splide/splide.min.css' %}">
+    <script src="{% static 'main/scripts/splide.min.js' %}" defer></script>
+    <script src="{% static 'main/person_page/person_page.js' %}" defer></script>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "[ФИО] Психоаналитик",
+          "image": "https://example.com/фото-психолога.jpg",
+          "description": "Опытный психоаналитик с многолетней практикой. Помогаю разобраться в глубинных причинах психологических проблем.",
+          "jobTitle": "Психоаналитик",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Улица, дом, офис",
+            "addressLocality": "Город",
+            "addressRegion": "Регион",
+            "postalCode": "Индекс"
+          },
+          "telephone": "+71234567890",
+          "email": "info@example.com",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "10:00",
+              "closes": "20:00"
+            }
+          ],
+          "knowsAbout": ["Психоанализ", "Психотерапия", "Фрейдизм"],
+          "url": "https://example.com/услуги",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://example.com/психолог" // URL вашей страницы!
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    
+    <div class="person_top">
+
+        <div class="title_mob">
+            СТАНИСЛАВ
+            <span> САНАЧЕВ</span>
+        </div>
+
+        <div class="navigation">
+            <a href="{% url 'air_page' %}" class="person_link a">
+                <img src="{% static 'main/images/person_page/air_person.png' %}" alt="Переход на страницу Ирина Свирина">
+            </a>
+            <div class="person_link b active">
+                <img src="{% static 'main/images/person_page/fire_person_active.svg' %}" alt="Страница Станислав Саначев">
+            </div>
+            <a href="{% url 'water_page' %}" class="person_link d">
+                <img src="{% static 'main/images/person_page/water_person.png' %}" alt="Переход на страницу Ульяна Лукацкая">
+            </a>
+            <a href="{% url 'earth_page' %}" class="person_link c">
+                <img src="{% static 'main/images/person_page/earth_person.png' %}" alt="Переход на страницу Ульяна Комарова">
+            </a>
+            <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element">
+        </div>
+
+        <div class="description">
+            <h1>
+                СТАНИСЛАВ
+                <span>САНАЧЕВ</span>
+            </h1>
+
+            <div class="slogans_block">
+                <p class="top">
+                    Ты есть <span class="upper">такой</span> – какой бы <span style="white-space: nowrap;">ты хотел быть</span>?
+                </p>
+    
+                <p class="middle">
+                    А может быть – это хотел <span class="upper">не ты</span>?
+                </p>
+    
+                <p class="bottom">
+                    Но где во всем окружающем <span class="upper">настоящий ты</span>?
+                </p>
+            </div>
+        </div>
+        
+        <div class="image_block">
+            <img src="{% static 'main/images/person_page/stanislav.webp' %}" alt="">
+        </div>
+    </div>
+
+    <div class="person_middle">
+        <div class="container">
+            <div class="image_block">
+                <img src="{% static 'main/images/person_page/mayak.svg' %}" alt="">
+            </div>
+
+            <div class="description">
+                <p>На моей странице я не могу написать что-то о тебе настоящем. А т.к. задумка этой страницы в том, чтобы дать начало исследованию настоящего живого мира, который по какой-то, конечно же <span>разумной</span>, причине не открыт тебе всеми своими красками, то мне и писать особо не о чем.</p>
+
+                <p>Я не знаю и не могу знать всего того, что есть в этом внутреннем мире любого человека, но я могу представить как это непросто, когда ты готов к новым открытиям, а все происходит по прежнему, как в заколдованном круге. С моей помощью у тебя будет возможность заметить причину того, почему тебя влечет этот <span>прежний круг</span>.</p>
+                
+                <p>Взглянуть сверху на свой путь? Если ты желаешь – то и это возможно. На пути, по которому начинается погружение в настоящий мир есть много маяков с непривычными для твоего сознательного берегами.</p>
+
+                <p>Включить маяк? Если тебе хочется, давай попробуем. Всякое путешествие принесет результаты, но все же нужно будет соблюдать и некоторые меры безопасности.</p>
+                
+                <p>Безопасность для тебя? Я для этого и подготовил эту страницу, чтобы попытаться хоть немного рассказать как мне самому интересно пойти в путешествие, из которого мы вернемся вместе.</p>
+                
+            </div>
+
+            <section id="stanislav_slider" class="stanislav_slider splide" aria-label="Splide Basic HTML Example">
+
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            На моей странице я не могу написать что-то о тебе настоящем. А т.к. задумка этой страницы в том, чтобы дать начало исследованию настоящего живого мира, который по какой-то, конечно же <span>разумной</span>, причине не открыт тебе всеми своими красками, то мне и писать особо не о чем.
+                        </li>
+                        <li class="splide__slide">
+                            Я не знаю и не могу знать всего того, что есть в этом внутреннем мире любого человека, но я могу представить как это непросто, когда ты готов к новым открытиям, а все происходит по прежнему, как в заколдованном круге. С моей помощью у тебя будет возможность заметить причину того, почему тебя влечет этот <span>прежний круг</span>.
+                        </li>
+                        <li class="splide__slide">
+                            Взглянуть сверху на свой путь? Если ты желаешь – то и это возможно. На пути, по которому начинается погружение в настоящий мир есть много маяков с непривычными для твоего сознательного берегами.
+                        </li>
+                        <li class="splide__slide flex">
+                            <p>Включить маяк? Если тебе хочется, давай попробуем. Всякое путешествие принесет результаты, но все же нужно будет соблюдать и некоторые меры безопасности.</p>
+                
+                            <p>Безопасность для тебя? Я для этого и подготовил эту страницу, чтобы попытаться хоть немного рассказать как мне самому интересно пойти в путешествие, из которого мы вернемся вместе.</p>
+                        </li>
+                    </ul>
+                    <ul class="splide__pagination"></ul>
+                </div>
+    
+            </section>
+        </div>
+    </div>
+
+    <div class="person_bottom container">
+
+        <div class="main_decor"></div>
+
+        <div class="head">
+            <h2>Мои основные направления для исследования в психоаналитическом методе</h2>
+
+            <div class="decor">
+                <img src="{% static 'main/images/person_page/person_decor.svg' %}" alt="">
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="grid_item">
+
+                <div class="desc_decor top">
+                    <img src="{% static 'main/images/person_page/person_decor.svg' %}" alt="">
+                </div>
+
+                <h3>Паттерны отношений</h3>
+
+                <div class="grid_descripttion">
+                    <p>Ты хотел(а) бы разобраться в том, что было или в том, чего не было?</p>
+                    <p>Твои мысли часто про то, что происходит с общением между тобой и твоими близкими?</p>
+                    <p>Тебе важно чувствовать или чтобы твои чувства были поняты?</p>
+                </div>
+            </div>
+            <div class="grid_item">
+
+                <div class="desc_decor center">
+                    <img src="{% static 'main/images/person_page/person_decor.svg' %}" alt="">
+                </div>
+
+                <h3>Сложные мысли и чувства</h3>
+
+                <div class="grid_descripttion mt37">
+                    <p>Как поступить?</p>
+                    <p>Как сделать так, чтобы стало легче?</p>
+                    <p>Возможно ли какие-то решение?</p>
+                </div>
+            </div>
+            <div class="grid_item">
+
+                <div class="desc_decor bottom">
+                    <img src="{% static 'main/images/person_page/person_decor.svg' %}" alt="">
+                </div>
+
+                <h3>Хотелось бы разобраться..</h3>
+
+                <div class="grid_descripttion mt37">
+                    <p>С тем, с чем не получается?</p>
+                    <p>С тем, с чем не сталкивались?</p>
+                    <p>С тем, чему не просто подобрать слова?</p>
+                </div>
+
+            </div>
+
+            <div class="grid_decor">
+                <img src="{% static 'main/images/person_page/grid_decor.svg' %}" alt="">
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
