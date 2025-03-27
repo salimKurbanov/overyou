@@ -6,7 +6,7 @@
 {% block headline %}{% endblock %}
 {% block keywords %}{{ keywords }}{% endblock %}
 {% block url %}{{ url }}{% endblock %}
-{% block image %}{{ image }}{% endblock %}
+{% block image %}{{ image.url }}{% endblock %}
 {% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
@@ -17,7 +17,7 @@
 
     <script type="application/ld+json">
         {
-          "@context": "https://schema.org/",
+          "@context": "https://schema.org",
           "@type": "Person",
           "name": "[ФИО] Психоаналитик",
           "image": "https://example.com/фото-психолога.jpg",
@@ -46,7 +46,7 @@
               "closes": "20:00"
             }
           ],
-          "knowsAbout": "Психоанализ",
+          "knowsAbout": ["Психоанализ", "Психотерапия", "Фрейдизм"],
           "url": "https://example.com/услуги",
             "mainEntityOfPage": {
               "@type": "WebPage",
@@ -57,7 +57,7 @@
 {% endblock %}
 
 {% block content %}
-
+    
     <div class="person_top">
 
         <div class="title_mob">
@@ -67,16 +67,16 @@
 
         <div class="navigation">
             <a href="{% url 'air_page' %}" class="person_link a">
-                <img src="{% static 'main/images/person_page/air_person.png' %}" alt="">
+                <img src="{% static 'main/images/person_page/air_person.png' %}" alt="Переход на страницу Ирина Свирина">
             </a>
             <div class="person_link b active">
-                <img src="{% static 'main/images/person_page/fire_person_active.svg' %}" alt="">
+                <img src="{% static 'main/images/person_page/fire_person_active.svg' %}" alt="Страница Станислав Саначев">
             </div>
             <a href="{% url 'water_page' %}" class="person_link d">
-                <img src="{% static 'main/images/person_page/water_person.png' %}" alt="">
+                <img src="{% static 'main/images/person_page/water_person.png' %}" alt="Переход на страницу Ульяна Лукацкая">
             </a>
             <a href="{% url 'earth_page' %}" class="person_link c">
-                <img src="{% static 'main/images/person_page/earth_person.png' %}" alt="">
+                <img src="{% static 'main/images/person_page/earth_person.png' %}" alt="Переход на страницу Ульяна Комарова">
             </a>
             <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element">
         </div>
@@ -103,7 +103,7 @@
         </div>
         
         <div class="image_block">
-            <img src="{% static 'main/images/person_page/stanislav.jpg' %}" alt="">
+            <img src="{% static 'main/images/person_page/stanislav.webp' %}" alt="">
         </div>
     </div>
 
