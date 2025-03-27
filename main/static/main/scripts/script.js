@@ -70,6 +70,13 @@ const closeChat = () => {
     tabContent.querySelectorAll('.form').forEach(item => item.classList.remove('active'))
     tabContent.style.height = `0px`
     chatTab.classList.remove('open')
+    chatTab.querySelector('.tab_title h5').textContent = 'Выберите способ'
+
+    setTimeout(() => {
+        chat.querySelector('.success_message').style.display = 'none'
+        chat.querySelector('h4').style.opacity = '1'
+        chat.querySelector('.body').style.opacity = '1'
+    }, 500)
 }
 
 const openChatTabs = (e) => {
@@ -127,6 +134,8 @@ const sendForm = async (e) => {
         data['message'] = formData.get('message_email')
     }
 
+    success()
+
     // formData.forEach((value, key) => data[key] = value)
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
@@ -146,4 +155,19 @@ const sendForm = async (e) => {
     } catch (err) {
         console.log(err)
     }
+
+    setTimeout(() => {
+        closeChat()
+    }, 1500)
+}
+
+const success = () => {
+    const title = chat.querySelector('h4')
+    const body = chat.querySelector('.body')
+    tabContent.style.height = `0px`
+    const message = chat.querySelector('.success_message')
+
+    title.style.opacity = '0'
+    body.style.opacity = '0'
+    message.style.display = 'flex'
 }

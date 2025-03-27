@@ -10,9 +10,138 @@
 {% block about %}{{ keywords }}{% endblock %}
 
 {% block css %}
-
+    <link rel="stylesheet" href="{% static 'main/person_page/person_page.css' %}">
 {% endblock %}
 
 {% block content %}
 
+    <div class="komarova_page">
+
+        <div class="person_top uliyana">
+    
+            <div class="title_mob">
+                Ульяна
+                <span> Комарова</span>
+            </div>
+    
+            <div class="navigation">
+                <a href="{% url 'water_page' %}" class="person_link a">
+                    <img src="{% static 'main/images/person_page/water_person.png' %}" alt="">
+                </a>
+                <div class="person_link b active">
+                    <img src="{% static 'main/images/person_page/ground_person_active.png' %}" alt="">
+                </div>
+                <a href="{% url 'air_page' %}" class="person_link d">
+                    <img src="{% static 'main/images/person_page/air_person.png' %}" alt="">
+                </a>
+                <a href="{% url 'fire_page' %}" class="person_link c">
+                    <img src="{% static 'main/images/person_page/fire_person.png' %}" alt="">
+                </a>
+                <img src="{% static 'main/images/person_page/main_element.svg' %}" alt="" class="main_element earth">
+            </div>
+    
+            <div class="description">
+                <img class="description_decor" src="{% static 'main/images/person_page/uliyana_decor.svg' %}" alt="">
+    
+                <h1 class="komarova">
+                    Ульяна
+                    <span>Комарова</span>
+                </h1>
+    
+                <div class="slogans_block komarova">
+    
+                    <p class="top">
+                        <span class="upper">Психотерапия</span>
+                    </p>
+                    
+                    <p class="middle">
+                        как красивая <span class="upper">дорога</span>
+                    </p>
+                    
+                    <p class="bottom">
+                        <span class="upper">К</span> истинному <span class="upper">Я</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="image_block">
+                <img src="{% static 'main/images/person_page/uliyana.svg' %}" alt="">
+            </div>
+    
+        </div>
+
+        <div class="uliyana_description">
+            Зачастую, <span>клиент,</span> который приходит первый раз на сеанс к психотерапевту,<span>испытывает целую гамму чувств,</span> и в особенности – <span>волнение.</span> Предвкушение и интерес сменяются учащенным сердцебиением и новыми, и новыми вопросами, возникающими в голове.
+        </div>
+
+        <div class="person_middle komarova">
+            <div class="description_left">
+                <p class="text">Пока человек ожидает у входа в кабинет или в зале ожидания онлайн-платформы,<span>он спрашивает себя:</span></p>
+    
+                <div class="question_block">
+                    <div class="top">
+                        <div class="content">
+                            <img src="{% static 'main/images/person_page/union1.svg' %}" alt="">
+                            <p>
+                                Как меня здесь примут?
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="middle">
+                        <div class="content">
+                            <img src="{% static 'main/images/person_page/union3.svg' %}" alt="">
+                            <p>
+                                Поможет ли мне психотерапия?
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="bottom">
+                        <div class="content">
+                            <img src="{% static 'main/images/person_page/union2.svg' %}" alt="">
+                            <p>
+                                Смогу ли я открыться человеку, который сидит передо мной?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <p class="text">Я тоже <span>проживала эти чувства</span> и задавалась схожими вопросами, находясь в собственной терапии. Поэтому знаю, как волнительно быть <span>на месте клиента.</span></p>
+    
+                <p class="text">Могу с уверенностью сказать : если у вас есть хоть малейший интерес к себе, то <span>психотерапия поможет.</span></p>
+            </div>
+    
+            <div class="image_block">
+                <img src="{% static 'main/images/person_page/uliana_middle_image.svg' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="komarova_dreams">
+        <img src="{% static 'main/images/person_page/dreams.svg' %}" alt="">
+
+        <p class="text">В работе я руководствуюсь желанием открыть в человеке красоту и силу, подсветить её.</p>
+    </div>
+
+    <div class="komarova_bottom container">
+        <div class="grid_item a">
+            <img src="{% static 'main/images/person_page/dream1.jpg' %}" alt="">
+        </div>
+        <div class="grid_item b">
+            <p>
+                Несмотря на длительную практику и обширные знания, с каждым клиентом я открываю новые миры:
+            </p>
+
+            <span>
+                мир его внутренней реальности, <br> сновидений, <br> бессознательного.
+            </span>
+        </div>
+        <div class="grid_item c">
+            <img src="{% static 'main/images/person_page/dream2.jpg' %}" alt="">
+        </div>
+        <div class="grid_item d">
+            <img src="{% static 'main/images/person_page/dream3.jpg' %}" alt="">
+        </div>
+    </div>
 {% endblock %}
