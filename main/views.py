@@ -40,12 +40,11 @@ def process_form(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            type = data.get('type')
             contact = data.get('contact')
             name = data.get('name')
             message = data.get('message')
             
-            Applications.objects.create(type=type, contact=contact, name=name, message=message)
+            Applications.objects.create(contact=contact, name=name, message=message)
 
             # send_mail(
             #     'Заявка на обратную связь',
