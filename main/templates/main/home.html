@@ -83,20 +83,20 @@
 
     <div class="container scenaries">
 
+        
+
+        <div class="scenaries_item g" onclick="openDescription(event)">
+            <p>
+                Если вы ощущаете нечто, что заставляет вас увязать в старых сценариях, <span>ходить по кругу</span> или любой другой дискомфорт, который не позволяет получать удовольствие от жизни, мы готовы стать <span>Вашим проводником</span> для познания истинного Себя
+            </p>
+        </div>
+        <div class="scenaries_item e" onclick="openDescription(event)">
+            <p>
+                Мы рады приветствовать вас в нашем <span>открытом</span> и в то же время очень приватном <span>пространстве</span>, так как психотерапия это про тонкое взаимодействие двоих в поиске <span>истины</span>
+            </p>
+        </div>
+
         {% for scenary in scenaries %}
-            {% if scenary.title == 'Приветствие' %}
-                <div class="scenaries_item e" onclick="openDescription(event)">
-                    <p>
-                        Мы рады приветствовать вас в нашем <span>открытом</span> и в то же время очень приватном <span>пространстве</span>, так как психотерапия это про тонкое взаимодействие двоих в поиске <span>истины</span>
-                    </p>
-                </div>
-            {% elif scenary.title == 'Индивидуальная терапия' %}
-                <div class="scenaries_item g" onclick="openDescription(event)">
-                    <p>
-                        Если вы ощущаете нечто, что заставляет вас увязать в старых сценариях, <span>ходить по кругу</span> или любой другой дискомфорт, который не позволяет получать удовольствие от жизни, мы готовы стать <span>Вашим проводником</span> для познания истинного Себя
-                    </p>
-                </div>
-            {% else %}
                 <div 
                     class="scenaries_item s{{ forloop.counter }} {% if forloop.counter == 1 %}active{% endif %} {% if forloop.counter < 12 %}main{% else %}secondary{% endif %}" 
                     data-id="s{{ forloop.counter }}" 
@@ -121,7 +121,6 @@
                         <h4>{{ scenary.title }}</h4>
                     </div>
                 </div>
-            {% endif %}
         {% endfor %}
 
     </div>
