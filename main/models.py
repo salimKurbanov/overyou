@@ -1,6 +1,7 @@
 from django.db import models
-from django.core.exceptions import PermissionDenied
-
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+import os
 
 class Seo(models.Model):
     page = models.CharField('Название страницы', max_length=100)
@@ -20,23 +21,32 @@ class Seo(models.Model):
 
 
 class Applications(models.Model):
-    type = models.CharField('Тип', max_length=100, null=True, blank=True)
     contact = models.CharField('Контакт', max_length=100, null=True, blank=True)
     name = models.CharField('Имя', max_length=100, null=True, blank=True)
     message = models.TextField('Сообщение', null=True, blank=True)
 
     def __str__(self):
-        return f'{self.name} - {self.type}'
+        return f'{self.name} - {self.contact}'
     
     class Meta:
         verbose_name = 'Заявка'
         verbose_name_plural = 'Заявки'
 
+def validate_not_svg(value):
+    ext = os.path.splitext(value.name)[1].lower()
+    if ext == '.svg':
+        raise ValidationError(_('Загрузка SVG-файлов запрещена.'))
 
 class Scenaries(models.Model):
     title = models.CharField('Название', max_length=100, null=True, blank=True)
     description = models.TextField('Описание', null=True, blank=True)
-    label_image = models.FileField(upload_to='images/scenaries/', null=True, blank=True, verbose_name='Лэйбл')
+    label_image = models.FileField(
+        upload_to='images/scenaries/', 
+        null=True, 
+        blank=True, 
+        verbose_name='Лэйбл', 
+        validators=[validate_not_svg]
+    )
 
     def __str__(self):
         return f'{self.title}'

@@ -384,10 +384,12 @@
   border-radius: 16px;
   font-size: 16px;
 }
-.scenaries .scenaries_item.main {
-  width: auto;
-  height: auto;
-  overflow: visible;
+@media screen and (min-width: 769px) {
+  .scenaries .scenaries_item.main {
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
 }
 .scenaries .scenaries_item.main .label h4 {
   opacity: 1;
@@ -395,10 +397,12 @@
 .scenaries .scenaries_item.main .label img {
   opacity: 1;
 }
-.scenaries .scenaries_item.secondary {
-  height: 0;
-  width: 0;
-  overflow: hidden;
+@media screen and (min-width: 769px) {
+  .scenaries .scenaries_item.secondary {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
 }
 .scenaries .scenaries_item.secondary .label h4 {
   opacity: 0;
@@ -462,6 +466,8 @@
   overflow: hidden;
 }
 .scenaries .scenaries_item .label img {
+  width: 100%;
+  max-width: 30px;
   min-width: 20px;
   transition: 1s;
 }
@@ -1109,6 +1115,7 @@
   align-items: center;
   gap: 4dvw;
   overflow: hidden;
+  min-width: 90px;
 }
 @media screen and (max-width: 768px) {
   .acquaintance .acquaintance_head .rigth {
