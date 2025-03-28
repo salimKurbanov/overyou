@@ -43,6 +43,12 @@ const switchDescription = () => {
     const randomSecondaryIndex = Math.floor(Math.random() * secondary_scenaries.length);
     const randomSecondaryElement = secondary_scenaries[randomSecondaryIndex]
 
+    // Если нет доп элементов то выходим из функции
+    if(!randomSecondaryElement) {
+      clearInterval(intervalId); 
+      return
+    }
+
     if(randomMainElement.classList.contains('active')) {
         switchDescription()
         return

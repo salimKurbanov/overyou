@@ -390,9 +390,11 @@
 
         &.main {
             // opacity: 1;
-            width: auto;
-            height: auto;
-            overflow: visible;
+            @include common.mediaMinWidth(769) {
+                width: auto;
+                height: auto;
+                overflow: visible;
+            }
             .label {
                 h4 {
                     opacity: 1;
@@ -405,9 +407,11 @@
         &.secondary {
             // transition: 0s;
             // opacity: 0;
-            height: 0;
-            width: 0;
-            overflow: hidden;
+            @include common.mediaMinWidth(769) {
+                height: 0;
+                width: 0;
+                overflow: hidden;
+            }
             .label {
                 h4 {
                     opacity: 0;
@@ -476,6 +480,8 @@
 
 
             img {
+                width: 100%;
+                max-width: 30px;
                 min-width: 20px;
                 transition: 1s;
             }
@@ -1205,6 +1211,7 @@
             align-items: center;
             gap: 4dvw;
             overflow: hidden;
+            min-width: 90px;
 
             @include common.mediaMaxWidth(768) {
                 display: none;
